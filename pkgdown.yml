@@ -1,0 +1,13 @@
+pandoc: 3.8.3
+pkgdown: 2.2.1
+pkgdown_sha: ~
+articles:
+  benchmark-validation: benchmark-validation.html
+  emg-mocap-integration: emg-mocap-integration.html
+  forceplate-inverse-dynamics: forceplate-inverse-dynamics.html
+  getting-started: getting-started.html
+  gold-standard-data-download: gold-standard-data-download.html
+last_built: 2026-08-12T11:38Z
+urls:
+  reference: https://x-biosignal.github.io/PhysioMoCap/reference
+  article: https://x-biosignal.github.io/PhysioMoCap/articles
