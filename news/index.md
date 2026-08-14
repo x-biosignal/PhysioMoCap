@@ -1,5 +1,14 @@
 # Changelog
 
+## PhysioMoCap 0.3.1
+
+- [`poseFix()`](https://x-biosignal.github.io/PhysioMoCap/reference/poseFix.md)
+  gains left/right leg-swap correction (`deswap = TRUE`): leg-label
+  swaps that pose estimators make as the legs cross during gait are
+  corrected by restoring trajectory continuity, before the anomaly
+  steps. The number of corrections is reported in
+  `metadata()$poseFix$leg_swaps`.
+
 ## PhysioMoCap 0.3.0
 
 - [`poseFix()`](https://x-biosignal.github.io/PhysioMoCap/reference/poseFix.md)

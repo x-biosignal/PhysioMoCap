@@ -23,7 +23,7 @@ derived from the recording itself, so the method is model-agnostic."></head><bod
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,6 +103,7 @@ derived from the recording itself, so the method is model-agnostic.</p>
 <span>  angle_range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">0.99</span><span class="op">)</span>,</span>
 <span>  skeleton <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  joints <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  deswap <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  smooth <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  smooth_spar <span class="op">=</span> <span class="fl">0.4</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -147,6 +148,11 @@ exceeds this fraction of body scale (default 0.5).</p></dd>
 <dd><p>Optional list of <code>c(a, b, c)</code> angle triplets (angle at <code>b</code>).</p></dd>
 
 
+<dt id="arg-deswap">deswap<a class="anchor" aria-label="anchor" href="#arg-deswap"></a></dt>
+<dd><p>If <code>TRUE</code> (default), first correct left/right leg-label swaps by
+restoring trajectory continuity (a common pose-estimation error during gait).</p></dd>
+
+
 <dt id="arg-smooth">smooth<a class="anchor" aria-label="anchor" href="#arg-smooth"></a></dt>
 <dd><p>If <code>TRUE</code> (default) smooth each coordinate with a spline after
 interpolation.</p></dd>
@@ -160,7 +166,8 @@ interpolation.</p></dd>
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A cleaned <code>PhysioExperiment</code> (corrected <code>keypoint_x</code>/<code>keypoint_y</code>
 assays); <code>metadata()$poseFix</code> holds the per-criterion anomaly counts, the
-<code>flagged</code> frame-by-keypoint logical matrix, and the flagged fraction.</p>
+number of leg-swap corrections (<code>leg_swaps</code>), the <code>flagged</code> frame-by-keypoint
+logical matrix, and the flagged fraction.</p>
     </div>
     <div class="section level2">
     <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>

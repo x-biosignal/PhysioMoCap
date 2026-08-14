@@ -23,6 +23,7 @@ poseFix(
   angle_range = c(0.01, 0.99),
   skeleton = NULL,
   joints = NULL,
+  deswap = TRUE,
   smooth = TRUE,
   smooth_spar = 0.4
 )
@@ -67,6 +68,12 @@ poseFix(
 
   Optional list of `c(a, b, c)` angle triplets (angle at `b`).
 
+- deswap:
+
+  If `TRUE` (default), first correct left/right leg-label swaps by
+  restoring trajectory continuity (a common pose-estimation error during
+  gait).
+
 - smooth:
 
   If `TRUE` (default) smooth each coordinate with a spline after
@@ -81,8 +88,8 @@ poseFix(
 
 A cleaned `PhysioExperiment` (corrected `keypoint_x`/`keypoint_y`
 assays); `metadata()$poseFix` holds the per-criterion anomaly counts,
-the `flagged` frame-by-keypoint logical matrix, and the flagged
-fraction.
+the number of leg-swap corrections (`leg_swaps`), the `flagged`
+frame-by-keypoint logical matrix, and the flagged fraction.
 
 ## References
 
