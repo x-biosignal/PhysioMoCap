@@ -1,5 +1,22 @@
 # Changelog
 
+## PhysioMoCap 0.3.0
+
+- [`poseFix()`](https://x-biosignal.github.io/PhysioMoCap/reference/poseFix.md)
+  — pose-estimation anomaly detection and correction, connecting
+  markerless pose input
+  ([`readOpenPose()`](https://x-biosignal.github.io/PhysioMoCap/reference/readOpenPose.md)
+  /
+  [`readMediaPipe()`](https://x-biosignal.github.io/PhysioMoCap/reference/readMediaPipe.md)
+  /
+  [`readDeepLabCut()`](https://x-biosignal.github.io/PhysioMoCap/reference/readDeepLabCut.md))
+  to the downstream joint-angle / gait / kinematics analysis. Flags
+  keypoints on four criteria (low detector confidence, implausible
+  segment lengths, frame-to-frame jumps, out-of-range joint angles),
+  then interpolates and smooths them. Generalised, name-based,
+  self-referential reimplementation of the method in PoseFixeR
+  (Sugiyama, Uno & Matsui 2023, PLOS Comput Biol 19:e1009989).
+
 ## PhysioMoCap 0.2.2
 
 - Made the OpenSim MOT/TRC read/write round-trip tests portable to

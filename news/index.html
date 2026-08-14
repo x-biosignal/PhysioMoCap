@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,6 +64,11 @@
       <small>Source: <a href="https://github.com/x-biosignal/PhysioMoCap/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.3.0" id="physiomocap-030">PhysioMoCap 0.3.0<a class="anchor" aria-label="anchor" href="#physiomocap-030"></a></h2>
+<ul><li>
+<code><a href="../reference/poseFix.html">poseFix()</a></code> — pose-estimation anomaly detection and correction, connecting markerless pose input (<code><a href="../reference/readOpenPose.html">readOpenPose()</a></code> / <code><a href="../reference/readMediaPipe.html">readMediaPipe()</a></code> / <code><a href="../reference/readDeepLabCut.html">readDeepLabCut()</a></code>) to the downstream joint-angle / gait / kinematics analysis. Flags keypoints on four criteria (low detector confidence, implausible segment lengths, frame-to-frame jumps, out-of-range joint angles), then interpolates and smooths them. Generalised, name-based, self-referential reimplementation of the method in PoseFixeR (Sugiyama, Uno &amp; Matsui 2023, PLOS Comput Biol 19:e1009989).</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.2.2" id="physiomocap-022">PhysioMoCap 0.2.2<a class="anchor" aria-label="anchor" href="#physiomocap-022"></a></h2>
 <ul><li>Made the OpenSim MOT/TRC read/write round-trip tests portable to macOS: they now assert numerical equality (<code>expect_equal</code>) of the recovered data rather than bit-identity (<code>expect_identical</code>). Writing numeric data through a decimal ASCII file (17 significant digits) recovers values exactly on a correctly- rounded libc (glibc) but to ~1 ULP on macOS’s printf/strtod, so a bit- identical round-trip is not a portable guarantee; the data is still preserved to full double precision. No writer/reader behaviour changed.</li>

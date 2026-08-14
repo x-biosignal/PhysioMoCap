@@ -1,11 +1,11 @@
 # Bland-Altman agreement plot
 
 Draws the Bland-Altman difference-vs-mean scatter that
-[`blandAltman`](https://x-biosignal.r-universe.dev/PhysioCore/reference/blandAltman.html)
+[`blandAltman`](https://x-biosignal.github.io/PhysioCore//reference/blandAltman.html)
 only computes: the bias (mean difference), the upper/lower limits of
 agreement (LoA), and shaded confidence bands for the bias and each LoA.
 The numerics come from
-[`blandAltman()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/blandAltman.html)
+[`blandAltman()`](https://x-biosignal.github.io/PhysioCore//reference/blandAltman.html)
 so the plotted reference lines are single-sourced and cannot drift from
 the computed statistics.
 
@@ -28,7 +28,7 @@ plotBlandAltman(
 
   Numeric vectors of paired measurements (two methods, or two time
   points). Must be the same length with at least 2 pairs (validated by
-  [`blandAltman()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/blandAltman.html)).
+  [`blandAltman()`](https://x-biosignal.github.io/PhysioCore//reference/blandAltman.html)).
 
 - confidence:
 
@@ -52,7 +52,7 @@ plotBlandAltman(
 - colorblind:
 
   Logical; if `TRUE` (default) use the ecosystem colorblind-safe palette
-  ([`physioPalette`](https://x-biosignal.r-universe.dev/PhysioCore/reference/physioPalette.html)).
+  ([`physioPalette`](https://x-biosignal.github.io/PhysioCore//reference/physioPalette.html)).
 
 ## Value
 
@@ -67,7 +67,7 @@ between two methods of clinical measurement. *Lancet*, 327(8476),
 
 ## See also
 
-[`PhysioCore::blandAltman()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/blandAltman.html)
+[`PhysioCore::blandAltman()`](https://x-biosignal.github.io/PhysioCore//reference/blandAltman.html)
 for the underlying statistics.
 
 ## Examples

@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -239,7 +239,7 @@ filtered before inverse dynamics.</p>
 <span>  fp2 <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">filtered_forces</span><span class="op">$</span><span class="va">force_z</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">pe_fp</span> <span class="op">&lt;-</span> <span class="fu">PhysioCore</span><span class="fu">::</span><span class="fu"><a href="https://x-biosignal.r-universe.dev/PhysioCore/reference/PhysioExperiment.html" class="external-link">PhysioExperiment</a></span><span class="op">(</span></span>
+<span><span class="va">pe_fp</span> <span class="op">&lt;-</span> <span class="fu">PhysioCore</span><span class="fu">::</span><span class="fu"><a href="https://x-biosignal.github.io/PhysioCore//reference/PhysioExperiment.html" class="external-link">PhysioExperiment</a></span><span class="op">(</span></span>
 <span>  assays <span class="op">=</span> <span class="fu">S4Vectors</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/SimpleList-class.html" class="external-link">SimpleList</a></span><span class="op">(</span></span>
 <span>    force_x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span>fp1 <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">filtered_forces</span><span class="op">$</span><span class="va">force_x</span> <span class="op">*</span> <span class="fl">0.6</span>,</span>
 <span>                    fp2 <span class="op">=</span> <span class="va">out</span><span class="op">$</span><span class="va">filtered_forces</span><span class="op">$</span><span class="va">force_x</span><span class="op">)</span>,</span>

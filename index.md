@@ -366,18 +366,18 @@ Electromyography processing and synchronization with motion data:
 Reliability and agreement metrics commonly used in rehabilitation
 research:
 
-- [`icc()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/icc.html)
+- [`icc()`](https://x-biosignal.github.io/PhysioCore//reference/icc.html)
   – intraclass correlation coefficient (ICC) for inter-rater/test-retest
   reliability
-- [`sem()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/sem.html)
+- [`sem()`](https://x-biosignal.github.io/PhysioCore//reference/sem.html)
   – standard error of measurement
-- [`mdc()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/mdc.html)
+- [`mdc()`](https://x-biosignal.github.io/PhysioCore//reference/mdc.html)
   – minimal detectable change
-- [`blandAltman()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/blandAltman.html)
+- [`blandAltman()`](https://x-biosignal.github.io/PhysioCore//reference/blandAltman.html)
   – Bland-Altman limits of agreement analysis
-- [`cohensD()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/cohensD.html)
+- [`cohensD()`](https://x-biosignal.github.io/PhysioCore//reference/cohensD.html)
   – Cohen’s d effect size
-- [`etaSquared()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/etaSquared.html)
+- [`etaSquared()`](https://x-biosignal.github.io/PhysioCore//reference/etaSquared.html)
   – eta-squared effect size for ANOVA designs
 
 ### OpenSim Integration
@@ -477,7 +477,7 @@ Helpers for new users to explore the package without external data:
 | Running biomechanics | [`schema_running()`](https://x-biosignal.github.io/PhysioMoCap/reference/schema_running.md), [`analyzeForcePlate()`](https://x-biosignal.github.io/PhysioMoCap/reference/analyzeForcePlate.md), [`computeLoadingRate()`](https://x-biosignal.github.io/PhysioMoCap/reference/computeLoadingRate.md) |
 | Movement variability | [`dtwDistance()`](https://x-biosignal.github.io/PhysioMoCap/reference/dtwDistance.md), [`dtwClustering()`](https://x-biosignal.github.io/PhysioMoCap/reference/dtwClustering.md), [`waveformPCA()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformPCA.md), [`fPCA()`](https://x-biosignal.github.io/PhysioMoCap/reference/fPCA.md) |
 | Musculoskeletal modeling | [`readTRC()`](https://x-biosignal.github.io/PhysioMoCap/reference/readTRC.md), [`run_opensim_toolchain()`](https://x-biosignal.github.io/PhysioMoCap/reference/run_opensim_toolchain.md), [`inverseDynamics3D()`](https://x-biosignal.github.io/PhysioMoCap/reference/inverseDynamics3D.md) |
-| Rehabilitation assessment | [`icc()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/icc.html), [`sem()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/sem.html), [`mdc()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/mdc.html), [`blandAltman()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/blandAltman.html), [`symmetryIndex()`](https://x-biosignal.github.io/PhysioMoCap/reference/symmetryIndex.md) |
+| Rehabilitation assessment | [`icc()`](https://x-biosignal.github.io/PhysioCore//reference/icc.html), [`sem()`](https://x-biosignal.github.io/PhysioCore//reference/sem.html), [`mdc()`](https://x-biosignal.github.io/PhysioCore//reference/mdc.html), [`blandAltman()`](https://x-biosignal.github.io/PhysioCore//reference/blandAltman.html), [`symmetryIndex()`](https://x-biosignal.github.io/PhysioMoCap/reference/symmetryIndex.md) |
 | EMG-MoCap integration | [`normalizeEMG()`](https://x-biosignal.github.io/PhysioMoCap/reference/normalizeEMG.md), [`alignEMGtoMoCap()`](https://x-biosignal.github.io/PhysioMoCap/reference/alignEMGtoMoCap.md), [`plotMultiPanel()`](https://x-biosignal.github.io/PhysioMoCap/reference/plotMultiPanel.md) |
 | Balance/postural control | [`schema_balance()`](https://x-biosignal.github.io/PhysioMoCap/reference/schema_balance.md), [`calculateCOP()`](https://x-biosignal.github.io/PhysioMoCap/reference/calculateCOP.md), [`plotTrajectory()`](https://x-biosignal.github.io/PhysioMoCap/reference/plotTrajectory.md) |
 

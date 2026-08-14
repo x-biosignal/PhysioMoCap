@@ -59,7 +59,7 @@ Between Two Methods of Clinical Measurement." Lancet, 327(8476),
 for threshold configuration,
 [`runBenchmarkSuite()`](https://x-biosignal.github.io/PhysioMoCap/reference/runBenchmarkSuite.md)
 for multi-trial benchmarking,
-[`blandAltman()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/blandAltman.html)
+[`blandAltman()`](https://x-biosignal.github.io/PhysioCore//reference/blandAltman.html)
 for Bland-Altman agreement analysis.
 
 ## Examples

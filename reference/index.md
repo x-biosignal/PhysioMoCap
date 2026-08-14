@@ -300,6 +300,8 @@
   : Plot UMAP embedding
 - [`plotWaveformComparison()`](https://x-biosignal.github.io/PhysioMoCap/reference/plotWaveformComparison.md)
   : Plot waveform comparison across groups
+- [`poseFix()`](https://x-biosignal.github.io/PhysioMoCap/reference/poseFix.md)
+  : Detect and correct pose-estimation anomalies
 - [`pressureAsymmetry()`](https://x-biosignal.github.io/PhysioMoCap/reference/pressureAsymmetry.md)
   : Compare left and right plantar pressure
 - [`pressureMovie()`](https://x-biosignal.github.io/PhysioMoCap/reference/pressureMovie.md)

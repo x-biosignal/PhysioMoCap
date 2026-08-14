@@ -45,7 +45,7 @@ reachingKinematics(
 - sampling_rate:
 
   Optional sampling frequency in Hz; defaults to
-  [`PhysioCore::samplingRate()`](https://x-biosignal.r-universe.dev/PhysioCore/reference/samplingRate.html).
+  [`PhysioCore::samplingRate()`](https://x-biosignal.github.io/PhysioCore//reference/samplingRate.html).
 
 - onset_threshold:
 

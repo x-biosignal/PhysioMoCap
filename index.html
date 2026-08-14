@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -114,8 +114,8 @@
 <span></span>
 <span><span class="co"># Inspect the data</span></span>
 <span><span class="va">pe</span></span>
-<span><span class="fu"><a href="https://x-biosignal.r-universe.dev/PhysioCore/reference/samplingRate.html" class="external-link">samplingRate</a></span><span class="op">(</span><span class="va">pe</span><span class="op">)</span>    <span class="co"># e.g., 120 Hz</span></span>
-<span><span class="fu"><a href="https://x-biosignal.r-universe.dev/PhysioCore/reference/channelNames.html" class="external-link">channelNames</a></span><span class="op">(</span><span class="va">pe</span><span class="op">)</span>   <span class="co"># marker names</span></span>
+<span><span class="fu"><a href="https://x-biosignal.github.io/PhysioCore//reference/samplingRate.html" class="external-link">samplingRate</a></span><span class="op">(</span><span class="va">pe</span><span class="op">)</span>    <span class="co"># e.g., 120 Hz</span></span>
+<span><span class="fu"><a href="https://x-biosignal.github.io/PhysioCore//reference/channelNames.html" class="external-link">channelNames</a></span><span class="op">(</span><span class="va">pe</span><span class="op">)</span>   <span class="co"># marker names</span></span>
 <span></span>
 <span><span class="co"># Detect gait events (heel strikes, toe offs)</span></span>
 <span><span class="va">events</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/detectEvents.html">detectEvents</a></span><span class="op">(</span><span class="va">pe</span>, schema <span class="op">=</span> <span class="fu"><a href="reference/schema_gait.html">schema_gait</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
@@ -366,17 +366,17 @@
 <p>Reliability and agreement metrics commonly used in rehabilitation research:</p>
 <ul>
 <li>
-<code><a href="https://x-biosignal.r-universe.dev/PhysioCore/reference/icc.html" class="external-link">icc()</a></code> – intraclass correlation coefficient (ICC) for inter-rater/test-retest reliability</li>
+<code><a href="https://x-biosignal.github.io/PhysioCore//reference/icc.html" class="external-link">icc()</a></code> – intraclass correlation coefficient (ICC) for inter-rater/test-retest reliability</li>
 <li>
-<code><a href="https://x-biosignal.r-universe.dev/PhysioCore/reference/sem.html" class="external-link">sem()</a></code> – standard error of measurement</li>
+<code><a href="https://x-biosignal.github.io/PhysioCore//reference/sem.html" class="external-link">sem()</a></code> – standard error of measurement</li>
 <li>
-<code><a href="https://x-biosignal.r-universe.dev/PhysioCore/reference/mdc.html" class="external-link">mdc()</a></code> – minimal detectable change</li>
+<code><a href="https://x-biosignal.github.io/PhysioCore//reference/mdc.html" class="external-link">mdc()</a></code> – minimal detectable change</li>
 <li>
-<code><a href="https://x-biosignal.r-universe.dev/PhysioCore/reference/blandAltman.html" class="external-link">blandAltman()</a></code> – Bland-Altman limits of agreement analysis</li>
+<code><a href="https://x-biosignal.github.io/PhysioCore//reference/blandAltman.html" class="external-link">blandAltman()</a></code> – Bland-Altman limits of agreement analysis</li>
 <li>
-<code><a href="https://x-biosignal.r-universe.dev/PhysioCore/reference/cohensD.html" class="external-link">cohensD()</a></code> – Cohen’s d effect size</li>
+<code><a href="https://x-biosignal.github.io/PhysioCore//reference/cohensD.html" class="external-link">cohensD()</a></code> – Cohen’s d effect size</li>
 <li>
-<code><a href="https://x-biosignal.r-universe.dev/PhysioCore/reference/etaSquared.html" class="external-link">etaSquared()</a></code> – eta-squared effect size for ANOVA designs</li>
+<code><a href="https://x-biosignal.github.io/PhysioCore//reference/etaSquared.html" class="external-link">etaSquared()</a></code> – eta-squared effect size for ANOVA designs</li>
 </ul>
 </div>
 <div class="section level3">
@@ -510,7 +510,7 @@
 <tr>
 <td>Rehabilitation assessment</td>
 <td>
-<code><a href="https://x-biosignal.r-universe.dev/PhysioCore/reference/icc.html" class="external-link">icc()</a></code>, <code><a href="https://x-biosignal.r-universe.dev/PhysioCore/reference/sem.html" class="external-link">sem()</a></code>, <code><a href="https://x-biosignal.r-universe.dev/PhysioCore/reference/mdc.html" class="external-link">mdc()</a></code>, <code><a href="https://x-biosignal.r-universe.dev/PhysioCore/reference/blandAltman.html" class="external-link">blandAltman()</a></code>, <code><a href="reference/symmetryIndex.html">symmetryIndex()</a></code>
+<code><a href="https://x-biosignal.github.io/PhysioCore//reference/icc.html" class="external-link">icc()</a></code>, <code><a href="https://x-biosignal.github.io/PhysioCore//reference/sem.html" class="external-link">sem()</a></code>, <code><a href="https://x-biosignal.github.io/PhysioCore//reference/mdc.html" class="external-link">mdc()</a></code>, <code><a href="https://x-biosignal.github.io/PhysioCore//reference/blandAltman.html" class="external-link">blandAltman()</a></code>, <code><a href="reference/symmetryIndex.html">symmetryIndex()</a></code>
 </td>
 </tr>
 <tr>
