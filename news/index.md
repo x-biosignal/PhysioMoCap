@@ -1,5 +1,12 @@
 # Changelog
 
+## PhysioMoCap 0.3.2
+
+- New vignette *“Markerless pose to gait: OpenPose -\> poseFix -\>
+  analysis”* — the end-to-end pose pipeline from ingestion through
+  [`poseFix()`](https://x-biosignal.github.io/PhysioMoCap/reference/poseFix.md)
+  cleaning to joint angles and a gait metric.
+
 ## PhysioMoCap 0.3.1
 
 - [`poseFix()`](https://x-biosignal.github.io/PhysioMoCap/reference/poseFix.md)

@@ -12,3 +12,5 @@
   PhysioMoCap](https://x-biosignal.github.io/PhysioMoCap/articles/getting-started.md):
 - [Gold-Standard Data Download and Benchmark
   Setup](https://x-biosignal.github.io/PhysioMoCap/articles/gold-standard-data-download.md):
+- [Markerless pose to gait: OpenPose -\> poseFix -\>
+  analysis](https://x-biosignal.github.io/PhysioMoCap/articles/pose-pipeline.md):
