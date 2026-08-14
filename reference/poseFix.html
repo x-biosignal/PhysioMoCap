@@ -23,7 +23,7 @@ derived from the recording itself, so the method is model-agnostic."></head><bod
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -105,6 +105,7 @@ derived from the recording itself, so the method is model-agnostic.</p>
 <span>  skeleton <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  joints <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  deswap <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  length_correct <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  smooth <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  smooth_spar <span class="op">=</span> <span class="fl">0.4</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -152,6 +153,12 @@ exceeds this fraction of body scale (default 0.5).</p></dd>
 <dt id="arg-deswap">deswap<a class="anchor" aria-label="anchor" href="#arg-deswap"></a></dt>
 <dd><p>If <code>TRUE</code> (default), first correct left/right leg-label swaps by
 restoring trajectory continuity (a common pose-estimation error during gait).</p></dd>
+
+
+<dt id="arg-length-correct">length_correct<a class="anchor" aria-label="anchor" href="#arg-length-correct"></a></dt>
+<dd><p>If <code>TRUE</code>, additionally standardise segment lengths with
+<code><a href="poseLengthCorrect.html">poseLengthCorrect()</a></code> after cleaning (camera-distance correction; default
+<code>FALSE</code>).</p></dd>
 
 
 <dt id="arg-smooth">smooth<a class="anchor" aria-label="anchor" href="#arg-smooth"></a></dt>

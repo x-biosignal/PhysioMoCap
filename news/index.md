@@ -1,5 +1,14 @@
 # Changelog
 
+## PhysioMoCap 0.3.3
+
+- [`poseLengthCorrect()`](https://x-biosignal.github.io/PhysioMoCap/reference/poseLengthCorrect.md)
+  — segment-length standardisation (camera-distance correction):
+  rescales each limb segment along the bone direction to a stable
+  reference length, chained proximal to distal. Also available as
+  `poseFix(..., length_correct = TRUE)`. Generalised form of the length
+  correction in PoseFixeR (Sugiyama, Uno & Matsui 2023).
+
 ## PhysioMoCap 0.3.2
 
 - New vignette *“Markerless pose to gait: OpenPose -\> poseFix -\>

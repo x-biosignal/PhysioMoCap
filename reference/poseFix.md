@@ -24,6 +24,7 @@ poseFix(
   skeleton = NULL,
   joints = NULL,
   deswap = TRUE,
+  length_correct = FALSE,
   smooth = TRUE,
   smooth_spar = 0.4
 )
@@ -73,6 +74,12 @@ poseFix(
   If `TRUE` (default), first correct left/right leg-label swaps by
   restoring trajectory continuity (a common pose-estimation error during
   gait).
+
+- length_correct:
+
+  If `TRUE`, additionally standardise segment lengths with
+  [`poseLengthCorrect()`](https://x-biosignal.github.io/PhysioMoCap/reference/poseLengthCorrect.md)
+  after cleaning (camera-distance correction; default `FALSE`).
 
 - smooth:
 

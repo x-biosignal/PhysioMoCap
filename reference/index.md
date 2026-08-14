@@ -302,6 +302,8 @@
   : Plot waveform comparison across groups
 - [`poseFix()`](https://x-biosignal.github.io/PhysioMoCap/reference/poseFix.md)
   : Detect and correct pose-estimation anomalies
+- [`poseLengthCorrect()`](https://x-biosignal.github.io/PhysioMoCap/reference/poseLengthCorrect.md)
+  : Standardise segment lengths (camera-distance correction)
 - [`pressureAsymmetry()`](https://x-biosignal.github.io/PhysioMoCap/reference/pressureAsymmetry.md)
   : Compare left and right plantar pressure
 - [`pressureMovie()`](https://x-biosignal.github.io/PhysioMoCap/reference/pressureMovie.md)
