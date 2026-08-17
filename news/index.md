@@ -1,5 +1,19 @@
 # Changelog
 
+## PhysioMoCap 0.4.0
+
+Upper-limb ADL task assessment.
+
+- [`adlReachTask()`](https://x-biosignal.github.io/PhysioMoCap/reference/adlReachTask.md):
+  assess an ADL arm transport (drinking / feeding / dressing / grooming
+  / reaching) from its hand-speed profile – movement time, peak
+  velocity, submovement count and SPARC/LDLJ smoothness – labelled with
+  the ICF code it realises (d560 / d550 / d540 / d520 / d445).
+- [`nhptDexterity()`](https://x-biosignal.github.io/PhysioMoCap/reference/nhptDexterity.md):
+  instrumented Nine-Hole-Peg dexterity (ICF d440) from a hand-speed
+  profile – transport count, rate, inter-transport consistency and
+  smoothness – the sensor complement to the timed NHPT score.
+
 ## PhysioMoCap 0.3.3
 
 - [`poseLengthCorrect()`](https://x-biosignal.github.io/PhysioMoCap/reference/poseLengthCorrect.md)

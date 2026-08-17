@@ -555,6 +555,8 @@ Community and policy documents live in the umbrella repository:
   : Create a SkeletonModel object
 - [`TaskSchema()`](https://x-biosignal.github.io/PhysioMoCap/reference/TaskSchema.md)
   : Create a Task Schema
+- [`adlReachTask()`](https://x-biosignal.github.io/PhysioMoCap/reference/adlReachTask.md)
+  : Assess an upper-limb ADL reach from its speed profile
 - [`alignEMGtoMoCap()`](https://x-biosignal.github.io/PhysioMoCap/reference/alignEMGtoMoCap.md)
   : Align EMG to motion-capture sampling grid
 - [`analyzeForcePlate()`](https://x-biosignal.github.io/PhysioMoCap/reference/analyzeForcePlate.md)
@@ -767,6 +769,8 @@ Community and policy documents live in the umbrella repository:
   : Count reaching movement units
 - [`movingAverage()`](https://x-biosignal.github.io/PhysioMoCap/reference/movingAverage.md)
   : Simple moving average filter
+- [`nhptDexterity()`](https://x-biosignal.github.io/PhysioMoCap/reference/nhptDexterity.md)
+  : Instrumented Nine-Hole-Peg dexterity from a hand-speed profile
 - [`normalizeEMG()`](https://x-biosignal.github.io/PhysioMoCap/reference/normalizeEMG.md)
   : Normalize EMG by MVC or peak
 - [`normalizeMovement()`](https://x-biosignal.github.io/PhysioMoCap/reference/normalizeMovement.md)

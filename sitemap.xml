@@ -19,6 +19,7 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/PhysioMoCap-package.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/SkeletonModel.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/TaskSchema.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/adlReachTask.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/alignEMGtoMoCap.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/analyzeForcePlate.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/analyzeForcePlatePE.html</loc></url>
@@ -170,6 +171,7 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/movementTime.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/movementUnits.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/movingAverage.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/nhptDexterity.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/normalizeEMG.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/normalizeMovement.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/normalizedTimeAxis.html</loc></url>
