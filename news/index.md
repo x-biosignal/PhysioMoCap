@@ -1,5 +1,22 @@
 # Changelog
 
+## PhysioMoCap 0.5.0
+
+Inter-joint coordination analysis.
+
+- [`continuousRelativePhase()`](https://x-biosignal.github.io/PhysioMoCap/reference/continuousRelativePhase.md):
+  the phase-plane coordination measure (Hamill
+  2000. between two joints, with the mean absolute relative phase
+        (MARP).
+- [`vectorCoding()`](https://x-biosignal.github.io/PhysioMoCap/reference/vectorCoding.md):
+  the angle-angle coupling angle, classified per frame into in-phase /
+  anti-phase / proximal-phase / distal-phase coordination (Chang 2008;
+  Needham 2014).
+- [`coordinationVariability()`](https://x-biosignal.github.io/PhysioMoCap/reference/coordinationVariability.md):
+  trial-to-trial coordination variability – the deviation phase for CRP
+  (linear SD) or the coupling-angle circular SD for vector coding – a
+  motor-control marker.
+
 ## PhysioMoCap 0.4.0
 
 Upper-limb ADL task assessment.

@@ -64,8 +64,12 @@
   : Compute scalar speed from velocity
 - [`computeVelocity()`](https://x-biosignal.github.io/PhysioMoCap/reference/computeVelocity.md)
   : Compute velocity from position data
+- [`continuousRelativePhase()`](https://x-biosignal.github.io/PhysioMoCap/reference/continuousRelativePhase.md)
+  : Continuous relative phase between two joints
 - [`contractionWork()`](https://x-biosignal.github.io/PhysioMoCap/reference/contractionWork.md)
   : Angular work and impulse for strength-test repetitions
+- [`coordinationVariability()`](https://x-biosignal.github.io/PhysioMoCap/reference/coordinationVariability.md)
+  : Inter-joint coordination variability across cycles
 - [`copFromPressure()`](https://x-biosignal.github.io/PhysioMoCap/reference/copFromPressure.md)
   : Derive center of pressure from a pressure movie
 - [`correctSwaps()`](https://x-biosignal.github.io/PhysioMoCap/reference/correctSwaps.md)
@@ -483,6 +487,8 @@
   : Validate a TaskSchema
 - [`vectorAngle()`](https://x-biosignal.github.io/PhysioMoCap/reference/vectorAngle.md)
   : Angle between two 3D vectors
+- [`vectorCoding()`](https://x-biosignal.github.io/PhysioMoCap/reference/vectorCoding.md)
+  : Vector coding (coupling angle) between two joints
 - [`waveformPCA()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformPCA.md)
   : PCA for waveform data
 - [`waveformTSNE()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformTSNE.md)

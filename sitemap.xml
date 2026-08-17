@@ -46,7 +46,9 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/computeRMSEnvelope.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/computeSpeed.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/computeVelocity.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/continuousRelativePhase.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/contractionWork.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/coordinationVariability.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/copFromPressure.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/correctSwaps.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/createBenchmarkExample.html</loc></url>
@@ -301,6 +303,7 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/validateBenchmarkManifest.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/validateSchema.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/vectorAngle.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/vectorCoding.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/waveformPCA.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/waveformTSNE.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/waveformUMAP.html</loc></url>
