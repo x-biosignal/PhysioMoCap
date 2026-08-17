@@ -23,6 +23,7 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/alignEMGtoMoCap.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/analyzeForcePlate.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/analyzeForcePlatePE.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/approximateEntropy.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/assessMoCapReadiness.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/batchNormalize.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/batch_analyze_opensim.html</loc></url>
@@ -36,6 +37,8 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/calculateSegmentCOM.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/calculateStepSymmetry.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/calibrateIMU.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/circularLinearCorrelation.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/circularSummary.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/classifyGaitPatterns.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/combineTrials.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/computeAcceleration.html</loc></url>
@@ -68,6 +71,8 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/detectTrendelenburg.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/differentiate.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dimensionlessJerk.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dmpFit.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dmpGenerate.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-addEventMarkers.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-addPhaseRegions.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-applyWarpPath.html</loc></url>
@@ -131,7 +136,10 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/fillGapsSpline.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/filterGRF.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/filterSignals.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/floquetMultipliers.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/footImuGait.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/forwardDynamics.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/forwardKinematics2D.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/gaitDeviationIndex.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/gaitPatternLibrary.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/gaitProfileScore.html</loc></url>
@@ -147,6 +155,7 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/get_bone_connections.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/get_limb_pairs.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/get_segment_lengths.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/goalEquivalentManifold.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/groodSuntayAngles.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/hamstringQuadRatio.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/harmonicRatio.html</loc></url>
@@ -158,14 +167,17 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/inverseDynamics2D.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/inverseDynamics3D.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/inverseDynamicsRNE.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/inverseKinematicsMarkers.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/jointCoordinateSystem.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/jointWork.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/kalmanOrientation.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/labelPowerBursts.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/ldlj.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/limitsOfStability.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/listSchemas.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/localDynamicStability.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/mCTSIB.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/mahonyAHRS.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/manualEvents.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/maxLyapunovExponent.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/movementAnalysisProfile.html</loc></url>
@@ -188,6 +200,7 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/pipelineCPgait.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/pipelinePDfog.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/pipelineStrokePropulsion.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/planarLimbModel.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/plotBlandAltman.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/plotCorrelationMatrix.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/plotCycle.html</loc></url>
@@ -215,6 +228,7 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/plotWaveformComparison.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/poseFix.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/poseLengthCorrect.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/predictiveSimulation.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/pressureAsymmetry.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/pressureMovie.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/pressureTimeIntegral.html</loc></url>
@@ -238,9 +252,12 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/print.waveform_umap.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/processEMG.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/projectTo2D.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/promCondition.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/promFit.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/quaternionToEuler.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/quickStartMoCap.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/rateOfForceDevelopment.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/rayleighTest.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/reachingKinematics.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/readAMC.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/readASF.html</loc></url>
@@ -261,6 +278,7 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/readVenus3D.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/reconstructFPCA.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/rectifyEMG.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/recurrenceQuantification.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/reexports.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/regionalLoading.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/registerCurves.html</loc></url>
@@ -276,6 +294,7 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/sampleEntropy.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/savgolFilter.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/scaleBodyModel.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/scalePlanarModel.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/scaleSegmentModel.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/schema_balance.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/schema_cutting.html</loc></url>
@@ -298,13 +317,19 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/timeDelayEmbed.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/timeToPeakTorque.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/timeToPeakVelocity.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/toleranceNoiseCovariation.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/trackMarkers.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/trunkCompensation.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/uncontrolledManifold.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/validateBenchmarkManifest.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/validateSchema.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/vectorAngle.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/vectorCoding.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/watsonWilliamsTest.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/waveformCMC.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/waveformICC.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/waveformPCA.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/waveformReliability.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/waveformTSNE.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/waveformUMAP.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/writeBenchmarkManifest.html</loc></url>

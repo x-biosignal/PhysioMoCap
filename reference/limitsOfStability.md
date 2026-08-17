@@ -88,5 +88,5 @@ limitsOfStability(cop, sampling_rate = 100, target = 0)
 #> <los_result>
 #>   reaction time: 0.080 s
 #>   endpoint excursion: 5   max excursion: 5
-#>   directional control: 52.4%
+#>   directional control: 50.0%
 ```

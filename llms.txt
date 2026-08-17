@@ -563,6 +563,8 @@ Community and policy documents live in the umbrella repository:
   : Run complete force-plate analysis
 - [`analyzeForcePlatePE()`](https://x-biosignal.github.io/PhysioMoCap/reference/analyzeForcePlatePE.md)
   : Analyze force-plate signals from a PhysioExperiment object
+- [`approximateEntropy()`](https://x-biosignal.github.io/PhysioMoCap/reference/approximateEntropy.md)
+  : Approximate entropy (Pincus)
 - [`assessMoCapReadiness()`](https://x-biosignal.github.io/PhysioMoCap/reference/assessMoCapReadiness.md)
   : Assess readiness of a MoCap dataset for downstream analysis
 - [`batchNormalize()`](https://x-biosignal.github.io/PhysioMoCap/reference/batchNormalize.md)
@@ -589,6 +591,10 @@ Community and policy documents live in the umbrella repository:
   : Calculate step symmetry from gait parameters
 - [`calibrateIMU()`](https://x-biosignal.github.io/PhysioMoCap/reference/calibrateIMU.md)
   : Calibrate IMU from static data
+- [`circularLinearCorrelation()`](https://x-biosignal.github.io/PhysioMoCap/reference/circularLinearCorrelation.md)
+  : Mardia's circular-linear correlation
+- [`circularSummary()`](https://x-biosignal.github.io/PhysioMoCap/reference/circularSummary.md)
+  : Circular mean direction and spread
 - [`classifyGaitPatterns()`](https://x-biosignal.github.io/PhysioMoCap/reference/classifyGaitPatterns.md)
   : Classify gait pathology patterns from a bundle of gait variables
 - [`combineTrials()`](https://x-biosignal.github.io/PhysioMoCap/reference/combineTrials.md)
@@ -654,6 +660,10 @@ Community and policy documents live in the umbrella repository:
   : Differentiate a numeric vector or matrix
 - [`dimensionlessJerk()`](https://x-biosignal.github.io/PhysioMoCap/reference/dimensionlessJerk.md)
   : Dimensionless jerk of a speed profile
+- [`dmpFit()`](https://x-biosignal.github.io/PhysioMoCap/reference/dmpFit.md)
+  : Fit a Dynamic Movement Primitive to a demonstration
+- [`dmpGenerate()`](https://x-biosignal.github.io/PhysioMoCap/reference/dmpGenerate.md)
+  : Generate a trajectory from a Dynamic Movement Primitive
 - [`dtwAverage()`](https://x-biosignal.github.io/PhysioMoCap/reference/dtwAverage.md)
   : DTW Barycenter Averaging (DBA)
 - [`dtwClustering()`](https://x-biosignal.github.io/PhysioMoCap/reference/dtwClustering.md)
@@ -688,8 +698,14 @@ Community and policy documents live in the umbrella repository:
   : Low-pass filter ground reaction force data
 - [`filterSignals()`](https://x-biosignal.github.io/PhysioMoCap/reference/filterSignals.md)
   : Filter signals in a PhysioExperiment object
+- [`floquetMultipliers()`](https://x-biosignal.github.io/PhysioMoCap/reference/floquetMultipliers.md)
+  : Floquet multipliers (orbital stability of a cyclic movement)
 - [`footImuGait()`](https://x-biosignal.github.io/PhysioMoCap/reference/footImuGait.md)
   : Foot-IMU spatiotemporal gait parameters
+- [`forwardDynamics()`](https://x-biosignal.github.io/PhysioMoCap/reference/forwardDynamics.md)
+  : Forward dynamics: integrate the equations of motion
+- [`forwardKinematics2D()`](https://x-biosignal.github.io/PhysioMoCap/reference/forwardKinematics2D.md)
+  : Forward kinematics of a planar chain
 - [`gaitDeviationIndex()`](https://x-biosignal.github.io/PhysioMoCap/reference/gaitDeviationIndex.md)
   : Gait Deviation Index (Schwartz & Rozumalski 2008)
 - [`gaitPatternLibrary()`](https://x-biosignal.github.io/PhysioMoCap/reference/gaitPatternLibrary.md)
@@ -721,6 +737,8 @@ Community and policy documents live in the umbrella repository:
   : Get left/right limb pairs for symmetry analysis
 - [`get_segment_lengths()`](https://x-biosignal.github.io/PhysioMoCap/reference/get_segment_lengths.md)
   : Compute segment lengths from a PhysioExperiment and skeleton
+- [`goalEquivalentManifold()`](https://x-biosignal.github.io/PhysioMoCap/reference/goalEquivalentManifold.md)
+  : Goal-Equivalent Manifold (GEM) decomposition for a scalar goal
 - [`groodSuntayAngles()`](https://x-biosignal.github.io/PhysioMoCap/reference/groodSuntayAngles.md)
   : Signed Grood-Suntay / ISB joint angles from segment frames
 - [`hamstringQuadRatio()`](https://x-biosignal.github.io/PhysioMoCap/reference/hamstringQuadRatio.md)
@@ -741,11 +759,15 @@ Community and policy documents live in the umbrella repository:
   : Compute 3D lower-limb joint moments with inverse dynamics
 - [`inverseDynamicsRNE()`](https://x-biosignal.github.io/PhysioMoCap/reference/inverseDynamicsRNE.md)
   : Recursive Newton-Euler inverse dynamics for the lower limb
+- [`inverseKinematicsMarkers()`](https://x-biosignal.github.io/PhysioMoCap/reference/inverseKinematicsMarkers.md)
+  : Model-based inverse kinematics from markers (planar)
 - [`jointCoordinateSystem()`](https://x-biosignal.github.io/PhysioMoCap/reference/jointCoordinateSystem.md)
   : Build embedded anatomical segment coordinate systems from marker
   clusters
 - [`jointWork()`](https://x-biosignal.github.io/PhysioMoCap/reference/jointWork.md)
   : Integrate joint power into concentric and eccentric work
+- [`kalmanOrientation()`](https://x-biosignal.github.io/PhysioMoCap/reference/kalmanOrientation.md)
+  : Kalman orientation filter (tilt + gyro-bias)
 - [`labelPowerBursts()`](https://x-biosignal.github.io/PhysioMoCap/reference/labelPowerBursts.md)
   : Label joint power bursts with Winter nomenclature
 - [`ldlj()`](https://x-biosignal.github.io/PhysioMoCap/reference/ldlj.md)
@@ -759,6 +781,8 @@ Community and policy documents live in the umbrella repository:
   : Local dynamic stability (short- and long-term divergence)
 - [`mCTSIB()`](https://x-biosignal.github.io/PhysioMoCap/reference/mCTSIB.md)
   : Modified Clinical Test of Sensory Interaction on Balance (mCTSIB)
+- [`mahonyAHRS()`](https://x-biosignal.github.io/PhysioMoCap/reference/mahonyAHRS.md)
+  : Mahony AHRS orientation filter
 - [`manualEvents()`](https://x-biosignal.github.io/PhysioMoCap/reference/manualEvents.md)
   : Manually specify event times
 - [`maxLyapunovExponent()`](https://x-biosignal.github.io/PhysioMoCap/reference/maxLyapunovExponent.md)
@@ -803,6 +827,8 @@ Community and policy documents live in the umbrella repository:
   : Parkinson's freezing-of-gait pipeline (freeze index)
 - [`pipelineStrokePropulsion()`](https://x-biosignal.github.io/PhysioMoCap/reference/pipelineStrokePropulsion.md)
   : Stroke paretic-propulsion pipeline
+- [`planarLimbModel()`](https://x-biosignal.github.io/PhysioMoCap/reference/planarLimbModel.md)
+  : Planar two-segment limb model (equations of motion)
 - [`plotBlandAltman()`](https://x-biosignal.github.io/PhysioMoCap/reference/plotBlandAltman.md)
   : Bland-Altman agreement plot
 - [`plotCorrelationMatrix()`](https://x-biosignal.github.io/PhysioMoCap/reference/plotCorrelationMatrix.md)
@@ -857,6 +883,8 @@ Community and policy documents live in the umbrella repository:
   : Detect and correct pose-estimation anomalies
 - [`poseLengthCorrect()`](https://x-biosignal.github.io/PhysioMoCap/reference/poseLengthCorrect.md)
   : Standardise segment lengths (camera-distance correction)
+- [`predictiveSimulation()`](https://x-biosignal.github.io/PhysioMoCap/reference/predictiveSimulation.md)
+  : Predictive simulation: minimal-effort optimal control
 - [`pressureAsymmetry()`](https://x-biosignal.github.io/PhysioMoCap/reference/pressureAsymmetry.md)
   : Compare left and right plantar pressure
 - [`pressureMovie()`](https://x-biosignal.github.io/PhysioMoCap/reference/pressureMovie.md)
@@ -903,12 +931,18 @@ Community and policy documents live in the umbrella repository:
   : Process EMG for biomechanics workflows
 - [`projectTo2D()`](https://x-biosignal.github.io/PhysioMoCap/reference/projectTo2D.md)
   : Project 3D coordinates to a 2D plane
+- [`promCondition()`](https://x-biosignal.github.io/PhysioMoCap/reference/promCondition.md)
+  : Condition a ProMP on a via-point
+- [`promFit()`](https://x-biosignal.github.io/PhysioMoCap/reference/promFit.md)
+  : Fit a Probabilistic Movement Primitive to demonstrations
 - [`quaternionToEuler()`](https://x-biosignal.github.io/PhysioMoCap/reference/quaternionToEuler.md)
   : Convert quaternion to Euler angles
 - [`quickStartMoCap()`](https://x-biosignal.github.io/PhysioMoCap/reference/quickStartMoCap.md)
   : Run a one-command beginner workflow
 - [`rateOfForceDevelopment()`](https://x-biosignal.github.io/PhysioMoCap/reference/rateOfForceDevelopment.md)
   : Rate of force development
+- [`rayleighTest()`](https://x-biosignal.github.io/PhysioMoCap/reference/rayleighTest.md)
+  : Rayleigh test for a preferred direction
 - [`reachingKinematics()`](https://x-biosignal.github.io/PhysioMoCap/reference/reachingKinematics.md)
   : Reaching kinematics report for a PhysioExperiment
 - [`readAMC()`](https://x-biosignal.github.io/PhysioMoCap/reference/readAMC.md)
@@ -949,6 +983,8 @@ Community and policy documents live in the umbrella repository:
   : Reconstruct waveforms from fPCA
 - [`rectifyEMG()`](https://x-biosignal.github.io/PhysioMoCap/reference/rectifyEMG.md)
   : Rectify EMG signals
+- [`recurrenceQuantification()`](https://x-biosignal.github.io/PhysioMoCap/reference/recurrenceQuantification.md)
+  : Recurrence quantification analysis (RQA)
 - [`regionalLoading()`](https://x-biosignal.github.io/PhysioMoCap/reference/regionalLoading.md)
   : Summarize plantar loading by anatomical region
 - [`registerCurves()`](https://x-biosignal.github.io/PhysioMoCap/reference/registerCurves.md)
@@ -977,6 +1013,8 @@ Community and policy documents live in the umbrella repository:
   : Savitzky-Golay filter for smoothing and differentiation
 - [`scaleBodyModel()`](https://x-biosignal.github.io/PhysioMoCap/reference/scaleBodyModel.md)
   : Scale a body model from marker-measured segment lengths
+- [`scalePlanarModel()`](https://x-biosignal.github.io/PhysioMoCap/reference/scalePlanarModel.md)
+  : Scale a planar chain model from a static pose
 - [`scaleSegmentModel()`](https://x-biosignal.github.io/PhysioMoCap/reference/scaleSegmentModel.md)
   : Scale a de Leva segment inertia model to a subject
 - [`schema_balance`](https://x-biosignal.github.io/PhysioMoCap/reference/schema_balance.md)
@@ -1022,10 +1060,14 @@ Community and policy documents live in the umbrella repository:
   : Time to peak torque
 - [`timeToPeakVelocity()`](https://x-biosignal.github.io/PhysioMoCap/reference/timeToPeakVelocity.md)
   : Time to peak reaching velocity
+- [`toleranceNoiseCovariation()`](https://x-biosignal.github.io/PhysioMoCap/reference/toleranceNoiseCovariation.md)
+  : Tolerance-Noise-Covariation (TNC) decomposition of result error
 - [`trackMarkers()`](https://x-biosignal.github.io/PhysioMoCap/reference/trackMarkers.md)
   : Track Markers Across Frames
 - [`trunkCompensation()`](https://x-biosignal.github.io/PhysioMoCap/reference/trunkCompensation.md)
   : Trunk compensation during reaching
+- [`uncontrolledManifold()`](https://x-biosignal.github.io/PhysioMoCap/reference/uncontrolledManifold.md)
+  : Uncontrolled Manifold (UCM) analysis of motor variability
 - [`validateBenchmarkManifest()`](https://x-biosignal.github.io/PhysioMoCap/reference/validateBenchmarkManifest.md)
   : Validate a benchmark manifest
 - [`validateSchema()`](https://x-biosignal.github.io/PhysioMoCap/reference/validateSchema.md)
@@ -1034,8 +1076,17 @@ Community and policy documents live in the umbrella repository:
   : Angle between two 3D vectors
 - [`vectorCoding()`](https://x-biosignal.github.io/PhysioMoCap/reference/vectorCoding.md)
   : Vector coding (coupling angle) between two joints
+- [`watsonWilliamsTest()`](https://x-biosignal.github.io/PhysioMoCap/reference/watsonWilliamsTest.md)
+  : Watson-Williams test for equal mean directions
+- [`waveformCMC()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformCMC.md)
+  : Coefficient of multiple correlation for repeated waveforms (Kadaba
+  CMC)
+- [`waveformICC()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformICC.md)
+  : Pointwise intraclass correlation across the movement cycle
 - [`waveformPCA()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformPCA.md)
   : PCA for waveform data
+- [`waveformReliability()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformReliability.md)
+  : Waveform reliability report: CMC, ICC / SEM / MDC curves
 - [`waveformTSNE()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformTSNE.md)
   : t-SNE embedding for waveform data
 - [`waveformUMAP()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformUMAP.md)
