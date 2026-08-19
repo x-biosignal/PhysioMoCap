@@ -15,7 +15,7 @@ an external_loads_file (OpenCap is markerless and has no ground reactions)."></h
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,7 +91,7 @@ an <code>external_loads_file</code> (OpenCap is markerless and has no ground rea
 <span>  api_key <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  base_url <span class="op">=</span> <span class="st">"https://app.opencap.ai/api"</span>,</span>
 <span>  model_file <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  tools <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ik"</span>, <span class="st">"id"</span>, <span class="st">"so"</span><span class="op">)</span>,</span>
+<span>  tools <span class="op">=</span> <span class="st">"ik"</span>,</span>
 <span>  external_loads_file <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  time_range <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  workdir <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -139,6 +139,12 @@ downloaded from the session with <code><a href="downloadOpenCapModel.html">downl
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>An <code>opensim_run</code> object (see <code><a href="runOpenSimFromMarkers.html">runOpenSimFromMarkers()</a></code>).</p>
+    </div>
+    <div class="section level2">
+    <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
+    <p>With <code>dry_run = TRUE</code> the model and markers are still downloaded (they are
+needed to write the setups); only the OpenSim tool execution is skipped. For a
+fully offline dry run, call <code><a href="runOpenSimFromMarkers.html">runOpenSimFromMarkers()</a></code> with local files.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

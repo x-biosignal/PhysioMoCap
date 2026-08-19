@@ -17,7 +17,7 @@ runOpenSimFromOpenCap(
   api_key = NULL,
   base_url = "https://app.opencap.ai/api",
   model_file = NULL,
-  tools = c("ik", "id", "so"),
+  tools = "ik",
   external_loads_file = NULL,
   time_range = NULL,
   workdir = NULL,
@@ -66,6 +66,14 @@ runOpenSimFromOpenCap(
 
 An `opensim_run` object (see
 [`runOpenSimFromMarkers()`](https://x-biosignal.github.io/PhysioMoCap/reference/runOpenSimFromMarkers.md)).
+
+## Details
+
+With `dry_run = TRUE` the model and markers are still downloaded (they
+are needed to write the setups); only the OpenSim tool execution is
+skipped. For a fully offline dry run, call
+[`runOpenSimFromMarkers()`](https://x-biosignal.github.io/PhysioMoCap/reference/runOpenSimFromMarkers.md)
+with local files.
 
 ## See also
 

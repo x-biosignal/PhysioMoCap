@@ -17,7 +17,7 @@ counterpart to using OpenCap's cloud kinematics directly."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,7 +91,7 @@ counterpart to using OpenCap's cloud kinematics directly.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">runOpenSimFromMarkers</span><span class="op">(</span></span>
 <span>  <span class="va">model_file</span>,</span>
 <span>  <span class="va">trc_file</span>,</span>
-<span>  tools <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ik"</span>, <span class="st">"id"</span>, <span class="st">"so"</span><span class="op">)</span>,</span>
+<span>  tools <span class="op">=</span> <span class="st">"ik"</span>,</span>
 <span>  external_loads_file <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  time_range <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  workdir <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -127,7 +127,9 @@ reactions). Required for <code>"id"</code>/<code>"so"</code> unless <code>requir
 
 
 <dt id="arg-time-range">time_range<a class="anchor" aria-label="anchor" href="#arg-time-range"></a></dt>
-<dd><p>Optional numeric <code>c(start, end)</code> (s) applied to every tool.</p></dd>
+<dd><p>Optional numeric <code>c(start, end)</code> (s) applied to every tool.
+If <code>NULL</code> (default) the whole trial is used, read from <code>trc_file</code> (otherwise
+the tool templates' own <code>&lt;time_range&gt;</code> would truncate the trial to 0-1 s).</p></dd>
 
 
 <dt id="arg-workdir">workdir<a class="anchor" aria-label="anchor" href="#arg-workdir"></a></dt>

@@ -16,7 +16,7 @@ OpenCap's cloud kinematics directly.
 runOpenSimFromMarkers(
   model_file,
   trc_file,
-  tools = c("ik", "id", "so"),
+  tools = "ik",
   external_loads_file = NULL,
   time_range = NULL,
   workdir = NULL,
@@ -50,7 +50,9 @@ runOpenSimFromMarkers(
 
 - time_range:
 
-  Optional numeric `c(start, end)` (s) applied to every tool.
+  Optional numeric `c(start, end)` (s) applied to every tool. If `NULL`
+  (default) the whole trial is used, read from `trc_file` (otherwise the
+  tool templates' own `<time_range>` would truncate the trial to 0-1 s).
 
 - workdir:
 

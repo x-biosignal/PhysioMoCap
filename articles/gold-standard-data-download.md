@@ -50,7 +50,7 @@ Write the template to CSV if needed:
 tmp_manifest <- tempfile("benchmark_manifest_", fileext = ".csv")
 writeBenchmarkManifest(tmp_manifest, n = 2, overwrite = TRUE)
 tmp_manifest
-#> [1] "/tmp/RtmpQrwqWi/benchmark_manifest_2af77148a58b.csv"
+#> [1] "/tmp/RtmpnUUSCe/benchmark_manifest_29e43fd4749b.csv"
 ```
 
 ## 3. Point manifest rows to your downloaded files

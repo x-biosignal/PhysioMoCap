@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,6 +66,19 @@
       <small>Source: <a href="https://github.com/x-biosignal/PhysioMoCap/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.6.2" id="physiomocap-062">PhysioMoCap 0.6.2<a class="anchor" aria-label="anchor" href="#physiomocap-062"></a></h2>
+<p>Fixes to the OpenCap -&gt; OpenSim pipeline (from a code review of 0.6.1).</p>
+<ul><li>
+<code><a href="../reference/runOpenSimFromMarkers.html">runOpenSimFromMarkers()</a></code>/<code><a href="../reference/runOpenSimFromOpenCap.html">runOpenSimFromOpenCap()</a></code> now default <code>time_range</code> to the <strong>whole trial</strong> (read from the marker file). Previously a <code>NULL</code> <code>time_range</code> left the tool templates’ <code>&lt;time_range&gt;0 1&lt;/time_range&gt;</code> in place, silently truncating every trial to its first second.</li>
+<li>
+<code>tools</code> now defaults to <code>"ik"</code> (matching the documentation); the previous <code>c("ik","id","so")</code> default made the bare call error on the ground-reaction requirement.</li>
+<li>Inverse kinematics is run before the ID/SO setups are written, so their motion input is real rather than an empty placeholder; a failed IK is now reported instead of crashing the MOT reader on a 0-byte file, and reused-<code>workdir</code> stale outputs are no longer attributed to the run.</li>
+<li>
+<code><a href="../reference/runOpenSimFromOpenCap.html">runOpenSimFromOpenCap()</a></code> resolves the OpenCap session once (model and markers come from the same trial, no duplicate requests), validates <code>session_id</code> and a supplied <code>external_loads_file</code> before downloading, and records the resolved trial id.</li>
+<li>
+<code>.opencap_model_url</code> handling tolerates empty/<code>NA</code>/non-scalar session metadata; a partial <code>templates</code> override keeps the bundled defaults for the other tools.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.6.1" id="physiomocap-061">PhysioMoCap 0.6.1<a class="anchor" aria-label="anchor" href="#physiomocap-061"></a></h2>
 <p>OpenCap -&gt; OpenSim -&gt; downstream pipeline.</p>

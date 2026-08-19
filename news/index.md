@@ -1,5 +1,31 @@
 # Changelog
 
+## PhysioMoCap 0.6.2
+
+Fixes to the OpenCap -\> OpenSim pipeline (from a code review of 0.6.1).
+
+- [`runOpenSimFromMarkers()`](https://x-biosignal.github.io/PhysioMoCap/reference/runOpenSimFromMarkers.md)/[`runOpenSimFromOpenCap()`](https://x-biosignal.github.io/PhysioMoCap/reference/runOpenSimFromOpenCap.md)
+  now default `time_range` to the **whole trial** (read from the marker
+  file). Previously a `NULL` `time_range` left the tool templates’
+  `<time_range>0 1</time_range>` in place, silently truncating every
+  trial to its first second.
+- `tools` now defaults to `"ik"` (matching the documentation); the
+  previous `c("ik","id","so")` default made the bare call error on the
+  ground-reaction requirement.
+- Inverse kinematics is run before the ID/SO setups are written, so
+  their motion input is real rather than an empty placeholder; a failed
+  IK is now reported instead of crashing the MOT reader on a 0-byte
+  file, and reused-`workdir` stale outputs are no longer attributed to
+  the run.
+- [`runOpenSimFromOpenCap()`](https://x-biosignal.github.io/PhysioMoCap/reference/runOpenSimFromOpenCap.md)
+  resolves the OpenCap session once (model and markers come from the
+  same trial, no duplicate requests), validates `session_id` and a
+  supplied `external_loads_file` before downloading, and records the
+  resolved trial id.
+- `.opencap_model_url` handling tolerates empty/`NA`/non-scalar session
+  metadata; a partial `templates` override keeps the bundled defaults
+  for the other tools.
+
 ## PhysioMoCap 0.6.1
 
 OpenCap -\> OpenSim -\> downstream pipeline.
