@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,6 +23,7 @@
     <li><a class="dropdown-item" href="../articles/forceplate-inverse-dynamics.html">Force Plate and Inverse Dynamics Workflow</a></li>
     <li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started with PhysioMoCap</a></li>
     <li><a class="dropdown-item" href="../articles/gold-standard-data-download.html">Gold-Standard Data Download and Benchmark Setup</a></li>
+    <li><a class="dropdown-item" href="../articles/opencap-opensim-pipeline.html">OpenCap to OpenSim to downstream analysis</a></li>
     <li><a class="dropdown-item" href="../articles/pose-pipeline.html">Markerless pose to gait: OpenPose -&gt; poseFix -&gt; analysis</a></li>
   </ul></li>
 <li class="nav-item dropdown">
@@ -479,6 +480,13 @@
 
         </dt>
         <dd>Generate a trajectory from a Dynamic Movement Primitive</dd>
+
+        <dt>
+
+          <code><a href="downloadOpenCapModel.html">downloadOpenCapModel()</a></code>
+
+        </dt>
+        <dd>Download the OpenSim Model for an OpenCap Session</dd>
 
         <dt>
 
@@ -1648,6 +1656,20 @@
 
         </dt>
         <dd>Run Computed Muscle Control (CMC) via OpenSim</dd>
+
+        <dt>
+
+          <code><a href="runOpenSimFromMarkers.html">runOpenSimFromMarkers()</a></code>
+
+        </dt>
+        <dd>Run the local OpenSim toolchain from a model and marker file</dd>
+
+        <dt>
+
+          <code><a href="runOpenSimFromOpenCap.html">runOpenSimFromOpenCap()</a></code>
+
+        </dt>
+        <dd>Run the local OpenSim toolchain directly from an OpenCap session</dd>
 
         <dt>
 

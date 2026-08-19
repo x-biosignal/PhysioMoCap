@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,6 +23,7 @@
     <li><a class="dropdown-item" href="../articles/forceplate-inverse-dynamics.html">Force Plate and Inverse Dynamics Workflow</a></li>
     <li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started with PhysioMoCap</a></li>
     <li><a class="dropdown-item" href="../articles/gold-standard-data-download.html">Gold-Standard Data Download and Benchmark Setup</a></li>
+    <li><a class="dropdown-item" href="../articles/opencap-opensim-pipeline.html">OpenCap to OpenSim to downstream analysis</a></li>
     <li><a class="dropdown-item" href="../articles/pose-pipeline.html">Markerless pose to gait: OpenPose -&gt; poseFix -&gt; analysis</a></li>
   </ul></li>
 <li class="active nav-item dropdown">
@@ -65,6 +66,15 @@
       <small>Source: <a href="https://github.com/x-biosignal/PhysioMoCap/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.6.1" id="physiomocap-061">PhysioMoCap 0.6.1<a class="anchor" aria-label="anchor" href="#physiomocap-061"></a></h2>
+<p>OpenCap -&gt; OpenSim -&gt; downstream pipeline.</p>
+<ul><li>
+<code><a href="../reference/runOpenSimFromMarkers.html">runOpenSimFromMarkers()</a></code> wires a scaled model and marker <code>.trc</code> through OpenSim inverse kinematics and, optionally, inverse dynamics and static optimization: it writes the tool setup XMLs from the bundled <code>PhysioOpenSim</code> templates, runs them via <code><a href="../reference/run_opensim_toolchain.html">run_opensim_toolchain()</a></code>, and parses the outputs with <code><a href="../reference/readOpenSimOutputs.html">readOpenSimOutputs()</a></code>. ID/SO require an <code>external_loads_file</code> (markerless OpenCap has no ground reactions); <code>dry_run = TRUE</code> writes the setups without a backend.</li>
+<li>
+<code><a href="../reference/runOpenSimFromOpenCap.html">runOpenSimFromOpenCap()</a></code> runs that chain directly from an OpenCap session, and <code><a href="../reference/downloadOpenCapModel.html">downloadOpenCapModel()</a></code> fetches the session’s scaled <code>.osim</code> model (the input the local OpenSim toolchain needs, since OpenCap does the scaling).</li>
+<li>New vignette <code>opencap-opensim-pipeline</code> documents both the cloud-kinematics route (no local OpenSim) and the local-OpenSim route, with its scope limits.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.5.0" id="physiomocap-050">PhysioMoCap 0.5.0<a class="anchor" aria-label="anchor" href="#physiomocap-050"></a></h2>
 <p>Inter-joint coordination analysis.</p>

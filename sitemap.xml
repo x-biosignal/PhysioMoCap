@@ -10,6 +10,7 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/articles/getting-started.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/articles/gold-standard-data-download.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/articles/index.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/articles/opencap-opensim-pipeline.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/articles/pose-pipeline.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/authors.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/index.html</loc></url>
@@ -108,7 +109,10 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-opencap_auth_header.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-opencap_build_url.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-opencap_download_file.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-opencap_download_markers.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-opencap_get_json.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-opencap_model_url.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-opencap_resolve_trial.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-opencap_result_url.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-osim_num.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-parse_c3d_wide.html</loc></url>
@@ -119,6 +123,7 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-summarize_batch_results.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-validate_marker_labels.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dot-write_opensim_tabular.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/downloadOpenCapModel.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dtwAverage.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dtwClustering.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/dtwDistance.html</loc></url>
@@ -288,6 +293,8 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/resampleVector.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/runBenchmarkSuite.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/runCMC.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/runOpenSimFromMarkers.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/runOpenSimFromOpenCap.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/runRRA.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/runStaticOptimization.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/run_opensim_toolchain.html</loc></url>

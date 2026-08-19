@@ -1,5 +1,29 @@
 # Changelog
 
+## PhysioMoCap 0.6.1
+
+OpenCap -\> OpenSim -\> downstream pipeline.
+
+- [`runOpenSimFromMarkers()`](https://x-biosignal.github.io/PhysioMoCap/reference/runOpenSimFromMarkers.md)
+  wires a scaled model and marker `.trc` through OpenSim inverse
+  kinematics and, optionally, inverse dynamics and static optimization:
+  it writes the tool setup XMLs from the bundled `PhysioOpenSim`
+  templates, runs them via
+  [`run_opensim_toolchain()`](https://x-biosignal.github.io/PhysioMoCap/reference/run_opensim_toolchain.md),
+  and parses the outputs with
+  [`readOpenSimOutputs()`](https://x-biosignal.github.io/PhysioMoCap/reference/readOpenSimOutputs.md).
+  ID/SO require an `external_loads_file` (markerless OpenCap has no
+  ground reactions); `dry_run = TRUE` writes the setups without a
+  backend.
+- [`runOpenSimFromOpenCap()`](https://x-biosignal.github.io/PhysioMoCap/reference/runOpenSimFromOpenCap.md)
+  runs that chain directly from an OpenCap session, and
+  [`downloadOpenCapModel()`](https://x-biosignal.github.io/PhysioMoCap/reference/downloadOpenCapModel.md)
+  fetches the session’s scaled `.osim` model (the input the local
+  OpenSim toolchain needs, since OpenCap does the scaling).
+- New vignette `opencap-opensim-pipeline` documents both the
+  cloud-kinematics route (no local OpenSim) and the local-OpenSim route,
+  with its scope limits.
+
 ## PhysioMoCap 0.5.0
 
 Inter-joint coordination analysis.

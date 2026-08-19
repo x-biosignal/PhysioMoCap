@@ -119,6 +119,8 @@
   : Fit a Dynamic Movement Primitive to a demonstration
 - [`dmpGenerate()`](https://x-biosignal.github.io/PhysioMoCap/reference/dmpGenerate.md)
   : Generate a trajectory from a Dynamic Movement Primitive
+- [`downloadOpenCapModel()`](https://x-biosignal.github.io/PhysioMoCap/reference/downloadOpenCapModel.md)
+  : Download the OpenSim Model for an OpenCap Session
 - [`dtwAverage()`](https://x-biosignal.github.io/PhysioMoCap/reference/dtwAverage.md)
   : DTW Barycenter Averaging (DBA)
 - [`dtwClustering()`](https://x-biosignal.github.io/PhysioMoCap/reference/dtwClustering.md)
@@ -456,6 +458,10 @@
   : Run a benchmark suite from a manifest
 - [`runCMC()`](https://x-biosignal.github.io/PhysioMoCap/reference/runCMC.md)
   : Run Computed Muscle Control (CMC) via OpenSim
+- [`runOpenSimFromMarkers()`](https://x-biosignal.github.io/PhysioMoCap/reference/runOpenSimFromMarkers.md)
+  : Run the local OpenSim toolchain from a model and marker file
+- [`runOpenSimFromOpenCap()`](https://x-biosignal.github.io/PhysioMoCap/reference/runOpenSimFromOpenCap.md)
+  : Run the local OpenSim toolchain directly from an OpenCap session
 - [`runRRA()`](https://x-biosignal.github.io/PhysioMoCap/reference/runRRA.md)
   : Run Residual Reduction Algorithm (RRA) via OpenSim
 - [`runStaticOptimization()`](https://x-biosignal.github.io/PhysioMoCap/reference/runStaticOptimization.md)
