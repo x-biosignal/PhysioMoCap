@@ -1,0 +1,74 @@
+---
+title: "Benchmark Validation Workflow"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Benchmark Validation Workflow}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+This vignette shows a complete validation-benchmark workflow that works even
+before external gold-standard datasets are attached.
+
+## 1. Create a benchmark bundle
+
+```{r}
+library(PhysioMoCap)
+
+ex <- createBenchmarkExample(
+  n_trials = 3,
+  n_samples = 250,
+  noise_sd = 0.02,
+  seed = 1
+)
+
+ex$manifest
+```
+
+## 2. Validate manifest integrity
+
+```{r}
+v <- validateBenchmarkManifest(ex$manifest, data_dir = ex$data_dir)
+v
+```
+
+## 3. Run benchmark suite
+
+```{r}
+suite <- runBenchmarkSuite(
+  manifest = ex$manifest,
+  data_dir = ex$data_dir,
+  thresholds = defaultBenchmarkThresholds("balanced"),
+  alignment = "truncate"
+)
+
+suite
+suite$suite_summary
+head(suite$metrics)
+```
+
+## 4. Export reports
+
+```{r}
+report_dir <- tempfile("benchmark_report_")
+runBenchmarkSuite(
+  manifest = ex$manifest,
+  data_dir = ex$data_dir,
+  thresholds = defaultBenchmarkThresholds("balanced"),
+  report_dir = report_dir
+)
+
+list.files(report_dir)
+```
+
+## 5. Use real gold-standard data later
+
+1. Keep the same manifest columns (`benchmark_id`, `prediction_file`, `reference_file`).
+2. Replace file paths with your real prediction/reference files (`.csv`, `.mot`, `.sto`, `.trc`).
+3. Re-run `validateBenchmarkManifest()` and `runBenchmarkSuite()`.
+
+This keeps validation infrastructure stable while datasets evolve.

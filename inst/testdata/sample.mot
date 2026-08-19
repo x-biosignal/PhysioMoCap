@@ -1,0 +1,12 @@
+Coordinates
+version=1
+nRows=5
+nColumns=4
+inDegrees=yes
+endheader
+time	hip_flexion_r	knee_angle_r	ankle_angle_r
+0.00	25.0	-5.0	10.0
+0.01	24.5	-4.8	9.5
+0.02	24.0	-4.6	9.0
+0.03	23.5	-4.4	8.5
+0.04	23.0	-4.2	8.0

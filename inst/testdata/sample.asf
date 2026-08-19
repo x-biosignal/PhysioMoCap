@@ -1,0 +1,35 @@
+:version 1.10
+:name VICON
+:units
+  mass 1.0
+  length 0.45
+  angle deg
+:root
+  order TX TY TZ RX RY RZ
+  axis XYZ
+  position 0 0 0
+  orientation 0 0 0
+:bonedata
+  begin
+    id 1
+    name lfemur
+    direction 0.34 -0.93 0.12
+    length 7.2
+    axis 0 0 20 XYZ
+    dof rx ry rz
+    limits (-160 20) (-70 70) (-60 70)
+  end
+  begin
+    id 2
+    name ltibia
+    direction 0.01 -0.99 0.04
+    length 6.8
+    axis 0 0 15 XYZ
+    dof rx
+    limits (-10 170)
+  end
+:hierarchy
+  begin
+    root lfemur
+    lfemur ltibia
+  end

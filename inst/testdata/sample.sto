@@ -1,0 +1,11 @@
+Force data
+version=1
+nRows=5
+nColumns=3
+endheader
+time	ground_force_vx	ground_force_vy
+0.00	100.5	750.2
+0.01	98.3	745.8
+0.02	96.1	740.1
+0.03	94.0	735.5
+0.04	91.8	730.0

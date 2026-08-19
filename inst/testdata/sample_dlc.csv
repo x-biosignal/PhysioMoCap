@@ -1,0 +1,6 @@
+scorer,DLC_model,DLC_model,DLC_model,DLC_model,DLC_model,DLC_model
+bodyparts,nose,nose,nose,left_ear,left_ear,left_ear
+coords,x,y,likelihood,x,y,likelihood
+0,120.5,80.3,0.99,115.2,75.1,0.95
+1,121.0,80.5,0.98,115.8,75.3,0.96
+2,121.5,80.7,0.97,116.4,75.5,0.94

@@ -1,0 +1,8 @@
+Key: sparc_midband
+Source: Balasubramanian et al. (2015) spectral-arc-length reference
+        algorithm reimplemented inline on a Gabor speed profile sin(2
+        pi 4 tau) exp(-(tau-0.5)^2/0.02), n=200, fs=200; exercises the
+        adaptive lower frequency bound. Exact vs package.
+Tolerance: 1e-08
+Captured: 2026-07-10 23:55:07 UTC
+R: 4.5.2
