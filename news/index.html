@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.6.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,6 +66,13 @@
       <small>Source: <a href="https://github.com/x-biosignal/PhysioMoCap/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.7.0" id="physiomocap-070">PhysioMoCap 0.7.0<a class="anchor" aria-label="anchor" href="#physiomocap-070"></a></h2>
+<p>Movement-disorder quantification: tremor, ataxia and instrumented spasticity.</p>
+<ul><li>Tremor: <code><a href="../reference/tremorSpectrum.html">tremorSpectrum()</a></code> (dependency-free Welch periodogram → dominant frequency, in-band power, half-power bandwidth, harmonic ratio in a 3-12 Hz band), <code><a href="../reference/tremorAmplitude.html">tremorAmplitude()</a></code> (band-limited RMS) and <code><a href="../reference/tremorMetrics.html">tremorMetrics()</a></code> (combined, tagged rest/postural/kinetic).</li>
+<li>Ataxia: <code><a href="../reference/pathStraightness.html">pathStraightness()</a></code> (trajectory straightness / index of curvature) plus <code><a href="../reference/limbAtaxiaIndex.html">limbAtaxiaIndex()</a></code> and <code><a href="../reference/gaitAtaxiaIndex.html">gaitAtaxiaIndex()</a></code> — honest aggregators of the existing validated sub-metrics (<code>endpointError</code>, <code>movementUnits</code>, <code>sparc</code>/<code>ldlj</code>, <code>summarizeGaitParameters</code> CVs, <code>swayMetrics</code>) that standardise into a composite z only against a supplied healthy reference (no population weights/cut-offs are fabricated).</li>
+<li>Instrumented spasticity (Tardieu): <code><a href="../reference/tardieuStretch.html">tardieuStretch()</a></code> locates the catch (EMG reflex onset and/or velocity arrest) → R1; <code><a href="../reference/tardieuScore.html">tardieuScore()</a></code> derives R2 and the dynamic component R2-R1; <code><a href="../reference/reflexThreshold.html">reflexThreshold()</a></code> regresses catch angle on stretch velocity. Reuses the EMG↔︎MoCap alignment, envelope and angular-velocity primitives already in the package.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.6.2" id="physiomocap-062">PhysioMoCap 0.6.2<a class="anchor" aria-label="anchor" href="#physiomocap-062"></a></h2>
 <p>Fixes to the OpenCap -&gt; OpenSim pipeline (from a code review of 0.6.1).</p>

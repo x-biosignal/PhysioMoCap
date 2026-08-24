@@ -1,5 +1,39 @@
 # Changelog
 
+## PhysioMoCap 0.7.0
+
+Movement-disorder quantification: tremor, ataxia and instrumented
+spasticity.
+
+- Tremor:
+  [`tremorSpectrum()`](https://x-biosignal.github.io/PhysioMoCap/reference/tremorSpectrum.md)
+  (dependency-free Welch periodogram → dominant frequency, in-band
+  power, half-power bandwidth, harmonic ratio in a 3-12 Hz band),
+  [`tremorAmplitude()`](https://x-biosignal.github.io/PhysioMoCap/reference/tremorAmplitude.md)
+  (band-limited RMS) and
+  [`tremorMetrics()`](https://x-biosignal.github.io/PhysioMoCap/reference/tremorMetrics.md)
+  (combined, tagged rest/postural/kinetic).
+- Ataxia:
+  [`pathStraightness()`](https://x-biosignal.github.io/PhysioMoCap/reference/pathStraightness.md)
+  (trajectory straightness / index of curvature) plus
+  [`limbAtaxiaIndex()`](https://x-biosignal.github.io/PhysioMoCap/reference/limbAtaxiaIndex.md)
+  and
+  [`gaitAtaxiaIndex()`](https://x-biosignal.github.io/PhysioMoCap/reference/gaitAtaxiaIndex.md)
+  — honest aggregators of the existing validated sub-metrics
+  (`endpointError`, `movementUnits`, `sparc`/`ldlj`,
+  `summarizeGaitParameters` CVs, `swayMetrics`) that standardise into a
+  composite z only against a supplied healthy reference (no population
+  weights/cut-offs are fabricated).
+- Instrumented spasticity (Tardieu):
+  [`tardieuStretch()`](https://x-biosignal.github.io/PhysioMoCap/reference/tardieuStretch.md)
+  locates the catch (EMG reflex onset and/or velocity arrest) → R1;
+  [`tardieuScore()`](https://x-biosignal.github.io/PhysioMoCap/reference/tardieuScore.md)
+  derives R2 and the dynamic component R2-R1;
+  [`reflexThreshold()`](https://x-biosignal.github.io/PhysioMoCap/reference/reflexThreshold.md)
+  regresses catch angle on stretch velocity. Reuses the EMG↔︎MoCap
+  alignment, envelope and angular-velocity primitives already in the
+  package.
+
 ## PhysioMoCap 0.6.2
 
 Fixes to the OpenCap -\> OpenSim pipeline (from a code review of 0.6.1).

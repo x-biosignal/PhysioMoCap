@@ -163,6 +163,8 @@
   : Forward dynamics: integrate the equations of motion
 - [`forwardKinematics2D()`](https://x-biosignal.github.io/PhysioMoCap/reference/forwardKinematics2D.md)
   : Forward kinematics of a planar chain
+- [`gaitAtaxiaIndex()`](https://x-biosignal.github.io/PhysioMoCap/reference/gaitAtaxiaIndex.md)
+  : Gait-ataxia composite from gait-variability sub-metrics
 - [`gaitDeviationIndex()`](https://x-biosignal.github.io/PhysioMoCap/reference/gaitDeviationIndex.md)
   : Gait Deviation Index (Schwartz & Rozumalski 2008)
 - [`gaitPatternLibrary()`](https://x-biosignal.github.io/PhysioMoCap/reference/gaitPatternLibrary.md)
@@ -229,6 +231,8 @@
   : Label joint power bursts with Winter nomenclature
 - [`ldlj()`](https://x-biosignal.github.io/PhysioMoCap/reference/ldlj.md)
   : Log Dimensionless Jerk (LDLJ) movement smoothness
+- [`limbAtaxiaIndex()`](https://x-biosignal.github.io/PhysioMoCap/reference/limbAtaxiaIndex.md)
+  : Limb-ataxia composite from reaching sub-metrics
 - [`limitsOfStability()`](https://x-biosignal.github.io/PhysioMoCap/reference/limitsOfStability.md)
   : Limits of Stability (LOS) reaction time, excursion and directional
   control
@@ -262,6 +266,8 @@
   : Normalize movement data
 - [`normalizedTimeAxis()`](https://x-biosignal.github.io/PhysioMoCap/reference/normalizedTimeAxis.md)
   : Time axis for normalized data
+- [`pathStraightness()`](https://x-biosignal.github.io/PhysioMoCap/reference/pathStraightness.md)
+  : Movement-path straightness
 - [`peakPressure()`](https://x-biosignal.github.io/PhysioMoCap/reference/peakPressure.md)
   : Calculate a peak plantar-pressure map
 - [`peakTorque()`](https://x-biosignal.github.io/PhysioMoCap/reference/peakTorque.md)
@@ -442,6 +448,8 @@
   : Rectify EMG signals
 - [`recurrenceQuantification()`](https://x-biosignal.github.io/PhysioMoCap/reference/recurrenceQuantification.md)
   : Recurrence quantification analysis (RQA)
+- [`reflexThreshold()`](https://x-biosignal.github.io/PhysioMoCap/reference/reflexThreshold.md)
+  : Velocity-dependent reflex threshold
 - [`regionalLoading()`](https://x-biosignal.github.io/PhysioMoCap/reference/regionalLoading.md)
   : Summarize plantar loading by anatomical region
 - [`registerCurves()`](https://x-biosignal.github.io/PhysioMoCap/reference/registerCurves.md)
@@ -515,6 +523,10 @@
   : Compute bilateral symmetry index
 - [`synchronizeSignals()`](https://x-biosignal.github.io/PhysioMoCap/reference/synchronizeSignals.md)
   : Synchronize multiple PhysioExperiment objects
+- [`tardieuScore()`](https://x-biosignal.github.io/PhysioMoCap/reference/tardieuScore.md)
+  : Tardieu score: R1, R2 and the dynamic component
+- [`tardieuStretch()`](https://x-biosignal.github.io/PhysioMoCap/reference/tardieuStretch.md)
+  : Detect the spastic catch on a single passive stretch
 - [`timeDelayEmbed()`](https://x-biosignal.github.io/PhysioMoCap/reference/timeDelayEmbed.md)
   : Time-delay phase-space embedding
 - [`timeToPeakTorque()`](https://x-biosignal.github.io/PhysioMoCap/reference/timeToPeakTorque.md)
@@ -525,6 +537,12 @@
   : Tolerance-Noise-Covariation (TNC) decomposition of result error
 - [`trackMarkers()`](https://x-biosignal.github.io/PhysioMoCap/reference/trackMarkers.md)
   : Track Markers Across Frames
+- [`tremorAmplitude()`](https://x-biosignal.github.io/PhysioMoCap/reference/tremorAmplitude.md)
+  : Band-limited tremor amplitude (RMS)
+- [`tremorMetrics()`](https://x-biosignal.github.io/PhysioMoCap/reference/tremorMetrics.md)
+  : Tremor metrics (frequency + amplitude, with a task tag)
+- [`tremorSpectrum()`](https://x-biosignal.github.io/PhysioMoCap/reference/tremorSpectrum.md)
+  : Tremor power spectrum and dominant frequency
 - [`trunkCompensation()`](https://x-biosignal.github.io/PhysioMoCap/reference/trunkCompensation.md)
   : Trunk compensation during reaching
 - [`uncontrolledManifold()`](https://x-biosignal.github.io/PhysioMoCap/reference/uncontrolledManifold.md)
