@@ -11,13 +11,9 @@ To download open datasets, you need:
 2.  DNS/HTTPS access to external hosts (for example, `physionet.org`,
     `ncbi.nlm.nih.gov`, `ftp.ncbi.nlm.nih.gov`)
 
-In this monorepo, the helper script is:
-
-- `publication/scripts/download_open_medrehab_gold_data.sh`
-
-``` bash
-bash publication/scripts/download_open_medrehab_gold_data.sh data/external
-```
+Download each open dataset from its public host (for example from
+`physionet.org`) into a local directory such as `data/external/`. Each
+dataset’s own page documents its exact download procedure.
 
 Controlled datasets (for example, MIMIC-IV full, eICU, MOST, OAI
 controlled resources) require account approval and DUA steps before
@@ -50,7 +46,7 @@ Write the template to CSV if needed:
 tmp_manifest <- tempfile("benchmark_manifest_", fileext = ".csv")
 writeBenchmarkManifest(tmp_manifest, n = 2, overwrite = TRUE)
 tmp_manifest
-#> [1] "/tmp/RtmpG5AwPV/benchmark_manifest_2aaa3f764c05.csv"
+#> [1] "/tmp/Rtmp5i7Gr5/benchmark_manifest_2acd43a5650c.csv"
 ```
 
 ## 3. Point manifest rows to your downloaded files
@@ -138,7 +134,5 @@ head(suite$metrics)
     [`runBenchmarkSuite()`](https://x-biosignal.github.io/PhysioMoCap/reference/runBenchmarkSuite.md)
     to export reports.
 
-For repository-level data availability and source links, see:
-
-- `publication/data_availability_and_download_guide_ja.md`
-- `publication/gold_standard_data_search_framework_medrehab_ja.md`
+For data availability, licensing, and source links, consult each
+dataset’s own documentation and data-use agreement.

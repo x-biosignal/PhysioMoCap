@@ -113,11 +113,10 @@ benchmark manifest for external gold-standard validation.</p>
 <code>physionet.org</code>, <code>ncbi.nlm.nih.gov</code>,
 <code>ftp.ncbi.nlm.nih.gov</code>)</li>
 </ol>
-<p>In this monorepo, the helper script is:</p>
-<ul>
-<li><code>publication/scripts/download_open_medrehab_gold_data.sh</code></li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">bash</span> publication/scripts/download_open_medrehab_gold_data.sh data/external</span></code></pre></div>
+<p>Download each open dataset from its public host (for example from
+<code>physionet.org</code>) into a local directory such as
+<code>data/external/</code>. Each dataset’s own page documents its exact
+download procedure.</p>
 <p>Controlled datasets (for example, MIMIC-IV full, eICU, MOST, OAI
 controlled resources) require account approval and DUA steps before
 download.</p>
@@ -128,7 +127,7 @@ download.</p>
 <p>Use a template and then replace file paths with your real
 prediction/reference pairs (<code>.csv</code>, <code>.mot</code>,
 <code>.sto</code>, <code>.trc</code>).</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/x-biosignal/PhysioMoCap" class="external-link">PhysioMoCap</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; Loading required package: PhysioCore</span></span>
 <span></span>
@@ -141,18 +140,18 @@ prediction/reference pairs (<code>.csv</code>, <code>.mot</code>,
 <span><span class="co">#&gt; 1               lab           100      </span></span>
 <span><span class="co">#&gt; 2               lab           100</span></span></code></pre></div>
 <p>Write the template to CSV if needed:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tmp_manifest</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="st">"benchmark_manifest_"</span>, fileext <span class="op">=</span> <span class="st">".csv"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/writeBenchmarkManifest.html">writeBenchmarkManifest</a></span><span class="op">(</span><span class="va">tmp_manifest</span>, n <span class="op">=</span> <span class="fl">2</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">tmp_manifest</span></span>
-<span><span class="co">#&gt; [1] "/tmp/RtmpG5AwPV/benchmark_manifest_2aaa3f764c05.csv"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp5i7Gr5/benchmark_manifest_2acd43a5650c.csv"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="point-manifest-rows-to-your-downloaded-files">3. Point manifest rows to your downloaded files<a class="anchor" aria-label="anchor" href="#point-manifest-rows-to-your-downloaded-files"></a>
 </h2>
 <p>Below is a minimal pattern. File names are examples; replace them
 with paths that exist in your local <code>data_dir</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data_dir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="st">"gold_data_"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/files2.html" class="external-link">dir.create</a></span><span class="op">(</span><span class="va">data_dir</span>, recursive <span class="op">=</span> <span class="cn">TRUE</span>, showWarnings <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
@@ -181,7 +180,7 @@ with paths that exist in your local <code>data_dir</code>.</p>
 <div class="section level2">
 <h2 id="validate-manifest-integrity">4. Validate manifest integrity<a class="anchor" aria-label="anchor" href="#validate-manifest-integrity"></a>
 </h2>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">v</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/validateBenchmarkManifest.html">validateBenchmarkManifest</a></span><span class="op">(</span><span class="va">manifest</span>, data_dir <span class="op">=</span> <span class="va">data_dir</span><span class="op">)</span></span>
 <span><span class="va">v</span></span>
 <span><span class="co">#&gt; Benchmark Manifest Validation</span></span>
@@ -195,7 +194,7 @@ with paths that exist in your local <code>data_dir</code>.</p>
 <div class="section level2">
 <h2 id="run-benchmark-suite">5. Run benchmark suite<a class="anchor" aria-label="anchor" href="#run-benchmark-suite"></a>
 </h2>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">suite</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runBenchmarkSuite.html">runBenchmarkSuite</a></span><span class="op">(</span></span>
 <span>  manifest <span class="op">=</span> <span class="va">manifest</span>,</span>
 <span>  data_dir <span class="op">=</span> <span class="va">data_dir</span>,</span>
@@ -229,11 +228,8 @@ with paths that exist in your local <code>data_dir</code>.</p>
 <li>Optionally set <code>report_dir</code> in
 <code><a href="../reference/runBenchmarkSuite.html">runBenchmarkSuite()</a></code> to export reports.</li>
 </ol>
-<p>For repository-level data availability and source links, see:</p>
-<ul>
-<li><code>publication/data_availability_and_download_guide_ja.md</code></li>
-<li><code>publication/gold_standard_data_search_framework_medrehab_ja.md</code></li>
-</ul>
+<p>For data availability, licensing, and source links, consult each
+dataset’s own documentation and data-use agreement.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
