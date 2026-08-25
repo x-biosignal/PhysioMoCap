@@ -46,10 +46,6 @@
   : Calculate step symmetry from gait parameters
 - [`calibrateIMU()`](https://x-biosignal.github.io/PhysioMoCap/reference/calibrateIMU.md)
   : Calibrate IMU from static data
-- [`circularLinearCorrelation()`](https://x-biosignal.github.io/PhysioMoCap/reference/circularLinearCorrelation.md)
-  : Mardia's circular-linear correlation
-- [`circularSummary()`](https://x-biosignal.github.io/PhysioMoCap/reference/circularSummary.md)
-  : Circular mean direction and spread
 - [`classifyGaitPatterns()`](https://x-biosignal.github.io/PhysioMoCap/reference/classifyGaitPatterns.md)
   : Classify gait pathology patterns from a bundle of gait variables
 - [`combineTrials()`](https://x-biosignal.github.io/PhysioMoCap/reference/combineTrials.md)
@@ -143,8 +139,6 @@
   : Extract a single phase from segmented data
 - [`extractWaveformFeatures()`](https://x-biosignal.github.io/PhysioMoCap/reference/extractWaveformFeatures.md)
   : Dimensionality Reduction for Biomechanics
-- [`fPCA()`](https://x-biosignal.github.io/PhysioMoCap/reference/fPCA.md)
-  : Functional Data Analysis (FDA) for Biomechanics
 - [`fillGaps()`](https://x-biosignal.github.io/PhysioMoCap/reference/fillGaps.md)
   : Fill gaps in motion capture data
 - [`fillGapsLinear()`](https://x-biosignal.github.io/PhysioMoCap/reference/fillGapsLinear.md)
@@ -374,8 +368,6 @@
   : Print a forceplate analysis summary
 - [`print(`*`<forceplate_analysis_multi>`*`)`](https://x-biosignal.github.io/PhysioMoCap/reference/print.forceplate_analysis_multi.md)
   : Print a multi-plate forceplate analysis summary
-- [`print(`*`<fpca_result>`*`)`](https://x-biosignal.github.io/PhysioMoCap/reference/print.fpca_result.md)
-  : Print fPCA result
 - [`print(`*`<gait_parameters>`*`)`](https://x-biosignal.github.io/PhysioMoCap/reference/print.gait_parameters.md)
   : Print gait parameters
 - [`print(`*`<mocap_quickstart>`*`)`](https://x-biosignal.github.io/PhysioMoCap/reference/print.mocap_quickstart.md)
@@ -404,8 +396,6 @@
   : Run a one-command beginner workflow
 - [`rateOfForceDevelopment()`](https://x-biosignal.github.io/PhysioMoCap/reference/rateOfForceDevelopment.md)
   : Rate of force development
-- [`rayleighTest()`](https://x-biosignal.github.io/PhysioMoCap/reference/rayleighTest.md)
-  : Rayleigh test for a preferred direction
 - [`reachingKinematics()`](https://x-biosignal.github.io/PhysioMoCap/reference/reachingKinematics.md)
   : Reaching kinematics report for a PhysioExperiment
 - [`readAMC()`](https://x-biosignal.github.io/PhysioMoCap/reference/readAMC.md)
@@ -442,8 +432,6 @@
   : Read OpenSim TRC File (.trc)
 - [`readVenus3D()`](https://x-biosignal.github.io/PhysioMoCap/reference/readVenus3D.md)
   : Read Venus3D CSV Data
-- [`reconstructFPCA()`](https://x-biosignal.github.io/PhysioMoCap/reference/reconstructFPCA.md)
-  : Reconstruct waveforms from fPCA
 - [`rectifyEMG()`](https://x-biosignal.github.io/PhysioMoCap/reference/rectifyEMG.md)
   : Rectify EMG signals
 - [`recurrenceQuantification()`](https://x-biosignal.github.io/PhysioMoCap/reference/recurrenceQuantification.md)
@@ -452,8 +440,6 @@
   : Velocity-dependent reflex threshold
 - [`regionalLoading()`](https://x-biosignal.github.io/PhysioMoCap/reference/regionalLoading.md)
   : Summarize plantar loading by anatomical region
-- [`registerCurves()`](https://x-biosignal.github.io/PhysioMoCap/reference/registerCurves.md)
-  : Curve registration (time warping)
 - [`removeGravity()`](https://x-biosignal.github.io/PhysioMoCap/reference/removeGravity.md)
   : Remove gravity from accelerometer data
 - [`reportGaps()`](https://x-biosignal.github.io/PhysioMoCap/reference/reportGaps.md)
@@ -555,17 +541,8 @@
   : Angle between two 3D vectors
 - [`vectorCoding()`](https://x-biosignal.github.io/PhysioMoCap/reference/vectorCoding.md)
   : Vector coding (coupling angle) between two joints
-- [`watsonWilliamsTest()`](https://x-biosignal.github.io/PhysioMoCap/reference/watsonWilliamsTest.md)
-  : Watson-Williams test for equal mean directions
-- [`waveformCMC()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformCMC.md)
-  : Coefficient of multiple correlation for repeated waveforms (Kadaba
-  CMC)
-- [`waveformICC()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformICC.md)
-  : Pointwise intraclass correlation across the movement cycle
 - [`waveformPCA()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformPCA.md)
   : PCA for waveform data
-- [`waveformReliability()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformReliability.md)
-  : Waveform reliability report: CMC, ICC / SEM / MDC curves
 - [`waveformTSNE()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformTSNE.md)
   : t-SNE embedding for waveform data
 - [`waveformUMAP()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformUMAP.md)

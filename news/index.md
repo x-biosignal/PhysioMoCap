@@ -1,5 +1,19 @@
 # Changelog
 
+## PhysioMoCap 0.7.1
+
+The generic functional-PCA, waveform-reliability and circular-statistics
+implementations moved to PhysioCore (their single source of truth) and
+are re-exported here, so
+[`fPCA()`](https://x-biosignal.github.io/PhysioCore//reference/fPCA.html)/[`reconstructFPCA()`](https://x-biosignal.github.io/PhysioCore//reference/reconstructFPCA.html)/[`registerCurves()`](https://x-biosignal.github.io/PhysioCore//reference/registerCurves.html),
+[`waveformCMC()`](https://x-biosignal.github.io/PhysioCore//reference/waveformCMC.html)/[`waveformICC()`](https://x-biosignal.github.io/PhysioCore//reference/waveformICC.html)/[`waveformReliability()`](https://x-biosignal.github.io/PhysioCore//reference/waveformReliability.html)
+and
+[`circularSummary()`](https://x-biosignal.github.io/PhysioCore//reference/circularSummary.html)/
+[`rayleighTest()`](https://x-biosignal.github.io/PhysioCore//reference/rayleighTest.html)/[`watsonWilliamsTest()`](https://x-biosignal.github.io/PhysioCore//reference/watsonWilliamsTest.html)/[`circularLinearCorrelation()`](https://x-biosignal.github.io/PhysioCore//reference/circularLinearCorrelation.html)
+behave exactly as before. The ggplot2 visualiser
+[`plotFPCA()`](https://x-biosignal.github.io/PhysioMoCap/reference/plotFPCA.md)
+stays in this package.
+
 ## PhysioMoCap 0.7.0
 
 Movement-disorder quantification: tremor, ataxia and instrumented

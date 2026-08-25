@@ -43,7 +43,7 @@ Springer.
 
 ## See also
 
-[`fPCA()`](https://x-biosignal.github.io/PhysioMoCap/reference/fPCA.md)
+[`fPCA()`](https://x-biosignal.github.io/PhysioCore//reference/fPCA.html)
 for computing fPCA results,
-[`reconstructFPCA()`](https://x-biosignal.github.io/PhysioMoCap/reference/reconstructFPCA.md)
+[`reconstructFPCA()`](https://x-biosignal.github.io/PhysioCore//reference/reconstructFPCA.html)
 for waveform reconstruction.
