@@ -1,0 +1,129 @@
+Package: PhysioMoCap
+Title: Motion Capture and Biomechanics Analysis for PhysioExperiment Objects
+Version: 0.7.2
+Authors@R:
+    person(given = "Yusuke",
+           family = "Matsui",
+           role = c("aut", "cre"),
+           email = "mail.to.matsui@gmail.com")
+Description: Provides motion capture, pose estimation, and biomechanical
+    simulation analysis for PhysioExperiment objects. Includes I/O for C3D,
+    Venus3D, GaitRec, OpenPose, DeepLabCut, MediaPipe, BVH, ASF/AMC,
+    OpenSim, and generic CSV formats. Provides marker tracking (Hungarian algorithm),
+    signal filtering, numerical differentiation, resampling,
+    center of mass calculation, gait parameters, clinical statistics (ICC, SEM,
+    MDC, Bland-Altman), movement phase segmentation, dynamic time warping,
+    movement normalization, functional PCA, force-plate kinetics (GRF
+    filtering, COP, loading rate, impulse), planar inverse dynamics (joint
+    moments/power), EMG integration (rectification, RMS envelope, MVC
+    normalization), gait/running/jump task schemas, OpenSim workflow
+    integration, and biomechanics-specific visualization.
+Depends:
+    R (>= 4.2),
+    PhysioCore
+Imports:
+    SummarizedExperiment,
+    S4Vectors,
+    stats,
+    utils,
+    jsonlite,
+    ggplot2,
+    rlang,
+    scales
+Suggests:
+    PhysioIO,
+    PhysioOpenSim,
+    PhysioGaitNorm,
+    signal,
+    uwot,
+    Rtsne,
+    c3dr,
+    clue,
+    rhdf5,
+    httr,
+    withr,
+    quadprog,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.2.0)
+VignetteBuilder:
+    knitr
+License: MIT + file LICENSE
+URL: https://github.com/x-biosignal/PhysioMoCap, https://x-biosignal.r-universe.dev/PhysioMoCap, https://x-biosignal.github.io/PhysioMoCap/
+BugReports: https://github.com/x-biosignal/PhysioMoCap/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Collate:
+    'class-TaskSchema.R'
+    'utils-provenance.R'
+    'schemas-prebuilt.R'
+    'mocap-skeleton.R'
+    'mocap-angles.R'
+    'anatomical-frames.R'
+    'mocap-gaps.R'
+    'mocap-imu.R'
+    'imu-gait.R'
+    'mocap-tracking.R'
+    'io-openpose.R'
+    'io-opensim.R'
+    'pose-fix.R'
+    'io-c3d.R'
+    'io-bvh.R'
+    'io-deeplabcut.R'
+    'io-mediapipe.R'
+    'io-opencap.R'
+    'ops-events.R'
+    'events-zeni.R'
+    'ops-phases.R'
+    'ops-normalize.R'
+    'ops-dtw.R'
+    'ops-dimred.R'
+    'stats-fda.R'
+    'opensim-integration.R'
+    'static-optimization.R'
+    'vis-biomech.R'
+    'vis-movement.R'
+    'vis-skeleton.R'
+    'biomech-com.R'
+    'io-asfamc.R'
+    'io-csv.R'
+    'io-gaitrec.R'
+    'io-venus3d.R'
+    'ops-filter.R'
+    'ops-derivatives.R'
+    'ops-resample.R'
+    'stats-clinical.R'
+    'vis-clinical.R'
+    'stats-gait.R'
+    'kinetics-forceplate.R'
+    'kinetics-inverse-dynamics.R'
+    'kinetics-rne.R'
+    'gait-indices.R'
+    'mocap-emg.R'
+    'dynamometry.R'
+    'user-onboarding.R'
+    'benchmark-validation.R'
+    'quality-smoothness.R'
+    'reaching.R'
+    'stability-nonlinear.R'
+    'gait-pathology.R'
+    'pipelines-population.R'
+    'clinical-mobility-tests.R'
+    'posturography.R'
+    'plantar-pressure.R'
+    'vis-pressure.R'
+    'adl-reach.R'
+    'coordination.R'
+    'stats-reliability.R'
+    'stats-circular.R'
+    'motor-variability-ucm.R'
+    'kinetics-forward-dynamics.R'
+    'motor-primitives.R'
+    'stability-orbital-rqa.R'
+    'imu-fusion.R'
+    'inverse-kinematics.R'
+    'movement-tremor.R'
+    'ataxia.R'
+    'spasticity-tardieu.R'
+    'zzz.R'
+RoxygenNote: 7.3.3

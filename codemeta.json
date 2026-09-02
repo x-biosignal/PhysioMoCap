@@ -1,0 +1,40 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "identifier": "PhysioMoCap",
+  "name": "PhysioMoCap: Motion Capture and Biomechanics Analysis for PhysioExperiment Objects",
+  "version": "0.2.0",
+  "description": "Provides motion capture, pose estimation, and biomechanical simulation analysis for PhysioExperiment objects. Includes I/O for C3D, Venus3D, GaitRec, OpenPose, DeepLabCut, MediaPipe, BVH, ASF/AMC, OpenSim, and generic CSV formats. Provides marker tracking (Hungarian algorithm), signal filtering, numerical differentiation, resampling, center of mass calculation, gait parameters, clinical statistics (ICC, SEM, MDC, Bland-Altman), movement phase segmentation, dynamic time warping, movement normalization, functional PCA, force-plate kinetics (GRF filtering, COP, loading rate, impulse), planar inverse dynamics (joint moments/power), EMG integration (rectification, RMS envelope, MVC normalization), gait/running/jump task schemas, OpenSim workflow integration, and biomechanics-specific visualization.",
+  "license": "https://spdx.org/licenses/MIT",
+  "codeRepository": "https://github.com/x-biosignal/PhysioMoCap",
+  "issueTracker": "https://github.com/x-biosignal/PhysioMoCap/issues",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R"
+  },
+  "runtimePlatform": "R",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Yusuke",
+      "familyName": "Matsui",
+      "email": "mail.to.matsui@gmail.com"
+    }
+  ],
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Yusuke",
+      "familyName": "Matsui",
+      "email": "mail.to.matsui@gmail.com"
+    }
+  ],
+  "developmentStatus": "active",
+  "keywords": [
+    "physiological-signals",
+    "rehabilitation",
+    "biosignal",
+    "biomechanics",
+    "R"
+  ]
+}
