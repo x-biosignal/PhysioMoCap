@@ -737,6 +737,9 @@ Community and policy documents live in the umbrella repository:
   : Compute segment lengths from a PhysioExperiment and skeleton
 - [`goalEquivalentManifold()`](https://x-biosignal.github.io/PhysioMoCap/reference/goalEquivalentManifold.md)
   : Goal-Equivalent Manifold (GEM) decomposition for a scalar goal
+- [`grfLandmarks()`](https://x-biosignal.github.io/PhysioMoCap/reference/grfLandmarks.md)
+  : Extract stance-phase landmarks from a time-normalised vertical GRF
+  curve
 - [`groodSuntayAngles()`](https://x-biosignal.github.io/PhysioMoCap/reference/groodSuntayAngles.md)
   : Signed Grood-Suntay / ISB joint angles from segment frames
 - [`hamstringQuadRatio()`](https://x-biosignal.github.io/PhysioMoCap/reference/hamstringQuadRatio.md)

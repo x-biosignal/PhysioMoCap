@@ -1,5 +1,20 @@
 # Changelog
 
+## PhysioMoCap 0.7.2
+
+New
+[`grfLandmarks()`](https://x-biosignal.github.io/PhysioMoCap/reference/grfLandmarks.md)
+reads the three classic stance-phase landmarks — the loading
+(weight-acceptance) peak, the mid-stance trough and the push-off peak —
+from a vertical GRF curve time-normalised to the stance phase. On a
+body-weight-normalised curve the landmarks are subject-mass independent,
+so the peak-trough-peak pattern can be contrasted across cohorts (the
+reduced weight-acceptance modulation of pathological gait). Complements
+[`filterGRF()`](https://x-biosignal.github.io/PhysioMoCap/reference/filterGRF.md),
+[`computeImpulse()`](https://x-biosignal.github.io/PhysioMoCap/reference/computeImpulse.md)
+and
+[`computeLoadingRate()`](https://x-biosignal.github.io/PhysioMoCap/reference/computeLoadingRate.md).
+
 ## PhysioMoCap 0.7.1
 
 The generic functional-PCA, waveform-reliability and circular-statistics
