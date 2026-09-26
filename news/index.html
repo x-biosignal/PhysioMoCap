@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,6 +66,26 @@
       <small>Source: <a href="https://github.com/x-biosignal/PhysioMoCap/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.7.3" id="physiomocap-073">PhysioMoCap 0.7.3<a class="anchor" aria-label="anchor" href="#physiomocap-073"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-0-7-3">Bug Fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-0-7-3"></a></h3>
+<ul><li>
+<code><a href="../reference/grfLandmarks.html">grfLandmarks()</a></code> <strong>could return landmarks in a physiologically impossible order</strong>. The three search windows overlap by design (loading 5–40 %, mid-stance 30–60 %, push-off 45–80 % of stance) but each extremum was taken independently, with nothing constraining their sequence. On flat pathological curves this returned a mid-stance “trough” located <em>before</em> the “loading peak” — 6 of the 499 GaitRec knee-pathology curves did exactly that — and could place the push-off peak before the trough. The landmarks are now found in temporal order: each search starts strictly after the previous landmark, so <code>peak1 &lt; trough &lt; peak2</code> always holds, and the function errors (rather than inventing an ordering) if a window leaves no admissible sample.</li>
+<li>The default <code>pushoff_window</code> was widened from <code>45:80</code> to <code>45:90</code>. The old bound truncated late propulsion and under-read the push-off peak by up to 2.2 % on gait peaking after ~80 % of stance.</li>
+<li>
+<code><a href="../reference/grfLandmarks.html">grfLandmarks()</a></code> now <strong>warns when a landmark sits on the upper edge of its search window</strong>, which signals that the true extremum may lie outside the range, instead of silently returning the truncated value (it fires on 1.1 % of the 707 tracked GaitRec curves).</li>
+</ul><p>The defect was found by comparing <code>grfLandmarks</code> against an independent, window-free implementation (<code>scipy.signal.find_peaks</code> with prominence-based hump selection) — the first external comparator this operator has had. The group-mean landmarks it feeds are unchanged (bit-identical before and after). Adds ordering, edge-warning and error-path regression tests.</p>
+</div>
+<div class="section level3">
+<h3 id="new-features-0-7-3">New Features<a class="anchor" aria-label="anchor" href="#new-features-0-7-3"></a></h3>
+<ul><li><p><code><a href="../reference/c3dEventTable.html">c3dEventTable()</a></code> converts parameter events using an explicitly declared clock, retains source times and rounding residuals, and rejects missing origins, off-grid snapping and unsupported recording times. Point-grid snapping is opt-in.</p></li>
+<li><p><code><a href="../reference/segmentCohortCycles.html">segmentCohortCycles()</a></code> connects existing PhysioCohort subject/session identities and native MultiRate clocks to keyed cycle features, preserving session and trial IDs separately.</p></li>
+<li><p><code><a href="../reference/segmentMultimodalCycles.html">segmentMultimodalCycles()</a></code> extracts repeated keyed intervals on native modality grids with explicit incompleteness reports. <code><a href="../reference/summarizeCycleFeatures.html">summarizeCycleFeatures()</a></code> carries complete-cycle identifiers into feature blocks and records explicitly requested exclusions.</p></li>
+<li><p>EMG alignment and integration now accept explicit start times (seconds on a shared clock) and an <code>outside</code> policy: legacy endpoint extension, missing values, or rejection of unsupported target times. Invalid time metadata and unrepresentable grids are rejected.</p></li>
+<li><p><code><a href="../reference/integrateEMGMoCap.html">integrateEMGMoCap()</a></code> now extracts EMG envelopes at the native EMG sampling rate before resampling to the motion timeline. The raw <code>emg_aligned</code> field is preserved.</p></li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.7.2" id="physiomocap-072">PhysioMoCap 0.7.2<a class="anchor" aria-label="anchor" href="#physiomocap-072"></a></h2>
 <p>New <code><a href="../reference/grfLandmarks.html">grfLandmarks()</a></code> reads the three classic stance-phase landmarks — the loading (weight-acceptance) peak, the mid-stance trough and the push-off peak — from a vertical GRF curve time-normalised to the stance phase. On a body-weight-normalised curve the landmarks are subject-mass independent, so the peak-trough-peak pattern can be contrasted across cohorts (the reduced weight-acceptance modulation of pathological gait). Complements <code><a href="../reference/filterGRF.html">filterGRF()</a></code>, <code><a href="../reference/computeImpulse.html">computeImpulse()</a></code> and <code><a href="../reference/computeLoadingRate.html">computeLoadingRate()</a></code>.</p>

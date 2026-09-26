@@ -1,7 +1,13 @@
 # Integrate EMG and MoCap signals onto a common timeline
 
-Aligns EMG to MoCap sample times and returns a combined table for
-downstream feature analysis.
+Processes EMG at its native sampling rate, then aligns the resulting
+envelope (or MVC-normalized envelope) to MoCap sample times for feature
+analysis. Start times must be expressed on a shared clock. Alignment
+uses linear interpolation with the selected support policy; it does not
+estimate offsets. With `process = FALSE`, raw samples are interpolated
+without anti-alias filtering. With `outside = "NA"`, combined features
+remain missing outside raw-data support even if processing produces
+finite values beyond that support.
 
 ## Usage
 
@@ -13,7 +19,10 @@ integrateEMGMoCap(
   emg_sampling_rate,
   mocap_assay = NULL,
   process = TRUE,
-  ...
+  ...,
+  emg_start_time = 0,
+  mocap_start_time = 0,
+  outside = c("extend", "NA", "error")
 )
 ```
 
@@ -52,9 +61,29 @@ integrateEMGMoCap(
   Additional arguments passed to
   [`processEMG()`](https://x-biosignal.github.io/PhysioMoCap/reference/processEMG.md).
 
+- emg_start_time, mocap_start_time:
+
+  Finite scalar start times in seconds on the same reference clock.
+  Defaults assume both recordings start at zero. These are known
+  offsets; no synchronization or clock drift is estimated.
+
+- outside:
+
+  Handling of target times outside each channel's finite-data support:
+  `"extend"` repeats endpoints (compatibility default), `"NA"` leaves
+  unavailable times missing, and `"error"` rejects the alignment. Fewer
+  than two finite observations produce missing output, or an error under
+  `"error"`. Internal gaps are still interpolated; this policy checks
+  support boundaries, not internal gap duration. No anti-alias filter is
+  added. Endpoint differences within floating-point roundoff are snapped
+  to the endpoint (tolerance capped at one millionth of the shorter
+  sample interval).
+
 ## Value
 
-A list with `mocap`, `emg_aligned`, and `combined` data.frame.
+A list with `mocap`, `emg_aligned` (aligned raw EMG, retained for
+compatibility), and `combined` data.frame (processed EMG when
+requested).
 
 ## References
 

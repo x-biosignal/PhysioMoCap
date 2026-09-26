@@ -31,6 +31,7 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/benchmarkAgreement.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/benchmarkManifestTemplate.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/butterworthFilter.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/c3dEventTable.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/calculateCOM.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/calculateCOP.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/calculateGaitParameters.html</loc></url>
@@ -307,6 +308,8 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/schema_jump.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/schema_running.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/schema_throw.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/segmentCohortCycles.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/segmentMultimodalCycles.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/segmentParameters.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/segmentPhases.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/sensoryOrganizationTest.html</loc></url>
@@ -314,6 +317,7 @@
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/stabilogramDiffusion.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/staticOptimizationR.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/strapdownIntegrate.html</loc></url>
+<url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/summarizeCycleFeatures.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/summarizeGaitParameters.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/swayMetrics.html</loc></url>
 <url><loc>https://x-biosignal.github.io/PhysioMoCap/reference/symmetryIndex.html</loc></url>

@@ -1,5 +1,67 @@
 # Changelog
 
+## PhysioMoCap 0.7.3
+
+### Bug Fixes
+
+- [`grfLandmarks()`](https://x-biosignal.github.io/PhysioMoCap/reference/grfLandmarks.md)
+  **could return landmarks in a physiologically impossible order**. The
+  three search windows overlap by design (loading 5–40 %, mid-stance
+  30–60 %, push-off 45–80 % of stance) but each extremum was taken
+  independently, with nothing constraining their sequence. On flat
+  pathological curves this returned a mid-stance “trough” located
+  *before* the “loading peak” — 6 of the 499 GaitRec knee-pathology
+  curves did exactly that — and could place the push-off peak before the
+  trough. The landmarks are now found in temporal order: each search
+  starts strictly after the previous landmark, so
+  `peak1 < trough < peak2` always holds, and the function errors (rather
+  than inventing an ordering) if a window leaves no admissible sample.
+- The default `pushoff_window` was widened from `45:80` to `45:90`. The
+  old bound truncated late propulsion and under-read the push-off peak
+  by up to 2.2 % on gait peaking after ~80 % of stance.
+- [`grfLandmarks()`](https://x-biosignal.github.io/PhysioMoCap/reference/grfLandmarks.md)
+  now **warns when a landmark sits on the upper edge of its search
+  window**, which signals that the true extremum may lie outside the
+  range, instead of silently returning the truncated value (it fires on
+  1.1 % of the 707 tracked GaitRec curves).
+
+The defect was found by comparing `grfLandmarks` against an independent,
+window-free implementation (`scipy.signal.find_peaks` with
+prominence-based hump selection) — the first external comparator this
+operator has had. The group-mean landmarks it feeds are unchanged
+(bit-identical before and after). Adds ordering, edge-warning and
+error-path regression tests.
+
+### New Features
+
+- [`c3dEventTable()`](https://x-biosignal.github.io/PhysioMoCap/reference/c3dEventTable.md)
+  converts parameter events using an explicitly declared clock, retains
+  source times and rounding residuals, and rejects missing origins,
+  off-grid snapping and unsupported recording times. Point-grid snapping
+  is opt-in.
+
+- [`segmentCohortCycles()`](https://x-biosignal.github.io/PhysioMoCap/reference/segmentCohortCycles.md)
+  connects existing PhysioCohort subject/session identities and native
+  MultiRate clocks to keyed cycle features, preserving session and trial
+  IDs separately.
+
+- [`segmentMultimodalCycles()`](https://x-biosignal.github.io/PhysioMoCap/reference/segmentMultimodalCycles.md)
+  extracts repeated keyed intervals on native modality grids with
+  explicit incompleteness reports.
+  [`summarizeCycleFeatures()`](https://x-biosignal.github.io/PhysioMoCap/reference/summarizeCycleFeatures.md)
+  carries complete-cycle identifiers into feature blocks and records
+  explicitly requested exclusions.
+
+- EMG alignment and integration now accept explicit start times (seconds
+  on a shared clock) and an `outside` policy: legacy endpoint extension,
+  missing values, or rejection of unsupported target times. Invalid time
+  metadata and unrepresentable grids are rejected.
+
+- [`integrateEMGMoCap()`](https://x-biosignal.github.io/PhysioMoCap/reference/integrateEMGMoCap.md)
+  now extracts EMG envelopes at the native EMG sampling rate before
+  resampling to the motion timeline. The raw `emg_aligned` field is
+  preserved.
+
 ## PhysioMoCap 0.7.2
 
 New

@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,7 +78,10 @@
 <span>  <span class="va">emg_sampling_rate</span>,</span>
 <span>  <span class="va">mocap_length</span>,</span>
 <span>  <span class="va">mocap_sampling_rate</span>,</span>
-<span>  method <span class="op">=</span> <span class="st">"linear"</span></span>
+<span>  method <span class="op">=</span> <span class="st">"linear"</span>,</span>
+<span>  emg_start_time <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  mocap_start_time <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  outside <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"extend"</span>, <span class="st">"NA"</span>, <span class="st">"error"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -104,6 +107,23 @@
 
 <dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
 <dd><p>Interpolation method passed to <code><a href="https://rdrr.io/r/stats/approxfun.html" class="external-link">stats::approx()</a></code>.</p></dd>
+
+
+<dt id="arg-emg-start-time-mocap-start-time">emg_start_time, mocap_start_time<a class="anchor" aria-label="anchor" href="#arg-emg-start-time-mocap-start-time"></a></dt>
+<dd><p>Finite scalar start times in seconds
+on the same reference clock. Defaults assume both recordings start at zero.
+These are known offsets; no synchronization or clock drift is estimated.</p></dd>
+
+
+<dt id="arg-outside">outside<a class="anchor" aria-label="anchor" href="#arg-outside"></a></dt>
+<dd><p>Handling of target times outside each channel's finite-data
+support: <code>"extend"</code> repeats endpoints (compatibility default), <code>"NA"</code>
+leaves unavailable times missing, and <code>"error"</code> rejects the alignment.
+Fewer than two finite observations produce missing output, or an error
+under <code>"error"</code>. Internal gaps are still interpolated; this policy checks
+support boundaries, not internal gap duration. No anti-alias filter is added.
+Endpoint differences within floating-point roundoff are snapped to the
+endpoint (tolerance capped at one millionth of the shorter sample interval).</p></dd>
 
 </dl></div>
     <div class="section level2">

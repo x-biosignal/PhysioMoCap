@@ -10,7 +10,10 @@ alignEMGtoMoCap(
   emg_sampling_rate,
   mocap_length,
   mocap_sampling_rate,
-  method = "linear"
+  method = "linear",
+  emg_start_time = 0,
+  mocap_start_time = 0,
+  outside = c("extend", "NA", "error")
 )
 ```
 
@@ -36,6 +39,24 @@ alignEMGtoMoCap(
 
   Interpolation method passed to
   [`stats::approx()`](https://rdrr.io/r/stats/approxfun.html).
+
+- emg_start_time, mocap_start_time:
+
+  Finite scalar start times in seconds on the same reference clock.
+  Defaults assume both recordings start at zero. These are known
+  offsets; no synchronization or clock drift is estimated.
+
+- outside:
+
+  Handling of target times outside each channel's finite-data support:
+  `"extend"` repeats endpoints (compatibility default), `"NA"` leaves
+  unavailable times missing, and `"error"` rejects the alignment. Fewer
+  than two finite observations produce missing output, or an error under
+  `"error"`. Internal gaps are still interpolated; this policy checks
+  support boundaries, not internal gap duration. No anti-alias filter is
+  added. Endpoint differences within floating-point roundoff are snapped
+  to the endpoint (tolerance capped at one millionth of the shorter
+  sample interval).
 
 ## Value
 

@@ -13,7 +13,7 @@ analog channel data (e.g., force plate signals)."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,8 +103,8 @@ data frame. Default is <code>FALSE</code>.</p></dd>
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>PhysioExperiment</code> object with three assays: <code>"position_x"</code>,
 <code>"position_y"</code>, and <code>"position_z"</code>, each a matrix with rows as time
-frames and columns as markers. If the C3D file contains residual data,
-a <code>"quality"</code> assay is also included. Column metadata (<code>colData</code>)
+frames and columns as markers. Residual quality data are not exposed by
+this reader. Column metadata (<code>colData</code>)
 contains <code>label</code> (marker names from POINT:LABELS), <code>type</code> (<code>"marker"</code>),
 and <code>body_segment</code> (<code>NA</code>). Metadata includes <code>c3d_parameters</code>,
 <code>source_file</code>, and a <code>time</code> vector computed from frame rate.</p>
@@ -115,7 +115,7 @@ and <code>body_segment</code> (<code>NA</code>). Metadata includes <code>c3d_par
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p><code><a href="readTRC.html">readTRC()</a></code>, <code><a href="readBVH.html">readBVH()</a></code>, <code><a href="readOpenPose.html">readOpenPose()</a></code></p></div>
+    <div class="dont-index"><p><code><a href="c3dEventTable.html">c3dEventTable()</a></code>, <code><a href="readTRC.html">readTRC()</a></code>, <code><a href="readBVH.html">readBVH()</a></code>, <code><a href="readOpenPose.html">readOpenPose()</a></code></p></div>
     </div>
 
     <div class="section level2">

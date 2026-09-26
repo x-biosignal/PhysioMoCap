@@ -17,7 +17,7 @@ grfLandmarks(
   grf,
   loading_window = 5:40,
   midstance_window = 30:60,
-  pushoff_window = 45:80
+  pushoff_window = 45:90
 )
 ```
 
@@ -37,7 +37,12 @@ grfLandmarks(
   Integer index ranges (into `grf`) in which to read the loading peak (a
   maximum), the mid-stance trough (a minimum) and the push-off peak (a
   maximum). Defaults target a 101-point stance curve; widen them for
-  populations with atypical timing.
+  populations with atypical timing. The windows deliberately overlap, so
+  the landmarks are found in temporal order: the trough is sought
+  strictly after the loading peak and the push-off peak strictly after
+  the trough, guaranteeing `peak1 < trough < peak2`. A landmark that
+  lands on the upper edge of its window raises a warning, since the true
+  extremum may lie beyond it.
 
 ## Value
 

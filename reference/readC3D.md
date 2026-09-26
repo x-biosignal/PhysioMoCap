@@ -27,11 +27,11 @@ readC3D(path, include_analog = FALSE)
 
 A `PhysioExperiment` object with three assays: `"position_x"`,
 `"position_y"`, and `"position_z"`, each a matrix with rows as time
-frames and columns as markers. If the C3D file contains residual data, a
-`"quality"` assay is also included. Column metadata (`colData`) contains
-`label` (marker names from POINT:LABELS), `type` (`"marker"`), and
-`body_segment` (`NA`). Metadata includes `c3d_parameters`,
-`source_file`, and a `time` vector computed from frame rate.
+frames and columns as markers. Residual quality data are not exposed by
+this reader. Column metadata (`colData`) contains `label` (marker names
+from POINT:LABELS), `type` (`"marker"`), and `body_segment` (`NA`).
+Metadata includes `c3d_parameters`, `source_file`, and a `time` vector
+computed from frame rate.
 
 ## References
 
@@ -39,6 +39,7 @@ C3D.org. "The C3D File Format." <https://www.c3d.org/>.
 
 ## See also
 
+[`c3dEventTable()`](https://x-biosignal.github.io/PhysioMoCap/reference/c3dEventTable.md),
 [`readTRC()`](https://x-biosignal.github.io/PhysioMoCap/reference/readTRC.md),
 [`readBVH()`](https://x-biosignal.github.io/PhysioMoCap/reference/readBVH.md),
 [`readOpenPose()`](https://x-biosignal.github.io/PhysioMoCap/reference/readOpenPose.md)

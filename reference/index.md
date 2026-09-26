@@ -32,6 +32,8 @@
   : Create a benchmark manifest template
 - [`butterworthFilter()`](https://x-biosignal.github.io/PhysioMoCap/reference/butterworthFilter.md)
   : Apply a Butterworth filter to numeric data
+- [`c3dEventTable()`](https://x-biosignal.github.io/PhysioMoCap/reference/c3dEventTable.md)
+  : Extract C3D Parameter Events on the Recording Clock
 - [`calculateCOM()`](https://x-biosignal.github.io/PhysioMoCap/reference/calculateCOM.md)
   : Calculate whole-body center of mass from marker positions
 - [`calculateCOP()`](https://x-biosignal.github.io/PhysioMoCap/reference/calculateCOP.md)
@@ -489,6 +491,11 @@
   : Pre-built Running Schema
 - [`schema_throw`](https://x-biosignal.github.io/PhysioMoCap/reference/schema_throw.md)
   : Pre-built Throwing Schema
+- [`segmentCohortCycles()`](https://x-biosignal.github.io/PhysioMoCap/reference/segmentCohortCycles.md)
+  : Segment cohort recordings while preserving subject and session
+  identity
+- [`segmentMultimodalCycles()`](https://x-biosignal.github.io/PhysioMoCap/reference/segmentMultimodalCycles.md)
+  : Segment matched cycles on native modality sampling grids
 - [`segmentParameters()`](https://x-biosignal.github.io/PhysioMoCap/reference/segmentParameters.md)
   : Get body segment inertial parameters (BSIP)
 - [`segmentPhases()`](https://x-biosignal.github.io/PhysioMoCap/reference/segmentPhases.md)
@@ -504,6 +511,8 @@
   : Pure-R static optimization of muscle activations
 - [`strapdownIntegrate()`](https://x-biosignal.github.io/PhysioMoCap/reference/strapdownIntegrate.md)
   : ZUPT-aided strapdown integration of world-frame acceleration
+- [`summarizeCycleFeatures()`](https://x-biosignal.github.io/PhysioMoCap/reference/summarizeCycleFeatures.md)
+  : Summarize matched cycles into keyed feature blocks
 - [`summarizeGaitParameters()`](https://x-biosignal.github.io/PhysioMoCap/reference/summarizeGaitParameters.md)
   : Summarise gait parameters
 - [`swayMetrics()`](https://x-biosignal.github.io/PhysioMoCap/reference/swayMetrics.md)

@@ -21,7 +21,7 @@ pathological gait: lower peaks, a raised trough)."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,7 +98,7 @@ pathological gait: lower peaks, a raised trough).</p>
 <span>  <span class="va">grf</span>,</span>
 <span>  loading_window <span class="op">=</span> <span class="fl">5</span><span class="op">:</span><span class="fl">40</span>,</span>
 <span>  midstance_window <span class="op">=</span> <span class="fl">30</span><span class="op">:</span><span class="fl">60</span>,</span>
-<span>  pushoff_window <span class="op">=</span> <span class="fl">45</span><span class="op">:</span><span class="fl">80</span></span>
+<span>  pushoff_window <span class="op">=</span> <span class="fl">45</span><span class="op">:</span><span class="fl">90</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -118,7 +118,12 @@ accepted, in which case the landmarks are read from the ensemble-mean curve
 <dd><p>Integer index ranges
 (into <code>grf</code>) in which to read the loading peak (a maximum), the mid-stance
 trough (a minimum) and the push-off peak (a maximum). Defaults target a
-101-point stance curve; widen them for populations with atypical timing.</p></dd>
+101-point stance curve; widen them for populations with atypical timing.
+The windows deliberately overlap, so the landmarks are found in temporal
+order: the trough is sought strictly after the loading peak and the
+push-off peak strictly after the trough, guaranteeing
+<code>peak1 &lt; trough &lt; peak2</code>. A landmark that lands on the upper edge of its
+window raises a warning, since the true extremum may lie beyond it.</p></dd>
 
 </dl></div>
     <div class="section level2">
