@@ -8,7 +8,9 @@ data.
 ``` r
 
 library(PhysioMoCap)
-#> Loading required package: PhysioCore
+#> Loading required package: PhysioExperiment
+#> Warning: replacing previous import 'S4Arrays::makeNindexFromArrayViewport' by
+#> 'DelayedArray::makeNindexFromArrayViewport' when loading 'SummarizedExperiment'
 
 set.seed(42)
 

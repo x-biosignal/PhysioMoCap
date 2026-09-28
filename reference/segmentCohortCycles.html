@@ -11,7 +11,7 @@ consistently named streams. No resampling or synchronization is performed."></he
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,7 +99,7 @@ consistently named streams. No resampling or synchronization is performed.</p>
 <dd><p>Nonempty data frame with character <code>subject_id</code>, <code>session_id</code>,
 <code>trial_id</code>, <code>side</code>, <code>cycle_id</code>, and numeric <code>start_time</code>, <code>end_time</code>.
 Times are seconds relative to each session's master-clock <code>t0</code>, as in
-<code><a href="https://x-biosignal.github.io/PhysioCore//reference/streamTimeIndex.html" class="external-link">PhysioCore::streamTimeIndex()</a></code>. Trial IDs describe intervals within a
+<code><a href="https://x-biosignal.r-universe.dev/PhysioExperiment/reference/streamTimeIndex.html" class="external-link">PhysioExperiment::streamTimeIndex()</a></code>. Trial IDs describe intervals within a
 session; they are never inferred from session IDs. Additional columns are
 retained. An optional <code>participant_id</code> must equal <code>subject_id</code>.</p></dd>
 

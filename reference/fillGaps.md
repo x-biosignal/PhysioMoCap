@@ -53,7 +53,7 @@ Biomechanics, 46(13), 2173-2178.
 ## Examples
 
 ``` r
-pe <- PhysioCore::PhysioExperiment(
+pe <- PhysioExperiment::PhysioExperiment(
   assays = S4Vectors::SimpleList(
     position_x = matrix(c(1, NA, NA, 4, 5), ncol = 1),
     position_y = matrix(c(10, NA, NA, 40, 50), ncol = 1)

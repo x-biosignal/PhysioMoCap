@@ -28,7 +28,7 @@ segmentCohortCycles(
   Nonempty data frame with character `subject_id`, `session_id`,
   `trial_id`, `side`, `cycle_id`, and numeric `start_time`, `end_time`.
   Times are seconds relative to each session's master-clock `t0`, as in
-  [`PhysioCore::streamTimeIndex()`](https://x-biosignal.github.io/PhysioCore//reference/streamTimeIndex.html).
+  [`PhysioExperiment::streamTimeIndex()`](https://x-biosignal.r-universe.dev/PhysioExperiment/reference/streamTimeIndex.html).
   Trial IDs describe intervals within a session; they are never inferred
   from session IDs. Additional columns are retained. An optional
   `participant_id` must equal `subject_id`.

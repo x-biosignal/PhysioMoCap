@@ -8,7 +8,9 @@ even before external gold-standard datasets are attached.
 ``` r
 
 library(PhysioMoCap)
-#> Loading required package: PhysioCore
+#> Loading required package: PhysioExperiment
+#> Warning: replacing previous import 'S4Arrays::makeNindexFromArrayViewport' by
+#> 'DelayedArray::makeNindexFromArrayViewport' when loading 'SummarizedExperiment'
 
 ex <- createBenchmarkExample(
   n_trials = 3,

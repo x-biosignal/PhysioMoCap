@@ -59,9 +59,9 @@ Springer.
 
 ## See also
 
-[`cohensD()`](https://x-biosignal.github.io/PhysioCore//reference/cohensD.html)
+[`cohensD()`](https://x-biosignal.r-universe.dev/PhysioExperiment/reference/cohensD.html)
 for computing Cohen's d effect sizes,
-[`etaSquared()`](https://x-biosignal.github.io/PhysioCore//reference/etaSquared.html)
+[`etaSquared()`](https://x-biosignal.r-universe.dev/PhysioExperiment/reference/etaSquared.html)
 for computing eta-squared effect sizes,
 [`plotCorrelationMatrix()`](https://x-biosignal.github.io/PhysioMoCap/reference/plotCorrelationMatrix.md)
 for correlation heatmaps.

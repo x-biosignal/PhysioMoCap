@@ -7,13 +7,15 @@ This guide is designed for first-time users.
 ``` r
 
 library(PhysioMoCap)
-#> Loading required package: PhysioCore
+#> Loading required package: PhysioExperiment
+#> Warning: replacing previous import 'S4Arrays::makeNindexFromArrayViewport' by
+#> 'DelayedArray::makeNindexFromArrayViewport' when loading 'SummarizedExperiment'
 
 demo <- demoMoCapData(seed = 1)
 class(demo$mocap)
 #> [1] "PhysioExperiment"
 #> attr(,"package")
-#> [1] "PhysioCore"
+#> [1] "PhysioExperiment"
 head(demo$joints)
 #>       ankle_x    ankle_y      knee_x    knee_y       hip_x     hip_y     toe_x
 #> 1 0.000000000 0.06000000 0.001986693 0.4696013 0.001947092 0.8592106 0.1500000

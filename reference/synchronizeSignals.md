@@ -44,14 +44,14 @@ for resampling raw numeric vectors.
 ## Examples
 
 ``` r
-pe1 <- PhysioCore::PhysioExperiment(
+pe1 <- PhysioExperiment::PhysioExperiment(
   assays = S4Vectors::SimpleList(
     raw = matrix(rnorm(100), ncol = 1)
   ),
   colData = S4Vectors::DataFrame(label = "ch1", type = "marker"),
   samplingRate = 100
 )
-pe2 <- PhysioCore::PhysioExperiment(
+pe2 <- PhysioExperiment::PhysioExperiment(
   assays = S4Vectors::SimpleList(
     raw = matrix(rnorm(200), ncol = 1)
   ),

@@ -54,7 +54,7 @@ for synchronizing multiple experiments.
 ## Examples
 
 ``` r
-pe <- PhysioCore::PhysioExperiment(
+pe <- PhysioExperiment::PhysioExperiment(
   assays = S4Vectors::SimpleList(
     position_x = matrix(sin(seq(0, 2 * pi, length.out = 100)), ncol = 1)
   ),
@@ -62,6 +62,6 @@ pe <- PhysioCore::PhysioExperiment(
   samplingRate = 100
 )
 pe2 <- resampleSignal(pe, target_rate = 200)
-PhysioCore::samplingRate(pe2)  # 200
+PhysioExperiment::samplingRate(pe2)  # 200
 #> [1] 200
 ```

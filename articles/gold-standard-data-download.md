@@ -27,7 +27,9 @@ prediction/reference pairs (`.csv`, `.mot`, `.sto`, `.trc`).
 ``` r
 
 library(PhysioMoCap)
-#> Loading required package: PhysioCore
+#> Loading required package: PhysioExperiment
+#> Warning: replacing previous import 'S4Arrays::makeNindexFromArrayViewport' by
+#> 'DelayedArray::makeNindexFromArrayViewport' when loading 'SummarizedExperiment'
 
 manifest <- benchmarkManifestTemplate(n = 2)
 manifest
@@ -46,7 +48,7 @@ Write the template to CSV if needed:
 tmp_manifest <- tempfile("benchmark_manifest_", fileext = ".csv")
 writeBenchmarkManifest(tmp_manifest, n = 2, overwrite = TRUE)
 tmp_manifest
-#> [1] "/tmp/Rtmpfc6JdG/benchmark_manifest_4fe170776f92.csv"
+#> [1] "/tmp/RtmppOUMvU/benchmark_manifest_2cb4504cc22b.csv"
 ```
 
 ## 3. Point manifest rows to your downloaded files

@@ -47,7 +47,7 @@ Biomechanics, 46(13), 2173-2178.
 ## Examples
 
 ``` r
-pe <- PhysioCore::PhysioExperiment(
+pe <- PhysioExperiment::PhysioExperiment(
   assays = S4Vectors::SimpleList(position_x = matrix(c(1, NA, NA, 4), ncol = 1)),
   colData = S4Vectors::DataFrame(label = "M1", type = "marker"),
   samplingRate = 120
