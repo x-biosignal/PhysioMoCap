@@ -1,0 +1,69 @@
+---
+title: "Getting Started with PhysioMoCap"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with PhysioMoCap}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+This guide is designed for first-time users.
+
+## 1. Create demo data
+
+```{r}
+library(PhysioMoCap)
+
+demo <- demoMoCapData(seed = 1)
+class(demo$mocap)
+head(demo$joints)
+```
+
+## 2. Run one-command quick start
+
+```{r}
+qs <- quickStartMoCap(seed = 1)
+qs
+```
+
+## 3. Check data readiness
+
+```{r}
+qs$readiness
+head(qs$readiness$checks)
+```
+
+## 4. Inspect key outputs
+
+```{r}
+qs$forceplate$summary
+head(qs$inverse_dynamics)
+```
+
+## 5. Start from your own file
+
+```{r}
+trc_file <- system.file("testdata", "sample.trc", package = "PhysioMoCap")
+if (nzchar(trc_file)) {
+  pe <- readMoCapAuto(trc_file)
+  assessMoCapReadiness(pe)
+}
+```
+
+You can also run `quickStartMoCap(path = "trial.c3d")` directly.
+
+## 6. Common input entry points
+
+- Marker trajectories: `readMoCapAuto()`, `readC3D()`, `readMoCapCSV()`, `readTRC()`
+- OpenSim kinematics/forces: `readMOT()`, `readSTO()`
+- OpenCap cloud data: `readOpenCap()`
+
+## 7. Common troubleshooting
+
+- If `sampling_rate` is missing, set it explicitly.
+- If `detectEvents()` cannot find signals from a matrix, pass a named `signals` list.
+- If optional dependency packages are missing (e.g., `c3dr`, `signal`), install them from CRAN.

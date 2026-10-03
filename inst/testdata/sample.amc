@@ -1,0 +1,15 @@
+#!OML:ASF sample.asf
+:FULLY-SPECIFIED
+:DEGREES
+1
+root 0.1 35.0 0.0 1.0 0.5 0.3
+lfemur 5.0 0.0 2.0
+ltibia 10.0
+2
+root 0.2 35.1 0.1 2.0 1.0 0.6
+lfemur 10.0 1.0 3.0
+ltibia 15.0
+3
+root 0.3 35.2 0.2 3.0 1.5 0.9
+lfemur 15.0 2.0 4.0
+ltibia 20.0

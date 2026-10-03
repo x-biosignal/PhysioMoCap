@@ -1,0 +1,91 @@
+---
+title: "EMG and MoCap Integration Workflow"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{EMG and MoCap Integration Workflow}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+This vignette shows how to process EMG and align it with motion-capture data.
+
+## 1. Simulate MoCap and EMG data
+
+```{r}
+library(PhysioMoCap)
+
+set.seed(42)
+
+mocap_sr <- 120
+emg_sr <- 1000
+
+n_mocap <- 600
+n_emg <- 5000
+
+mocap <- cbind(
+  knee_angle = sin(seq(0, 8 * pi, length.out = n_mocap)) * 40,
+  hip_angle = sin(seq(0, 8 * pi, length.out = n_mocap) + 0.5) * 30
+)
+
+emg <- cbind(
+  tibialis_anterior = rnorm(n_emg, 0, 0.2),
+  gastrocnemius = rnorm(n_emg, 0, 0.2),
+  rectus_femoris = rnorm(n_emg, 0, 0.2)
+)
+```
+
+## 2. Process EMG (rectify + RMS envelope + smoothing)
+
+```{r}
+emg_proc <- processEMG(
+  x = emg,
+  sampling_rate = emg_sr,
+  bandpass = c(20, 450),
+  envelope_cutoff = 6,
+  rms_window_ms = 50,
+  filter_method = "moving_average"
+)
+
+str(emg_proc, max.level = 1)
+```
+
+## 3. Align EMG to MoCap timeline
+
+```{r}
+emg_aligned <- alignEMGtoMoCap(
+  emg = emg_proc$envelope,
+  emg_sampling_rate = emg_sr,
+  mocap_length = n_mocap,
+  mocap_sampling_rate = mocap_sr
+)
+
+dim(emg_aligned)
+```
+
+## 4. Build an integrated analysis table
+
+```{r}
+integrated <- integrateEMGMoCap(
+  mocap = mocap,
+  emg = emg,
+  mocap_sampling_rate = mocap_sr,
+  emg_sampling_rate = emg_sr,
+  process = TRUE,
+  rms_window_ms = 50,
+  envelope_cutoff = 6,
+  filter_method = "moving_average"
+)
+
+head(integrated$combined)
+```
+
+## Notes
+
+- If MVC trials are available, pass `mvc = ...` to `processEMG()` for `%MVC`
+  scaling.
+- For event-locked studies, align on synchronization pulses or known trigger
+  markers before integrating.

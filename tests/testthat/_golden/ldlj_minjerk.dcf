@@ -1,0 +1,10 @@
+Key: ldlj_minjerk
+Source: Analytic continuous LDLJ for the minimum-jerk speed profile 30
+        tau^2 - 60 tau^3 + 30 tau^4: DLJ = INT_0^1 (60-360u+360u^2)^2
+        du / v_peak^2 = 720/1.875^2 = 204.8 exactly; LDLJ =
+        -log(204.8). Package uses forward-difference jerk + rectangle
+        integral; tol=1e-3 covers the O(1/n) convergence (n=20001, err
+        2.5e-4).
+Tolerance: 0.001
+Captured: 2026-07-10 23:55:07 UTC
+R: 4.5.2

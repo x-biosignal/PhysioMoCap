@@ -1,0 +1,112 @@
+---
+title: "Gold-Standard Data Download and Benchmark Setup"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Gold-Standard Data Download and Benchmark Setup}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+This vignette shows how to move from dataset discovery to a runnable benchmark
+manifest for external gold-standard validation.
+
+## 1. Preconditions
+
+To download open datasets, you need:
+
+1. `bash` and `wget`
+2. DNS/HTTPS access to external hosts (for example, `physionet.org`,
+   `ncbi.nlm.nih.gov`, `ftp.ncbi.nlm.nih.gov`)
+
+Download each open dataset from its public host (for example from
+`physionet.org`) into a local directory such as `data/external/`. Each
+dataset's own page documents its exact download procedure.
+
+Controlled datasets (for example, MIMIC-IV full, eICU, MOST, OAI controlled
+resources) require account approval and DUA steps before download.
+
+## 2. Create a benchmark manifest
+
+Use a template and then replace file paths with your real prediction/reference
+pairs (`.csv`, `.mot`, `.sto`, `.trc`).
+
+```{r}
+library(PhysioMoCap)
+
+manifest <- benchmarkManifestTemplate(n = 2)
+manifest
+```
+
+Write the template to CSV if needed:
+
+```{r}
+tmp_manifest <- tempfile("benchmark_manifest_", fileext = ".csv")
+writeBenchmarkManifest(tmp_manifest, n = 2, overwrite = TRUE)
+tmp_manifest
+```
+
+## 3. Point manifest rows to your downloaded files
+
+Below is a minimal pattern. File names are examples; replace them with paths
+that exist in your local `data_dir`.
+
+```{r}
+data_dir <- tempfile("gold_data_")
+dir.create(data_dir, recursive = TRUE, showWarnings = FALSE)
+
+# Demo-only placeholder files so the validation example can run end-to-end.
+pred <- data.frame(knee_angle = rnorm(200, sd = 0.02),
+                   hip_angle = rnorm(200, sd = 0.02))
+ref  <- data.frame(knee_angle = pred$knee_angle + rnorm(200, sd = 0.01),
+                   hip_angle = pred$hip_angle + rnorm(200, sd = 0.01))
+
+utils::write.csv(pred, file.path(data_dir, "prediction_trial1.csv"), row.names = FALSE)
+utils::write.csv(ref,  file.path(data_dir, "reference_trial1.csv"), row.names = FALSE)
+
+manifest <- benchmarkManifestTemplate(n = 1)
+manifest$benchmark_id[1] <- "trial1_external"
+manifest$prediction_file[1] <- "prediction_trial1.csv"
+manifest$reference_file[1] <- "reference_trial1.csv"
+manifest$modality[1] <- "mocap"
+manifest$units[1] <- "SI"
+manifest$sampling_rate[1] <- 100
+manifest
+```
+
+## 4. Validate manifest integrity
+
+```{r}
+v <- validateBenchmarkManifest(manifest, data_dir = data_dir)
+v
+```
+
+If `v$valid` is `FALSE`, inspect `v$issues` and fix file paths or required
+columns (`benchmark_id`, `prediction_file`, `reference_file`).
+
+## 5. Run benchmark suite
+
+```{r}
+suite <- runBenchmarkSuite(
+  manifest = manifest,
+  data_dir = data_dir,
+  thresholds = defaultBenchmarkThresholds("balanced"),
+  alignment = "truncate"
+)
+
+suite$suite_summary
+head(suite$metrics)
+```
+
+## 6. Replace placeholders with real external data
+
+1. Keep the same manifest contract.
+2. Replace the placeholder paths with real downloaded files (`.csv`, `.mot`, `.sto`, `.trc`).
+3. Re-run `validateBenchmarkManifest()` and `runBenchmarkSuite()`.
+4. Optionally set `report_dir` in `runBenchmarkSuite()` to export reports.
+
+For data availability, licensing, and source links, consult each dataset's
+own documentation and data-use agreement.

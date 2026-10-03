@@ -1,0 +1,10 @@
+PathFileType	4	(X/Y/Z)	sample.trc
+DataRate	CameraRate	NumFrames	NumMarkers	Units	OrigDataRate	OrigDataStartFrame	OrigNumFrames
+120.0	120.0	5	2	mm	120.0	1	5
+Frame#	Time	RASI			LASI
+		X1	Y1	Z1	X2	Y2	Z2
+1	0.00000	100.5	200.3	300.1	110.2	210.4	310.6
+2	0.00833	101.0	200.5	300.3	110.5	210.6	310.8
+3	0.01667	101.5	200.7	300.5	110.8	210.8	311.0
+4	0.02500	102.0	200.9	300.7	111.1	211.0	311.2
+5	0.03333	102.5	201.1	300.9	111.4	211.2	311.4
