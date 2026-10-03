@@ -78,9 +78,20 @@ for bilateral symmetry assessment.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-pe <- readTRC("markers.trc")
-result <- calculateCOM(pe, body_mass = 75)
-com_x <- SummarizedExperiment::assay(result, "com_x")
-} # }
+n <- 50
+mk <- function(v) { m <- matrix(v, n, 3); colnames(m) <- c("A", "B", "C"); m }
+pe <- PhysioExperiment(
+  assays = S4Vectors::SimpleList(position_x = mk(1), position_y = mk(2),
+                                 position_z = mk(0)),
+  colData = S4Vectors::DataFrame(label = c("A", "B", "C"),
+                                 type = rep("marker", 3)),
+  samplingRate = 100)
+bsip <- data.frame(segment = c("s1", "s2"), mass_fraction = c(50, 50),
+  com_proximal_fraction = c(0.5, 0.5),
+  proximal_marker = c("A", "B"), distal_marker = c("B", "C"),
+  stringsAsFactors = FALSE)
+pe_com <- calculateCOM(pe, body_mass = 70, bsip = bsip,
+  marker_map = list(s1 = c("A", "B"), s2 = c("B", "C")))
+SummarizedExperiment::assayNames(pe_com)
+#> [1] "com_x" "com_y" "com_z"
 ```

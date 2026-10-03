@@ -79,11 +79,15 @@ parts with deep learning." Nature Neuroscience, 21(9), 1281-1289.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-# Read DeepLabCut CSV output
-pe <- readDeepLabCut("path/to/DLC_output.csv", fps = 30)
-
-# Read HDF5 format
-pe <- readDeepLabCut("path/to/DLC_output.h5", fps = 25, format = "h5")
-} # }
+f <- system.file("testdata", "sample_dlc.csv", package = "PhysioMoCap")
+if (nzchar(f)) {
+  pe <- readDeepLabCut(f, format = "csv")
+  pe
+}
+#> class: PhysioExperiment
+#> dim: 3 x 2 
+#> assays(3): keypoint_x, keypoint_y, confidence
+#> samplingRate: 30 Hz
+#> channels(2): nose, left_ear
+#> colData names(3): label, type, scorer
 ```

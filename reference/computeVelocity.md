@@ -57,9 +57,9 @@ for general-purpose numerical differentiation.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-pe <- make_mocap_markers(n_time = 100, n_markers = 4, sr = 120)
-pe <- computeVelocity(pe)
-# velocity_x, velocity_y, velocity_z assays are now present
-} # }
+demo <- demoMoCapData(seed = 1)
+pe_vel <- computeVelocity(demo$mocap)
+SummarizedExperiment::assayNames(pe_vel)
+#> [1] "position_x" "position_y" "position_z" "velocity_x" "velocity_y"
+#> [6] "velocity_z"
 ```

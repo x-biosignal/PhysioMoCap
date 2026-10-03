@@ -101,14 +101,20 @@ for force plate analysis.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-# Read a single GRF file
-pe <- readGaitRec("path/to/gaitrec_grf.csv")
-
-# Read spatiotemporal parameters
-params <- readGaitRec("path/to/gaitrec_params.csv", type = "parameters")
-
-# Read with tab separator
-pe <- readGaitRec("path/to/gaitrec.tsv", sep = "\t")
-} # }
+# Write a small GaitRec-style GRF file, then read it back
+tmp <- tempfile(fileext = ".csv")
+header <- "time,GRF_X_1,GRF_Y_1,GRF_Z_1"
+rows <- vapply(1:50, function(i) {
+  paste(c(sprintf("%.3f", (i - 1) / 1000),
+          sprintf("%.1f", c(10 + i, 500 + i * 2, 50 + i))), collapse = ",")
+}, character(1))
+writeLines(c(header, rows), tmp)
+pe <- readGaitRec(tmp)
+pe
+#> class: PhysioExperiment
+#> dim: 50 x 3 
+#> assays(1): raw
+#> samplingRate: 1000 Hz
+#> channels(3): Fx1, Fy1, Fz1
+#> colData names(5): label, component, plate, unit, type
 ```

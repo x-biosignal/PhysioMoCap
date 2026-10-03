@@ -44,3 +44,15 @@ Winter DA (2009); Nolan & Lees (2000).
 ## See also
 
 [`jointWork()`](https://x-biosignal.github.io/PhysioMoCap/reference/jointWork.md)
+
+## Examples
+
+``` r
+set.seed(1)
+power_prosthetic <- abs(sin(seq(0, 10 * pi, length.out = 1000))) * 2
+power_intact <- abs(sin(seq(0, 10 * pi, length.out = 1000))) * 3
+pipelineAmputee(power_prosthetic, power_intact, sampling_rate = 100)
+#> <amputee_report>
+#>   positive work: prosthetic 12.7 / intact 19.1
+#>   work asymmetry index: 0.200 (0 = symmetric)
+```

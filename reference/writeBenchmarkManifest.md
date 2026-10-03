@@ -42,7 +42,8 @@ for validating manifest structure.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-writeBenchmarkManifest("benchmark_manifest.csv", n = 3)
-} # }
+path <- tempfile(fileext = ".json")
+writeBenchmarkManifest(path, n = 1, overwrite = TRUE)
+file.exists(path)
+#> [1] TRUE
 ```

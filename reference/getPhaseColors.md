@@ -32,3 +32,11 @@ Winter DA (2009). "Biomechanics and Motor Control of Human Movement."
 [`getPhaseNames()`](https://x-biosignal.github.io/PhysioMoCap/reference/getPhaseNames.md),
 [`getPhase()`](https://x-biosignal.github.io/PhysioMoCap/reference/getPhase.md),
 [`TaskSchema()`](https://x-biosignal.github.io/PhysioMoCap/reference/TaskSchema.md)
+
+## Examples
+
+``` r
+getPhaseColors(schema_gait)
+#>    stance     swing 
+#> "#E8F4F8" "#FFF4E8" 
+```

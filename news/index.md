@@ -1,5 +1,23 @@
 # Changelog
 
+## PhysioMoCap 0.7.5
+
+### Documentation
+
+- Runnable `@examples` added or corrected across 114 help pages. Each
+  runs offline in seconds, writes nothing outside
+  [`tempdir()`](https://rdrr.io/r/base/tempfile.html), and is executed
+  by `R CMD check`; anything needing a device, a download or an optional
+  backend is fenced with the reason stated.
+- The README’s quick start runs as written: it attaches the package,
+  builds its own inputs, and uses only hard dependencies.
+
+### Bug fixes
+
+- Two man pages carried no roxygen header, so `roxygenise()` skipped
+  them and their documentation sat frozen while the source moved on.
+  They are regenerated.
+
 ## PhysioMoCap 0.7.4
 
 - Type checks in

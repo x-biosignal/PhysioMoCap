@@ -60,3 +60,14 @@ A `pd_fog_report` object with a per-window `windows` data frame (`time`,
 ## References
 
 Moore ST, et al. (2008); Bachlin M, et al. (2010).
+
+## Examples
+
+``` r
+set.seed(1)
+accel <- matrix(rnorm(2000 * 3), 2000, 3)
+pipelinePDfog(accel, sampling_rate = 100)
+#> <pd_fog_report>
+#>   windows: 113, FOG windows: 49 (43.4%)
+#>   freeze-index threshold: 2
+```

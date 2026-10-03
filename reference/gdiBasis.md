@@ -33,3 +33,13 @@ Schwartz MH, Rozumalski A (2008). Gait & Posture 28(3):351-357.
 ## See also
 
 [`gaitDeviationIndex()`](https://x-biosignal.github.io/PhysioMoCap/reference/gaitDeviationIndex.md)
+
+## Examples
+
+``` r
+if (requireNamespace("PhysioGaitNorm", quietly = TRUE)) {
+  basis <- gdiBasis()
+  basis$n_features
+}
+#> [1] 15
+```

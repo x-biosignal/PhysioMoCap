@@ -32,3 +32,19 @@ Rater Reliability." Psychological Bulletin, 86(2), 420-428.
 
 [`benchmarkAgreement()`](https://x-biosignal.github.io/PhysioMoCap/reference/benchmarkAgreement.md)
 for computing agreement metrics.
+
+## Examples
+
+``` r
+ref <- data.frame(a = sin(seq(0, 1, length.out = 100)))
+pred <- ref + rnorm(100, sd = 0.01)
+print(benchmarkAgreement(pred, ref, trial_id = "demo"))
+#> Benchmark agreement
+#>   Trial: demo 
+#>   Variables: 1 
+#>   Pass rate: 100.0% 
+#>   Overall pass: TRUE 
+#>   Mean RMSE: 0.009967 
+#>   Mean Cor: 0.9992 
+#>   Mean ICC: 0.9992 
+```

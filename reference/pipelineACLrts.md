@@ -31,3 +31,13 @@ overall `rts_ready` flag.
 ## References
 
 Grindem H, et al. (2016). Br J Sports Med 50(13):804-808.
+
+## Examples
+
+``` r
+tests <- list(hop = list(involved = 90, uninvolved = 100))
+pipelineACLrts(tests)
+#> <acl_rts_report>
+#>   RTS ready: TRUE (1/1 tests >= 90% LSI)
+#>     hop              LSI 90.0% pass
+```

@@ -62,10 +62,10 @@ for Savitzky-Golay polynomial smoothing.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-# Filter a single vector
-x <- sin(2 * pi * 5 * seq(0, 1, length.out = 1000)) +
-     sin(2 * pi * 50 * seq(0, 1, length.out = 1000))
-x_filt <- butterworthFilter(x, cutoff = 20, sampling_rate = 1000, type = "lowpass")
-} # }
+if (requireNamespace("signal", quietly = TRUE)) {
+  x <- sin(2 * pi * 2 * seq(0, 1, length.out = 120)) + rnorm(120, 0, 0.1)
+  xf <- butterworthFilter(x, cutoff = 6, sampling_rate = 120)
+  length(xf)
+}
+#> [1] 120
 ```

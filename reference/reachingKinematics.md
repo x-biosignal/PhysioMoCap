@@ -73,8 +73,11 @@ bounds, sampling rate, marker, and optional endpoint/trunk results.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-pe <- make_mocap_markers(n_time = 200, n_markers = 3, sr = 200)
-reachingKinematics(pe, marker = "Marker1")
-} # }
+demo <- demoMoCapData(seed = 1)
+rk <- reachingKinematics(demo$mocap, marker = "Toe_R")
+names(rk)
+#>  [1] "movement_time"      "peak_velocity"      "time_to_peak"      
+#>  [4] "time_to_peak_frac"  "n_movement_units"   "sparc"             
+#>  [7] "ldlj"               "dimensionless_jerk" "onset"             
+#> [10] "offset"             "fs"                 "marker"            
 ```

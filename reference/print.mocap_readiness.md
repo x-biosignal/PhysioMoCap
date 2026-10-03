@@ -33,3 +33,16 @@ Winter DA (2009). "Biomechanics and Motor Control of Human Movement."
 
 [`assessMoCapReadiness()`](https://x-biosignal.github.io/PhysioMoCap/reference/assessMoCapReadiness.md)
 for computing the readiness report.
+
+## Examples
+
+``` r
+demo <- demoMoCapData(seed = 1)
+report <- assessMoCapReadiness(demo$mocap)
+print(report)
+#> MoCap Readiness Report
+#>   Score:100% (A+)
+#>   Frames: 300 
+#>   Markers: 8 
+#>   Checks: 8 / 8 passed
+```

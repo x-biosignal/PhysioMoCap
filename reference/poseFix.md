@@ -109,3 +109,19 @@ two-dimensional video-based gait analysis in uncontrolled environments.
 
 [`readOpenPose()`](https://x-biosignal.github.io/PhysioMoCap/reference/readOpenPose.md),
 [`calculateJointAngles()`](https://x-biosignal.github.io/PhysioMoCap/reference/calculateJointAngles.md)
+
+## Examples
+
+``` r
+lab <- c("nose", "neck", "Rshoulder", "Relbow", "Rwrist", "Lshoulder",
+         "Lelbow", "Lwrist", "Rhip", "Rknee", "Rankle", "Lhip", "Lknee", "Lankle")
+set.seed(1); nf <- 60; nk <- length(lab)
+mk <- function(mx) { m <- matrix(runif(nf * nk, 0, mx), nf); colnames(m) <- lab; m }
+pe <- PhysioExperiment(assays = S4Vectors::SimpleList(
+    keypoint_x = mk(1920), keypoint_y = mk(1080), confidence = mk(1)),
+  colData = S4Vectors::DataFrame(label = lab, type = rep("keypoint", nk)),
+  samplingRate = 30)
+pe_fixed <- poseFix(pe)
+SummarizedExperiment::assayNames(pe_fixed)
+#> [1] "keypoint_x" "keypoint_y" "confidence"
+```

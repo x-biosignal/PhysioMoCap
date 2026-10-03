@@ -23,7 +23,7 @@ derived from the recording itself, so the method is model-agnostic."></head><bod
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -190,6 +190,21 @@ two-dimensional video-based gait analysis in uncontrolled environments.
     <div class="dont-index"><p><code><a href="readOpenPose.html">readOpenPose()</a></code>, <code><a href="calculateJointAngles.html">calculateJointAngles()</a></code></p></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">lab</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"nose"</span>, <span class="st">"neck"</span>, <span class="st">"Rshoulder"</span>, <span class="st">"Relbow"</span>, <span class="st">"Rwrist"</span>, <span class="st">"Lshoulder"</span>,</span></span>
+<span class="r-in"><span>         <span class="st">"Lelbow"</span>, <span class="st">"Lwrist"</span>, <span class="st">"Rhip"</span>, <span class="st">"Rknee"</span>, <span class="st">"Rankle"</span>, <span class="st">"Lhip"</span>, <span class="st">"Lknee"</span>, <span class="st">"Lankle"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>; <span class="va">nf</span> <span class="op">&lt;-</span> <span class="fl">60</span>; <span class="va">nk</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">lab</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">mk</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">mx</span><span class="op">)</span> <span class="op">{</span> <span class="va">m</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="va">nf</span> <span class="op">*</span> <span class="va">nk</span>, <span class="fl">0</span>, <span class="va">mx</span><span class="op">)</span>, <span class="va">nf</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">m</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">lab</span>; <span class="va">m</span> <span class="op">}</span></span></span>
+<span class="r-in"><span><span class="va">pe</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://x-biosignal.r-universe.dev/PhysioExperiment/reference/PhysioExperiment.html" class="external-link">PhysioExperiment</a></span><span class="op">(</span>assays <span class="op">=</span> <span class="fu">S4Vectors</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/SimpleList-class.html" class="external-link">SimpleList</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    keypoint_x <span class="op">=</span> <span class="fu">mk</span><span class="op">(</span><span class="fl">1920</span><span class="op">)</span>, keypoint_y <span class="op">=</span> <span class="fu">mk</span><span class="op">(</span><span class="fl">1080</span><span class="op">)</span>, confidence <span class="op">=</span> <span class="fu">mk</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  colData <span class="op">=</span> <span class="fu">S4Vectors</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/DataFrame-class.html" class="external-link">DataFrame</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">lab</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"keypoint"</span>, <span class="va">nk</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  samplingRate <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">pe_fixed</span> <span class="op">&lt;-</span> <span class="fu">poseFix</span><span class="op">(</span><span class="va">pe</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">SummarizedExperiment</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">assayNames</a></span><span class="op">(</span><span class="va">pe_fixed</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "keypoint_x" "keypoint_y" "confidence"</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

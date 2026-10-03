@@ -69,8 +69,8 @@ ref <- data.frame(a = sin(seq(0, 1, length.out = 100)))
 pred <- ref + rnorm(100, sd = 0.01)
 out <- benchmarkAgreement(pred, ref, trial_id = "demo")
 out$summary
-#>   trial_id n_variables n_pass pass_rate  mean_rmse   mean_mae  mean_cor
-#> 1     demo           1      1         1 0.01033337 0.00814862 0.9991604
+#>   trial_id n_variables n_pass pass_rate  mean_rmse    mean_mae  mean_cor
+#> 1     demo           1      1         1 0.01062344 0.008618009 0.9990984
 #>    mean_icc overall_pass
-#> 1 0.9991511         TRUE
+#> 1 0.9991055         TRUE
 ```

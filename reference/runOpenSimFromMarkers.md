@@ -102,6 +102,10 @@ beyond what this wrapper infers; run them via
 with the corresponding `PhysioOpenSim::opensimWrite*SetupFromTemplate()`
 writers.
 
+Requires a native OpenSim installation (`SystemRequirements: OpenSim`)
+and setup/model files, so the example cannot run offline and is not
+executed.
+
 ## See also
 
 [`runOpenSimFromOpenCap()`](https://x-biosignal.github.io/PhysioMoCap/reference/runOpenSimFromOpenCap.md),

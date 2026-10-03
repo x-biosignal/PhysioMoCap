@@ -44,8 +44,9 @@ for general-purpose numerical differentiation.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-pe <- make_mocap_markers(n_time = 100, n_markers = 4, sr = 120)
-pe <- computeJerk(pe)
-} # }
+demo <- demoMoCapData(seed = 1)
+pe_jerk <- computeJerk(demo$mocap)
+SummarizedExperiment::assayNames(pe_jerk)
+#> [1] "position_x" "position_y" "position_z" "jerk_x"     "jerk_y"    
+#> [6] "jerk_z"    
 ```

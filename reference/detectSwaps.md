@@ -71,12 +71,9 @@ returned.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-pe <- readVenus3D("capture.csv")
-pe_tracked <- trackMarkers(pe)
-swaps <- detectSwaps(pe_tracked)
-if (nrow(swaps) > 0) {
-  pe_fixed <- correctSwaps(pe_tracked, swaps)
-}
-} # }
+demo <- demoMoCapData(seed = 1)
+swaps <- detectSwaps(demo$mocap)
+swaps
+#> [1] frame      marker_a   marker_b   velocity_a velocity_b confidence
+#> <0 rows> (or 0-length row.names)
 ```

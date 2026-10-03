@@ -31,7 +31,21 @@ runRRA(
 
 An `opensim_tool_result` list with `tool` (the PhysioOpenSim result).
 
+## Details
+
+Requires a native OpenSim installation and an RRA setup XML file, so the
+example cannot run offline and is not executed.
+
 ## See also
 
 [`runStaticOptimization()`](https://x-biosignal.github.io/PhysioMoCap/reference/runStaticOptimization.md),
 [`runCMC()`](https://x-biosignal.github.io/PhysioMoCap/reference/runCMC.md)
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+# Requires a native OpenSim installation and an RRA setup XML file.
+runRRA("rra_setup.xml")
+} # }
+```

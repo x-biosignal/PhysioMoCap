@@ -41,3 +41,19 @@ Schwartz & Rozumalski (2008); Palisano et al. (1997) GMFCS.
 
 [`gaitDeviationIndex()`](https://x-biosignal.github.io/PhysioMoCap/reference/gaitDeviationIndex.md),
 [`classifyGaitPatterns()`](https://x-biosignal.github.io/PhysioMoCap/reference/classifyGaitPatterns.md)
+
+## Examples
+
+``` r
+if (requireNamespace("PhysioGaitNorm", quietly = TRUE)) {
+  set.seed(1)
+  vars <- c("pelvic_tilt", "pelvic_obliquity", "pelvic_rotation",
+            "hip_flexion", "hip_adduction", "hip_rotation",
+            "knee_flexion", "ankle_dorsiflexion", "foot_progression")
+  kinematics <- matrix(rnorm(9 * 51), 9, 51, dimnames = list(vars, NULL))
+  pipelineCPgait(kinematics)
+}
+#> <cp_gait_report>
+#>   GDI: 60.7 (severe)
+#>   pathology flags: stiff_knee 
+```

@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,6 +100,31 @@ Function." 2nd ed. SLACK Incorporated.</p>
 <code><a href="summarizeGaitParameters.html">summarizeGaitParameters()</a></code> for descriptive statistics.</p></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">demo</span> <span class="op">&lt;-</span> <span class="fu"><a href="demoMoCapData.html">demoMoCapData</a></span><span class="op">(</span>seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">ev</span> <span class="op">&lt;-</span> <span class="fu"><a href="detectEventsZeni.html">detectEventsZeni</a></span><span class="op">(</span><span class="va">demo</span><span class="op">$</span><span class="va">mocap</span>,</span></span>
+<span class="r-in"><span>  markers <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>heel_right <span class="op">=</span> <span class="st">"Ankle_R"</span>, toe_right <span class="op">=</span> <span class="st">"Toe_R"</span>,</span></span>
+<span class="r-in"><span>                 heel_left <span class="op">=</span> <span class="st">"Ankle_L"</span>, toe_left <span class="op">=</span> <span class="st">"Toe_L"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  reference <span class="op">=</span> <span class="st">"Pelvis_R"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="calculateGaitParameters.html">calculateGaitParameters</a></span><span class="op">(</span><span class="va">demo</span><span class="op">$</span><span class="va">mocap</span>, <span class="va">ev</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Gait Parameters</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ===============</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Sides: right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Strides: 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Right side:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     stride_time               0.267 +/- 0.058</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     step_time                 0.175 +/- 0.048</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     stance_time               0.145 +/- 0.059</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     swing_time                0.129 +/- 0.077</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     stance_percent            54.038 +/- 23.143</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     swing_percent             45.962 +/- 23.143</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     double_support_time       0.139 +/- 0.074</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     cadence                   372.604 +/- 129.820</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

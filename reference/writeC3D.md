@@ -23,8 +23,7 @@ writeC3D(x, path, include_analog = TRUE)
   [`readC3D()`](https://x-biosignal.github.io/PhysioMoCap/reference/readC3D.md)
   or
   [`readTRC()`](https://x-biosignal.github.io/PhysioMoCap/reference/readTRC.md)),
-  or a `MultiRatePhysioExperiment` whose marker stream carries those
-  assays.
+  or a `MultiPhysioExperiment` whose marker stream carries those assays.
 
 - path:
 
@@ -34,8 +33,8 @@ writeC3D(x, path, include_analog = TRUE)
 
   Logical; if `TRUE` (default) and the object carries analog data (in
   `metadata(x)$analog_data`, or as an `"analog"` stream of a
-  `MultiRatePhysioExperiment`), that data is written as C3D analog
-  channels. If `FALSE`, a marker-only C3D file is written.
+  `MultiPhysioExperiment`), that data is written as C3D analog channels.
+  If `FALSE`, a marker-only C3D file is written.
 
 ## Value
 

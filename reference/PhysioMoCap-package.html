@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,6 +85,24 @@
     <p><strong>Maintainer</strong>: Yusuke Matsui <a href="mailto:mail.to.matsui@gmail.com">mail.to.matsui@gmail.com</a></p>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Synthetic demo data gets you started without external files</span></span></span>
+<span class="r-in"><span><span class="va">demo</span> <span class="op">&lt;-</span> <span class="fu"><a href="demoMoCapData.html">demoMoCapData</a></span><span class="op">(</span>seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">demo</span><span class="op">$</span><span class="va">mocap</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class: PhysioExperiment</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> dim: 300 x 8 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> assays(3): position_x, position_y, position_z</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> samplingRate: 120 Hz</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> channels(8): Pelvis_R, Pelvis_L, Knee_R, Knee_L, Ankle_R ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> colData names(2): label, type</span>
+<span class="r-in"><span><span class="co"># Most operations take a PhysioExperiment and add a result assay</span></span></span>
+<span class="r-in"><span><span class="va">vel</span> <span class="op">&lt;-</span> <span class="fu"><a href="computeVelocity.html">computeVelocity</a></span><span class="op">(</span><span class="va">demo</span><span class="op">$</span><span class="va">mocap</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">SummarizedExperiment</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">assayNames</a></span><span class="op">(</span><span class="va">vel</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "position_x" "position_y" "position_z" "velocity_x" "velocity_y"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "velocity_z"</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

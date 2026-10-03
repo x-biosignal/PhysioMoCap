@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +63,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Read OpenSim Output Files</h1>
-
+      <small class="dont-index">Source: <a href="https://github.com/x-biosignal/PhysioMoCap/blob/main/R/opensim-integration.R" class="external-link"><code>R/opensim-integration.R</code></a></small>
       <div class="d-none name"><code>readOpenSimOutputs.Rd</code></div>
     </div>
 
@@ -83,8 +83,9 @@
 <dl><dt id="arg-files">files<a class="anchor" aria-label="anchor" href="#arg-files"></a></dt>
 <dd><p>Character vector of file paths.</p></dd>
 
+
 <dt id="arg-format">format<a class="anchor" aria-label="anchor" href="#arg-format"></a></dt>
-<dd><p>One of <code>"auto"</code>, <code>"mot"</code>, <code>"sto"</code>, <code>"trc"</code>.</p></dd>
+<dd><p>One of <code>\"auto\"</code>, <code>\"mot\"</code>, <code>\"sto\"</code>, <code>\"trc\"</code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -96,6 +97,23 @@
     <div class="dont-index"><p><code><a href="readMOT.html">readMOT()</a></code>, <code><a href="readSTO.html">readSTO()</a></code>, <code><a href="readTRC.html">readTRC()</a></code></p></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">f</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"testdata"</span>, <span class="st">"sample.mot"</span>, package <span class="op">=</span> <span class="st">"PhysioMoCap"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nchar.html" class="external-link">nzchar</a></span><span class="op">(</span><span class="va">f</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">out</span> <span class="op">&lt;-</span> <span class="fu">readOpenSimOutputs</span><span class="op">(</span><span class="va">f</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">out</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $sample</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class: PhysioExperiment</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> dim: 5 x 3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> assays(1): raw</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> samplingRate: 100 Hz</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> channels(3): hip_flexion_r, knee_angle_r, ankle_angle_r</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> colData names(2): label, type</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

@@ -28,3 +28,10 @@ Winter DA (2009). "Biomechanics and Motor Control of Human Movement."
 [`TaskSchema()`](https://x-biosignal.github.io/PhysioMoCap/reference/TaskSchema.md),
 [`getSchema()`](https://x-biosignal.github.io/PhysioMoCap/reference/getSchema.md),
 [`listSchemas()`](https://x-biosignal.github.io/PhysioMoCap/reference/listSchemas.md)
+
+## Examples
+
+``` r
+validateSchema(schema_gait)
+#> [1] TRUE
+```

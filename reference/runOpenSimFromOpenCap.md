@@ -75,6 +75,10 @@ skipped. For a fully offline dry run, call
 [`runOpenSimFromMarkers()`](https://x-biosignal.github.io/PhysioMoCap/reference/runOpenSimFromMarkers.md)
 with local files.
 
+Requires the OpenCap web API (network + credentials) and a native
+OpenSim installation, so the example cannot run offline and is not
+executed.
+
 ## See also
 
 [`runOpenSimFromMarkers()`](https://x-biosignal.github.io/PhysioMoCap/reference/runOpenSimFromMarkers.md),

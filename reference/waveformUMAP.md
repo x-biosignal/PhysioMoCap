@@ -88,10 +88,11 @@ Journal of Machine Learning Research, 9, 2579-2605.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-# UMAP on gait data
-data <- matrix(rnorm(1000), nrow = 100, ncol = 10)
-umap_result <- waveformUMAP(data, n_neighbors = 15)
-plotUMAP(umap_result)
-} # }
+if (requireNamespace("uwot", quietly = TRUE)) {
+  set.seed(1)
+  d <- matrix(rnorm(1000), 100, 10)
+  um <- waveformUMAP(d, n_neighbors = 5)
+  dim(um$embedding)
+}
+#> [1] 10  2
 ```

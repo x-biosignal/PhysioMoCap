@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,6 +106,28 @@
     <div class="dont-index"><p><code><a href="getPhaseNames.html">getPhaseNames()</a></code>, <code><a href="getPhaseColors.html">getPhaseColors()</a></code>, <code><a href="getEvent.html">getEvent()</a></code></p></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">getPhase</span><span class="op">(</span><span class="va">schema_gait</span>, <span class="fu"><a href="getPhaseNames.html">getPhaseNames</a></span><span class="op">(</span><span class="va">schema_gait</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Phase:Stance Phase</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Name: stance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Events: hs1 -&gt; to</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Color: #E8F4F8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Subphases:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Phase:Loading Response</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Name: loading</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Events: hs1 -&gt; ff</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Color: #B8D4E3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Phase:Midstance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Name: midstance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Events: ff -&gt; ho</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Color: #A8C4D3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Phase:Propulsion</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Name: propulsion</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Events: ho -&gt; to</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Color: #98B4C3</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

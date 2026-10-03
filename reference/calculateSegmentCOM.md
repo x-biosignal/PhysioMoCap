@@ -51,13 +51,24 @@ for body segment inertial parameters.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-pe <- readTRC("markers.trc")
-seg_coms <- calculateSegmentCOM(
-  pe,
-  proximal_markers = c("RHip", "LHip"),
-  distal_markers   = c("RKnee", "LKnee"),
-  com_fractions    = c(0.4095, 0.4095)
-)
-} # }
+n <- 50
+mk <- function(v) { m <- matrix(v, n, 3); colnames(m) <- c("A", "B", "C"); m }
+pe <- PhysioExperiment(
+  assays = S4Vectors::SimpleList(position_x = mk(1), position_y = mk(2),
+                                 position_z = mk(0)),
+  colData = S4Vectors::DataFrame(label = c("A", "B", "C"),
+                                 type = rep("marker", 3)),
+  samplingRate = 100)
+seg_com <- calculateSegmentCOM(pe, proximal_markers = "A",
+  distal_markers = "B", com_fractions = 0.5)
+names(seg_com)
+#> [1] "A_to_B"
+head(seg_com[[1]])
+#>      x y z
+#> [1,] 1 2 0
+#> [2,] 1 2 0
+#> [3,] 1 2 0
+#> [4,] 1 2 0
+#> [5,] 1 2 0
+#> [6,] 1 2 0
 ```

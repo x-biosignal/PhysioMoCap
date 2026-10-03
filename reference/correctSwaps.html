@@ -9,7 +9,7 @@ pairs from the swap frame onward."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -112,10 +112,16 @@ correction. Swaps below this threshold are skipped. Default 0.5.</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
-<span class="r-in"><span><span class="va">swaps</span> <span class="op">&lt;-</span> <span class="fu"><a href="detectSwaps.html">detectSwaps</a></span><span class="op">(</span><span class="va">pe</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">pe_fixed</span> <span class="op">&lt;-</span> <span class="fu">correctSwaps</span><span class="op">(</span><span class="va">pe</span>, <span class="va">swaps</span>, min_confidence <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">demo</span> <span class="op">&lt;-</span> <span class="fu"><a href="demoMoCapData.html">demoMoCapData</a></span><span class="op">(</span>seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">swaps</span> <span class="op">&lt;-</span> <span class="fu"><a href="detectSwaps.html">detectSwaps</a></span><span class="op">(</span><span class="va">demo</span><span class="op">$</span><span class="va">mocap</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">pe_fixed</span> <span class="op">&lt;-</span> <span class="fu">correctSwaps</span><span class="op">(</span><span class="va">demo</span><span class="op">$</span><span class="va">mocap</span>, <span class="va">swaps</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">pe_fixed</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class: PhysioExperiment</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> dim: 300 x 8 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> assays(3): position_x, position_y, position_z</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> samplingRate: 120 Hz</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> channels(8): Pelvis_R, Pelvis_L, Knee_R, Knee_L, Ankle_R ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> colData names(2): label, type</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

@@ -31,7 +31,7 @@ Or install the development version from GitHub:
 
 ``` r
 
-# install.packages("remotes")
+# install.packages("remotes", repos = "https://cloud.r-project.org")
 remotes::install_github("x-biosignal/PhysioMoCap")
 ```
 
@@ -41,26 +41,44 @@ remotes::install_github("x-biosignal/PhysioMoCap")
 
 library(PhysioMoCap)
 
-# Read a C3D motion capture file
-pe <- readC3D("walking_trial.c3d")
+# A demonstration recording: bilateral lower-limb markers at 120 Hz.
+# No external file is needed; for real data use readMoCapAuto() or a format
+# reader such as readTRC() (readC3D() is shown in the note below).
+pe <- demoMoCapData()$mocap
 
 # Inspect the data
 pe
-samplingRate(pe)    # e.g., 120 Hz
-channelNames(pe)   # marker names
+samplingRate(pe)    # 120 Hz
+channelNames(pe)    # marker names
 
-# Detect gait events (heel strikes, toe offs)
-events <- detectEvents(pe, schema = schema_gait())
+# Detect gait events from the kinematics (schema_gait is a TaskSchema object)
+events <- detectEvents(pe, schema = schema_gait)
+events
 
-# Segment into gait cycles
-phases <- segmentPhases(pe, events, schema = schema_gait())
+# Segment the recording into gait-cycle phases
+phases <- segmentPhases(pe, events, schema = schema_gait)
 
-# Compute gait parameters (speed, cadence, step length, symmetry)
-gait <- calculateGaitParameters(pe, events)
-gait
+# Visualise the ensemble-averaged gait cycle
+plotGaitCycle(pe, events)
 
-# Visualize the gait cycle
-plotGaitCycle(pe, events, channels = c("L_Ankle_y", "R_Ankle_y"))
+# Spatiotemporal gait parameters (cadence, stance/swing, symmetry) from
+# bilateral heel-strike (HS) and toe-off (TO) events
+gait_events <- data.frame(
+  event = c("HS_R", "TO_L", "HS_L", "TO_R", "HS_R", "TO_L", "HS_L", "TO_R", "HS_R"),
+  index = c(12, 35, 72, 95, 132, 155, 192, 215, 252)
+)
+calculateGaitParameters(pe, gait_events, side = "both")
+```
+
+Reading a real C3D recording needs the optional **c3dr** package and a
+`.c3d` file; the same gait workflow then applies to the loaded object:
+
+``` r
+
+# install.packages("c3dr")
+# pe <- readC3D("walking_trial.c3d")   # PhysioExperiment: markers + analog + force data
+# events <- detectEvents(pe, schema = schema_gait)
+# calculateGaitParameters(pe, gait_events, side = "both")
 ```
 
 ## Features

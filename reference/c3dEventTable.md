@@ -75,6 +75,10 @@ a point frame. This adapter does not change the signals or their local
 sample grid. Applying it after cropping requires updating the first
 frame to match the stored samples.
 
+Operates on a parsed C3D object from the optional `c3dr` package, built
+from a binary `.c3d` file, so the example cannot run offline and is not
+executed.
+
 ## References
 
 C3D.org, EVENT:TIMES:
@@ -84,3 +88,12 @@ C3D.org, EVENT:TIMES:
 
 [`readC3D()`](https://x-biosignal.github.io/PhysioMoCap/reference/readC3D.md),
 [`segmentCohortCycles()`](https://x-biosignal.github.io/PhysioMoCap/reference/segmentCohortCycles.md)
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+# `x` is a C3D object read via the c3dr package from a .c3d file.
+c3dEventTable(x, event_time_reference = "trial_start")
+} # }
+```

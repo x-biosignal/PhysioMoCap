@@ -36,3 +36,13 @@ Journal of Machine Learning Research, 9, 2579-2605.
 [`waveformUMAP()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformUMAP.md),
 [`plotPCAScatter()`](https://x-biosignal.github.io/PhysioMoCap/reference/plotPCAScatter.md),
 [`waveformPCA()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformPCA.md)
+
+## Examples
+
+``` r
+if (requireNamespace("uwot", quietly = TRUE)) {
+  set.seed(1)
+  d <- matrix(rnorm(1000), 100, 10)
+  plotUMAP(waveformUMAP(d, n_neighbors = 5))
+}
+```

@@ -95,11 +95,22 @@ Building Perception Pipelines." arXiv:1906.08172.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-# Read directory of MediaPipe JSON files
-pe <- readMediaPipe("path/to/mediapipe_output/", model = "pose", fps = 30)
-
-# Read CSV format
-pe <- readMediaPipe("path/to/landmarks.csv", model = "hand", fps = 60)
-} # }
+set.seed(42)
+cols <- list()
+for (j in 0:32) {
+  cols[[paste0("landmark_", j, "_x")]] <- runif(5)
+  cols[[paste0("landmark_", j, "_y")]] <- runif(5)
+  cols[[paste0("landmark_", j, "_z")]] <- runif(5, -0.1, 0.1)
+  cols[[paste0("landmark_", j, "_visibility")]] <- runif(5, 0.5, 1.0)
+}
+path <- tempfile(fileext = ".csv")
+write.csv(as.data.frame(cols), path, row.names = FALSE)
+pe <- readMediaPipe(path, model = "pose", fps = 30)
+pe
+#> class: PhysioExperiment
+#> dim: 5 x 33 
+#> assays(4): landmark_x, landmark_y, landmark_z ...
+#> samplingRate: 30 Hz
+#> channels(33): nose, left_eye_inner, left_eye, left_eye_outer, right_eye_inner ...
+#> colData names(4): label, type, model, landmark_idx
 ```

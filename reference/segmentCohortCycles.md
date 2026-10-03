@@ -2,7 +2,7 @@
 
 Reuses the PhysioCore cohort hierarchy and
 [`segmentMultimodalCycles()`](https://x-biosignal.github.io/PhysioMoCap/reference/segmentMultimodalCycles.md).
-Sessions must be `MultiRatePhysioExperiment` objects with at least two
+Sessions must be `MultiPhysioExperiment` objects with at least two
 consistently named streams. No resampling or synchronization is
 performed.
 
@@ -67,7 +67,20 @@ rate-dependent features, process contexts with their own rate settings
 before pooling; a single fixed-rate callback is inappropriate when
 session rates differ.
 
+Operates on a `PhysioCohort` multi-subject container (package
+PhysioCohort), which is not among this package's dependencies, so the
+example cannot run offline and is not executed.
+
 ## See also
 
 [`segmentMultimodalCycles()`](https://x-biosignal.github.io/PhysioMoCap/reference/segmentMultimodalCycles.md),
 [`summarizeCycleFeatures()`](https://x-biosignal.github.io/PhysioMoCap/reference/summarizeCycleFeatures.md)
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+# `cohort` is a PhysioCohort object; see the PhysioCohort package.
+segmentCohortCycles(cohort, cycles = cohort_cycles)
+} # }
+```

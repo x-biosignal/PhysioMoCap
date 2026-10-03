@@ -50,3 +50,14 @@ Perry J, Burnfield JM (2010).
 ## See also
 
 [`classifyGaitPatterns()`](https://x-biosignal.github.io/PhysioMoCap/reference/classifyGaitPatterns.md)
+
+## Examples
+
+``` r
+pct <- seq(0, 100, length.out = 101)
+pelvic_obliquity <- rep(0, 101)
+pelvic_obliquity[pct >= 10 & pct <= 50] <- 12
+detectTrendelenburg(pelvic_obliquity)
+#> <gait_pattern_flag> trendelenburg: FLAGGED (severity 0.80)
+#>   contralateral_pelvic_drop_deg = 12 (threshold 5, normal 4)
+```

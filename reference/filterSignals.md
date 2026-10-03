@@ -82,8 +82,11 @@ for simple moving average smoothing.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-pe <- make_mocap_markers(n_time = 500, n_markers = 4, sr = 120)
-pe_filt <- filterSignals(pe, type = "lowpass", cutoff = 10)
-} # }
+if (requireNamespace("signal", quietly = TRUE)) {
+  demo <- demoMoCapData(seed = 1)
+  pe_filt <- filterSignals(demo$mocap, type = "lowpass", cutoff = 6)
+  SummarizedExperiment::assayNames(pe_filt)
+}
+#> [1] "position_x"          "position_y"          "position_z"         
+#> [4] "position_x_filtered"
 ```

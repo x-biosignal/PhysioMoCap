@@ -155,25 +155,10 @@ Journal of Biomechanical Engineering, 105(2), 136-144.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-pe <- readTRC("markers.trc")
-joints <- list(
-  right_elbow = list(
-    proximal = "RShoulder",
-    joint    = "RElbow",
-    distal   = "RWrist"
-  ),
-  right_knee = list(
-    proximal = "RHip",
-    joint    = "RKnee",
-    distal   = "RAnkle"
-  )
-)
-pe_angles <- calculateJointAngles(pe, joints)
-SummarizedExperiment::assay(pe_angles, "joint_angles")
-
-# Signed sagittal angles: flexion and hyperextension get opposite signs
-pe_signed <- calculateJointAngles(pe, joints, signed = TRUE,
-                                  plane_normal = c(0, 0, 1))
-} # }
+demo <- demoMoCapData(seed = 1)
+pe_ang <- calculateJointAngles(demo$mocap,
+  joints = list(knee_r = list(proximal = "Pelvis_R",
+                              joint = "Knee_R", distal = "Ankle_R")))
+SummarizedExperiment::assayNames(pe_ang)
+#> [1] "joint_angles"
 ```

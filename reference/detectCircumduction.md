@@ -54,3 +54,15 @@ Perry J, Burnfield JM (2010); Kerrigan DC, et al. (2000).
 ## See also
 
 [`classifyGaitPatterns()`](https://x-biosignal.github.io/PhysioMoCap/reference/classifyGaitPatterns.md)
+
+## Examples
+
+``` r
+pct <- seq(0, 100, length.out = 101)
+foot_ml <- rep(0, 101)
+swing <- pct >= 60
+foot_ml[swing] <- 0.10 * sin(pi * (pct[swing] - 60) / 40)
+detectCircumduction(foot_ml)
+#> <gait_pattern_flag> circumduction: FLAGGED (severity 0.83)
+#>   swing_lateral_excursion_m = 0.1 (threshold 0.04, normal 0)
+```

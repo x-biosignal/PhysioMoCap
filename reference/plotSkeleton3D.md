@@ -98,9 +98,17 @@ for manual coordinate projection.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-pe <- readOpenPose("frames/", model = "BODY_25")
 sk <- define_skeleton("BODY_25")
-plotSkeleton3D(pe, sk, frame = 10, azimuth = 35, elevation = 20)
-} # }
+labels <- sk$keypoints$label
+set.seed(42)
+nk <- length(labels); nf <- 10
+mk <- function(b) matrix(rep(b, each = nf), nf)
+px <- mk(rnorm(nk, 0, 0.3)); py <- mk(rnorm(nk, 0, 0.3))
+pz <- mk(seq(1.8, 0, length.out = nk))
+colnames(px) <- colnames(py) <- colnames(pz) <- labels
+pe <- PhysioExperiment(assays = S4Vectors::SimpleList(
+    position_x = px, position_y = py, position_z = pz),
+  colData = S4Vectors::DataFrame(label = labels, type = rep("keypoint", nk)),
+  samplingRate = 30)
+plotSkeleton3D(pe, sk, frame = 1)
 ```

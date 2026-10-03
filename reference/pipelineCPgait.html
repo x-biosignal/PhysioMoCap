@@ -13,7 +13,7 @@ for stratified interpretation."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -116,6 +116,21 @@ if <code>NULL</code>, the default is loaded from PhysioGaitNorm.</p></dd>
     <div class="dont-index"><p><code><a href="gaitDeviationIndex.html">gaitDeviationIndex()</a></code>, <code><a href="classifyGaitPatterns.html">classifyGaitPatterns()</a></code></p></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"PhysioGaitNorm"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">vars</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"pelvic_tilt"</span>, <span class="st">"pelvic_obliquity"</span>, <span class="st">"pelvic_rotation"</span>,</span></span>
+<span class="r-in"><span>            <span class="st">"hip_flexion"</span>, <span class="st">"hip_adduction"</span>, <span class="st">"hip_rotation"</span>,</span></span>
+<span class="r-in"><span>            <span class="st">"knee_flexion"</span>, <span class="st">"ankle_dorsiflexion"</span>, <span class="st">"foot_progression"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">kinematics</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">9</span> <span class="op">*</span> <span class="fl">51</span><span class="op">)</span>, <span class="fl">9</span>, <span class="fl">51</span>, dimnames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">vars</span>, <span class="cn">NULL</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">pipelineCPgait</span><span class="op">(</span><span class="va">kinematics</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;cp_gait_report&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   GDI: 60.7 (severe)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   pathology flags: stiff_knee </span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

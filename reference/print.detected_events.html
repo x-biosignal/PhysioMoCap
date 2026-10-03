@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,6 +90,28 @@
 
 </dl></div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">vGRF</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">100</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Trig.html" class="external-link">sin</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="va">pi</span>, length.out <span class="op">=</span> <span class="fl">500</span><span class="op">)</span><span class="op">)</span> <span class="op">*</span> <span class="fl">800</span>, <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">400</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">vGRF</span> <span class="op">&lt;-</span> <span class="va">vGRF</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">0</span>, <span class="fl">10</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">ev</span> <span class="op">&lt;-</span> <span class="fu"><a href="detectEvents.html">detectEvents</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">as.matrix</a></span><span class="op">(</span><span class="va">vGRF</span><span class="op">)</span>, <span class="va">schema_gait</span>,</span></span>
+<span class="r-in"><span>  signals <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>vGRF <span class="op">=</span> <span class="va">vGRF</span><span class="op">)</span>, sampling_rate <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">ev</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Detected Events</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Schema: gait </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Sampling rate: 1000 Hz</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Total samples: 1000 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  event         label index        time    percent        method confidence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ms     Midstance     2 0.001128671  0.1001001 zero_crossing       0.85</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    hs1   Heel Strike     3 0.002000000  0.2002002     threshold       0.90</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ho      Heel Off     3 0.002000000  0.2002002     threshold       0.90</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    hs2 Heel Strike 2     3 0.002000000  0.2002002     threshold       0.90</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     to       Toe Off     4 0.003000000  0.3003003     threshold       0.90</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ff     Foot Flat   360 0.359000000 35.9359359          peak       0.95</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

@@ -19,7 +19,7 @@ calculateJointAngles."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -128,12 +128,12 @@ coordinate systems." J Biomech.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
-<span class="r-in"><span><span class="va">segs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>  femur <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>proximal <span class="op">=</span> <span class="st">"HIP"</span>, distal <span class="op">=</span> <span class="st">"KNEE"</span>, lateral <span class="op">=</span> <span class="st">"THIGH"</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>  tibia <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>proximal <span class="op">=</span> <span class="st">"KNEE"</span>, distal <span class="op">=</span> <span class="st">"ANKLE"</span>, lateral <span class="op">=</span> <span class="st">"SHANK"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">frames</span> <span class="op">&lt;-</span> <span class="fu">jointCoordinateSystem</span><span class="op">(</span><span class="va">pe</span>, <span class="va">segs</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">demo</span> <span class="op">&lt;-</span> <span class="fu"><a href="demoMoCapData.html">demoMoCapData</a></span><span class="op">(</span>seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">jcs</span> <span class="op">&lt;-</span> <span class="fu">jointCoordinateSystem</span><span class="op">(</span><span class="va">demo</span><span class="op">$</span><span class="va">mocap</span>,</span></span>
+<span class="r-in"><span>  segments <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>shank_r <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>proximal <span class="op">=</span> <span class="st">"Knee_R"</span>,</span></span>
+<span class="r-in"><span>                                 distal <span class="op">=</span> <span class="st">"Ankle_R"</span>, lateral <span class="op">=</span> <span class="st">"Toe_R"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">jcs</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "shank_r"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

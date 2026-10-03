@@ -43,8 +43,14 @@ A PhysioExperiment with corrected position assays.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-swaps <- detectSwaps(pe)
-pe_fixed <- correctSwaps(pe, swaps, min_confidence = 0.3)
-} # }
+demo <- demoMoCapData(seed = 1)
+swaps <- detectSwaps(demo$mocap)
+pe_fixed <- correctSwaps(demo$mocap, swaps)
+pe_fixed
+#> class: PhysioExperiment
+#> dim: 300 x 8 
+#> assays(3): position_x, position_y, position_z
+#> samplingRate: 120 Hz
+#> channels(8): Pelvis_R, Pelvis_L, Knee_R, Knee_L, Ankle_R ...
+#> colData names(2): label, type
 ```

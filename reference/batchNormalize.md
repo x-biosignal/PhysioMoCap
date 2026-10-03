@@ -50,3 +50,13 @@ Winter DA (2009). "Biomechanics and Motor Control of Human Movement."
 [`normalizeMovement()`](https://x-biosignal.github.io/PhysioMoCap/reference/normalizeMovement.md),
 [`normalizedTimeAxis()`](https://x-biosignal.github.io/PhysioMoCap/reference/normalizedTimeAxis.md),
 [`combineTrials()`](https://x-biosignal.github.io/PhysioMoCap/reference/combineTrials.md)
+
+## Examples
+
+``` r
+set.seed(1)
+trials <- list(matrix(rnorm(200), 100, 2), matrix(rnorm(180), 90, 2))
+norm <- batchNormalize(trials, method = "cycle")
+dim(norm[[1]])
+#> NULL
+```

@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,6 +103,29 @@
     <div class="dont-index"><p><code><a href="quickStartMoCap.html">quickStartMoCap()</a></code> for the complete getting-started workflow.</p></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">qs</span> <span class="op">&lt;-</span> <span class="fu"><a href="quickStartMoCap.html">quickStartMoCap</a></span><span class="op">(</span>seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">qs</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> PhysioMoCap Quick Start</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Source: demo </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Frames: 300 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Markers: 8 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Sampling rate: 120.000 Hz</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Readiness:100% (A+)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Generated outputs:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   - velocity / acceleration: TRUE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   - forceplate summary: TRUE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   - inverse dynamics: TRUE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   - EMG processed/aligned: TRUE / TRUE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Next steps:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1) Check readiness details: x$readiness</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   2) View force summary: x$forceplate$summary</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3) Start from your own file: quickStartMoCap(path = 'trial.c3d')</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

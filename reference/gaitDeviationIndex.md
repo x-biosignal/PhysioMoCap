@@ -52,3 +52,19 @@ Schwartz MH, Rozumalski A (2008). Gait & Posture 28(3):351-357.
 
 [`gdiBasis()`](https://x-biosignal.github.io/PhysioMoCap/reference/gdiBasis.md),
 [`gaitProfileScore()`](https://x-biosignal.github.io/PhysioMoCap/reference/gaitProfileScore.md)
+
+## Examples
+
+``` r
+if (requireNamespace("PhysioGaitNorm", quietly = TRUE)) {
+  basis <- gdiBasis()
+  vars <- c("pelvic_tilt", "pelvic_obliquity", "pelvic_rotation",
+            "hip_flexion", "hip_adduction", "hip_rotation",
+            "knee_flexion", "ankle_dorsiflexion", "foot_progression")
+  set.seed(1)
+  kin <- matrix(rnorm(9 * basis$n_points, 0, 5), 9, basis$n_points,
+                dimnames = list(vars, NULL))
+  gaitDeviationIndex(kin, basis = basis)$gdi
+}
+#> [1] 60.97475
+```

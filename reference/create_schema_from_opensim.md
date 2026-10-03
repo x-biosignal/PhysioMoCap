@@ -54,6 +54,10 @@ generate an appropriate TaskSchema. For gait analysis, it prefers
 GRF-based detection if available, falling back to marker-based or
 kinematic detection.
 
+Requires a native OpenSim installation (`SystemRequirements: OpenSim`)
+and setup/model files, so the example cannot run offline and is not
+executed.
+
 ## References
 
 Delp SL, Anderson FC, Arnold AS, Loan P, Habib A, John CT, Guendelman E,

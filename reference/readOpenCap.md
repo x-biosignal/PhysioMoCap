@@ -80,6 +80,9 @@ The download workflow is:
     or
     [`readMOT()`](https://x-biosignal.github.io/PhysioMoCap/reference/readMOT.md)
 
+Requires the OpenCap web API (network access and an API key), so the
+example cannot run offline and is not executed.
+
 ## References
 
 Uhlrich SD, Falisse A, Kidzinski L, Muccini J, Ko M, Chaudhari AS, Hicks

@@ -21,7 +21,7 @@ both sides across a full trial."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -178,6 +178,35 @@ Gait &amp; Posture 27(4):710-714.</p>
 <code><a href="calculateGaitParameters.html">calculateGaitParameters()</a></code>, <code><a href="calculateCOM.html">calculateCOM()</a></code>.</p></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">demo</span> <span class="op">&lt;-</span> <span class="fu"><a href="demoMoCapData.html">demoMoCapData</a></span><span class="op">(</span>seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">ev</span> <span class="op">&lt;-</span> <span class="fu">detectEventsZeni</span><span class="op">(</span><span class="va">demo</span><span class="op">$</span><span class="va">mocap</span>,</span></span>
+<span class="r-in"><span>  markers <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>heel_right <span class="op">=</span> <span class="st">"Ankle_R"</span>, toe_right <span class="op">=</span> <span class="st">"Toe_R"</span>,</span></span>
+<span class="r-in"><span>                 heel_left <span class="op">=</span> <span class="st">"Ankle_L"</span>, toe_left <span class="op">=</span> <span class="st">"Toe_L"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  reference <span class="op">=</span> <span class="st">"Pelvis_R"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">ev</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Detected Events</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Schema: gait </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Sampling rate: 120 Hz</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Total samples: 300 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              event             label index       time   percent method</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       left_toe_off      Left Toe Off     6 0.04166667  1.672241   zeni</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      right_toe_off     Right Toe Off     6 0.04166667  1.672241   zeni</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  right_heel_strike Right Heel Strike     7 0.05000000  2.006689   zeni</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   left_heel_strike  Left Heel Strike    12 0.09166667  3.678930   zeni</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  right_heel_strike Right Heel Strike    36 0.29166667 11.705686   zeni</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   left_heel_strike  Left Heel Strike    40 0.32500000 13.043478   zeni</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  confidence  side</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           1  left</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           1 right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           1 right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           1  left</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           1 right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           1  left</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

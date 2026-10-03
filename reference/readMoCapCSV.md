@@ -121,18 +121,16 @@ for automatic format detection.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-# Read xyz-format CSV
-pe <- readMoCapCSV("markers.csv", sampling_rate = 120)
-
-# Read with auto-detection from Time column
-pe <- readMoCapCSV("markers.csv")
-
-# Read tab-separated file
-pe <- readMoCapCSV("qualisys_export.tsv", format = "qualisys", sep = "\t")
-
-# Override marker names
-pe <- readMoCapCSV("data.csv", marker_names = c("Hip", "Knee", "Ankle"),
-                   sampling_rate = 100)
-} # }
+path <- tempfile(fileext = ".csv")
+df <- data.frame(Marker1_X = rnorm(10), Marker1_Y = rnorm(10),
+                 Marker1_Z = rnorm(10))
+write.csv(df, path, row.names = FALSE)
+pe <- readMoCapCSV(path, format = "wide", sampling_rate = 100)
+pe
+#> class: PhysioExperiment
+#> dim: 10 x 1 
+#> assays(3): position_x, position_y, position_z
+#> samplingRate: 100 Hz
+#> channels(1): Marker1_
+#> colData names(2): label, type
 ```

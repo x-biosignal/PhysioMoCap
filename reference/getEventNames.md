@@ -28,3 +28,10 @@ Winter DA (2009). "Biomechanics and Motor Control of Human Movement."
 [`getPhaseNames()`](https://x-biosignal.github.io/PhysioMoCap/reference/getPhaseNames.md),
 [`getEvent()`](https://x-biosignal.github.io/PhysioMoCap/reference/getEvent.md),
 [`TaskSchema()`](https://x-biosignal.github.io/PhysioMoCap/reference/TaskSchema.md)
+
+## Examples
+
+``` r
+getEventNames(schema_gait)
+#> [1] "hs1" "ff"  "ms"  "ho"  "to"  "hs2"
+```

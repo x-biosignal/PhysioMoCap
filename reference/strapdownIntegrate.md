@@ -44,3 +44,13 @@ inertial sensors." J Biomech 43(15):2999-3006.
 
 [`detectStanceZUPT()`](https://x-biosignal.github.io/PhysioMoCap/reference/detectStanceZUPT.md),
 [`footImuGait()`](https://x-biosignal.github.io/PhysioMoCap/reference/footImuGait.md).
+
+## Examples
+
+``` r
+stance <- rep(c(TRUE, FALSE, TRUE, FALSE, TRUE), c(60, 40, 60, 40, 60))
+accel_world <- matrix(0, length(stance), 3)
+si <- strapdownIntegrate(accel_world, sampling_rate = 200, stance = stance)
+names(si)
+#> [1] "velocity" "position"
+```

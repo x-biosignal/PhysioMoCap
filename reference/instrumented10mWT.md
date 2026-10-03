@@ -63,3 +63,14 @@ Standard 10-metre walk test protocol.
 
 [`instrumentedTUG()`](https://x-biosignal.github.io/PhysioMoCap/reference/instrumentedTUG.md),
 [`footImuGait()`](https://x-biosignal.github.io/PhysioMoCap/reference/footImuGait.md)
+
+## Examples
+
+``` r
+fs <- 100
+n <- 12 * fs
+position <- seq(0, 10, length.out = n) + rnorm(n, 0, 0.01)
+wt <- instrumented10mWT(position, fs)
+wt$gait_speed
+#> [1] 0.8326484
+```

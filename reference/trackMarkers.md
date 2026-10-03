@@ -102,11 +102,13 @@ for post-tracking swap repair.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-pe <- readVenus3D("capture.csv")
-pe_tracked <- trackMarkers(pe)
-
-# With velocity prediction for fast movements
-pe_tracked <- trackMarkers(pe, use_prediction = TRUE, max_distance = 50)
-} # }
+demo <- demoMoCapData(seed = 1)
+pe_tracked <- trackMarkers(demo$mocap, method = "greedy")
+pe_tracked
+#> class: PhysioExperiment
+#> dim: 300 x 8 
+#> assays(3): position_x, position_y, position_z
+#> samplingRate: 120 Hz
+#> channels(8): Pelvis_R, Pelvis_L, Knee_R, Knee_L, Ankle_R ...
+#> colData names(2): label, type
 ```

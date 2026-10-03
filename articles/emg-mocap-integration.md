@@ -11,6 +11,11 @@ library(PhysioMoCap)
 #> Loading required package: PhysioExperiment
 #> Warning: replacing previous import 'S4Arrays::makeNindexFromArrayViewport' by
 #> 'DelayedArray::makeNindexFromArrayViewport' when loading 'SummarizedExperiment'
+#> 
+#> Attaching package: 'PhysioMoCap'
+#> The following object is masked from 'package:PhysioExperiment':
+#> 
+#>     detectGaps
 
 set.seed(42)
 

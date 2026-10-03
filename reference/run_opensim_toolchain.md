@@ -60,18 +60,32 @@ run_opensim_toolchain(
 
 - fail_on_error:
 
-  If `TRUE`, abort on non-zero exit status.
+  If `TRUE`, abort when any tool returns non-zero status.
 
 - extra_args:
 
-  Optional character vector appended to each tool run.
+  Optional character vector appended to every tool run.
 
 ## Value
 
-Named list with entries for executed tools (`ik`, `id`, `so`, `rra`,
-`cmc`, `analyze`).
+Named list with entries for tools that were executed (`ik`, `id`, `so`,
+`rra`, `cmc`, `analyze`).
+
+## Details
+
+Requires a native OpenSim installation and tool setup XML files, so the
+example cannot run offline and is not executed.
 
 ## See also
 
 [`batch_analyze_opensim()`](https://x-biosignal.github.io/PhysioMoCap/reference/batch_analyze_opensim.md),
 [`create_schema_from_opensim()`](https://x-biosignal.github.io/PhysioMoCap/reference/create_schema_from_opensim.md)
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+# Requires a native OpenSim installation and OpenSim setup XML files.
+run_opensim_toolchain(ik_setup = "ik_setup.xml")
+} # }
+```

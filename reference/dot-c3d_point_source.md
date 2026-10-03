@@ -1,7 +1,7 @@
 # Resolve the marker-bearing PhysioExperiment for a C3D write
 
 For a plain `PhysioExperiment` this is the object itself. For a
-`MultiRatePhysioExperiment` it is the stream whose assays include the
+`MultiPhysioExperiment` it is the stream whose assays include the
 `"position_*"` markers (falling back to a `"recording"` stream).
 
 ## Usage
@@ -14,7 +14,7 @@ For a plain `PhysioExperiment` this is the object itself. For a
 
 - x:
 
-  A PhysioExperiment or MultiRatePhysioExperiment.
+  A PhysioExperiment or MultiPhysioExperiment.
 
 ## Value
 

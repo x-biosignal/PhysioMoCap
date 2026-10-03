@@ -68,14 +68,15 @@ for automatic format detection.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-pe <- readVenus3D("capture.csv")
-
-# Assign meaningful marker names
-pe <- readVenus3D("capture.csv",
-                  marker_names = c("Hip", "Knee", "Ankle"))
-
-# Follow with marker tracking to resolve label shuffling
-pe_tracked <- trackMarkers(pe)
-} # }
+f <- system.file("testdata", "sample_venus3d.csv", package = "PhysioMoCap")
+if (nzchar(f)) {
+  pe <- readVenus3D(f)
+  pe
+}
+#> class: PhysioExperiment
+#> dim: 5 x 3 
+#> assays(3): position_x, position_y, position_z
+#> samplingRate: 120 Hz
+#> channels(3): P1, P2, P3
+#> colData names(2): label, type
 ```

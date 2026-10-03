@@ -44,3 +44,20 @@ Biomech Eng, 105(2), 136-144.
 
 [`jointCoordinateSystem()`](https://x-biosignal.github.io/PhysioMoCap/reference/jointCoordinateSystem.md),
 [`calculateJointAngles()`](https://x-biosignal.github.io/PhysioMoCap/reference/calculateJointAngles.md)
+
+## Examples
+
+``` r
+set.seed(1)
+proximal <- array(rnorm(100 * 3 * 3), c(100, 3, 3))
+distal <- array(rnorm(100 * 3 * 3), c(100, 3, 3))
+ang <- groodSuntayAngles(proximal, distal)
+head(ang)
+#>         flexion abduction   rotation
+#> [1,] -122.94297       -90  166.75640
+#> [2,]  -58.96001        90  -99.52818
+#> [3,] -144.25289       -90 -136.05456
+#> [4,]   68.92221       -90  131.73075
+#> [5,]  -97.65342       -90   19.67545
+#> [6,]   93.71014       -90 -105.75731
+```

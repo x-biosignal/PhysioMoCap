@@ -62,3 +62,12 @@ Rosenstein MT, Collins JJ, De Luca CJ (1993). Physica D 65:117-134.
 
 [`localDynamicStability()`](https://x-biosignal.github.io/PhysioMoCap/reference/localDynamicStability.md),
 [`timeDelayEmbed()`](https://x-biosignal.github.io/PhysioMoCap/reference/timeDelayEmbed.md)
+
+## Examples
+
+``` r
+x <- sin(seq(0, 20 * pi, length.out = 600))
+mle <- maxLyapunovExponent(x)
+mle$lambda
+#> [1] 0.002577792
+```

@@ -49,3 +49,12 @@ Dingwell JB, Cusumano JJ (2000). Chaos 10(4):848-863.
 ## See also
 
 [`maxLyapunovExponent()`](https://x-biosignal.github.io/PhysioMoCap/reference/maxLyapunovExponent.md)
+
+## Examples
+
+``` r
+x <- sin(seq(0, 20 * pi, length.out = 600))
+lds <- localDynamicStability(x, stride_samples = 60)
+lds$lambda_short
+#> [1] 0.1546675
+```

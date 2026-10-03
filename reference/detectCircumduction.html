@@ -13,7 +13,7 @@ the stance-phase baseline."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -132,6 +132,17 @@ metres, with lateral being positive (see <code>lateral_sign</code>).</p></dd>
     <div class="dont-index"><p><code><a href="classifyGaitPatterns.html">classifyGaitPatterns()</a></code></p></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">pct</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">100</span>, length.out <span class="op">=</span> <span class="fl">101</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">foot_ml</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">101</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">swing</span> <span class="op">&lt;-</span> <span class="va">pct</span> <span class="op">&gt;=</span> <span class="fl">60</span></span></span>
+<span class="r-in"><span><span class="va">foot_ml</span><span class="op">[</span><span class="va">swing</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">0.10</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/Trig.html" class="external-link">sin</a></span><span class="op">(</span><span class="va">pi</span> <span class="op">*</span> <span class="op">(</span><span class="va">pct</span><span class="op">[</span><span class="va">swing</span><span class="op">]</span> <span class="op">-</span> <span class="fl">60</span><span class="op">)</span> <span class="op">/</span> <span class="fl">40</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">detectCircumduction</span><span class="op">(</span><span class="va">foot_ml</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;gait_pattern_flag&gt; circumduction: FLAGGED (severity 0.83)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   swing_lateral_excursion_m = 0.1 (threshold 0.04, normal 0)</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

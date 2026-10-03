@@ -91,3 +91,10 @@ Springer.
 for full-body skeleton visualization,
 [`plotPhasePortrait()`](https://x-biosignal.github.io/PhysioMoCap/reference/plotPhasePortrait.md)
 for phase-space trajectory plots.
+
+## Examples
+
+``` r
+set.seed(1)
+plotTrajectory(cumsum(rnorm(100)), cumsum(rnorm(100)))
+```

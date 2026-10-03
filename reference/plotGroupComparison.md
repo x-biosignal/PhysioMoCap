@@ -81,3 +81,12 @@ Springer.
 for single-group cycle visualization,
 [`plotWaveformComparison()`](https://x-biosignal.github.io/PhysioMoCap/reference/plotWaveformComparison.md)
 for alternative group comparison plots.
+
+## Examples
+
+``` r
+set.seed(1)
+waveforms <- matrix(sin(seq(0, pi, length.out = 101)) + rnorm(101 * 8, 0, 0.2),
+                    101, 8)
+plotGroupComparison(waveforms, groups = rep(c("A", "B"), 4))
+```

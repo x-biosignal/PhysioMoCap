@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,6 +103,21 @@ Rater Reliability." Psychological Bulletin, 86(2), 420-428.</p>
     <div class="dont-index"><p><code><a href="runBenchmarkSuite.html">runBenchmarkSuite()</a></code> for running the benchmark suite.</p></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">ex</span> <span class="op">&lt;-</span> <span class="fu"><a href="createBenchmarkExample.html">createBenchmarkExample</a></span><span class="op">(</span>n_trials <span class="op">=</span> <span class="fl">2</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">suite</span> <span class="op">&lt;-</span> <span class="fu"><a href="runBenchmarkSuite.html">runBenchmarkSuite</a></span><span class="op">(</span><span class="va">ex</span><span class="op">$</span><span class="va">manifest</span>, data_dir <span class="op">=</span> <span class="va">ex</span><span class="op">$</span><span class="va">data_dir</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">suite</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Benchmark suite</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Trials: 2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Variables: 6 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Variable pass rate: 100.0% </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Trial pass rate: 100.0% </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Mean RMSE: 0.02067 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Mean Cor: 0.9998 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Mean ICC: 0.9998 </span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

@@ -31,3 +31,15 @@ A `stroke_propulsion_report` object.
 ## References
 
 Bowden MG, et al. (2006). Stroke 37(3):872-876.
+
+## Examples
+
+``` r
+set.seed(1)
+ap_paretic <- sin(seq(0, 10 * pi, length.out = 1000))
+ap_nonparetic <- sin(seq(0, 10 * pi, length.out = 1000)) * 1.3
+pipelineStrokePropulsion(ap_paretic, ap_nonparetic, sampling_rate = 100)
+#> <stroke_propulsion_report>
+#>   paretic propulsion Pp: 0.435 (0.5 = symmetric)
+#>   propulsive impulse: paretic 3.18 / non-paretic 4.13
+```

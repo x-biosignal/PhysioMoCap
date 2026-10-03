@@ -94,3 +94,19 @@ detection – an algorithm evaluation." IEEE Trans Biomed Eng
 
 [`strapdownIntegrate()`](https://x-biosignal.github.io/PhysioMoCap/reference/strapdownIntegrate.md),
 [`footImuGait()`](https://x-biosignal.github.io/PhysioMoCap/reference/footImuGait.md).
+
+## Examples
+
+``` r
+set.seed(1)
+g <- 9.81
+stance_block <- matrix(rep(c(0, 0, -g), each = 60), 60, 3)
+swing_block <- matrix(rnorm(40 * 3, 0, 3), 40, 3)
+accel <- rbind(stance_block, swing_block, stance_block, swing_block, stance_block)
+gyro <- rbind(matrix(0, 60, 3), matrix(rnorm(40 * 3, 0, 1.5), 40, 3),
+              matrix(0, 60, 3), matrix(rnorm(40 * 3, 0, 1.5), 40, 3),
+              matrix(0, 60, 3))
+det <- detectStanceZUPT(accel, gyro, sampling_rate = 200)
+sum(det)
+#> [1] 180
+```

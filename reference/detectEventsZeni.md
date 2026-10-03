@@ -97,3 +97,33 @@ Posture 27(4):710-714.
 (use `method = "zeni"`),
 [`calculateGaitParameters()`](https://x-biosignal.github.io/PhysioMoCap/reference/calculateGaitParameters.md),
 [`calculateCOM()`](https://x-biosignal.github.io/PhysioMoCap/reference/calculateCOM.md).
+
+## Examples
+
+``` r
+demo <- demoMoCapData(seed = 1)
+ev <- detectEventsZeni(demo$mocap,
+  markers = list(heel_right = "Ankle_R", toe_right = "Toe_R",
+                 heel_left = "Ankle_L", toe_left = "Toe_L"),
+  reference = "Pelvis_R")
+head(ev)
+#> Detected Events
+#> Schema: gait 
+#> Sampling rate: 120 Hz
+#> Total samples: 300 
+#> 
+#>              event             label index       time   percent method
+#>       left_toe_off      Left Toe Off     6 0.04166667  1.672241   zeni
+#>      right_toe_off     Right Toe Off     6 0.04166667  1.672241   zeni
+#>  right_heel_strike Right Heel Strike     7 0.05000000  2.006689   zeni
+#>   left_heel_strike  Left Heel Strike    12 0.09166667  3.678930   zeni
+#>  right_heel_strike Right Heel Strike    36 0.29166667 11.705686   zeni
+#>   left_heel_strike  Left Heel Strike    40 0.32500000 13.043478   zeni
+#>  confidence  side
+#>           1  left
+#>           1 right
+#>           1 right
+#>           1  left
+#>           1 right
+#>           1  left
+```

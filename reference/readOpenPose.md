@@ -82,14 +82,18 @@ Transactions on Pattern Analysis and Machine Intelligence, 43(1),
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-# Read directory of OpenPose JSON files
-pe <- readOpenPose("path/to/openpose_output/", fps = 30)
-
-# Read with COCO model
-pe <- readOpenPose("path/to/output/", model = "COCO", fps = 25)
-
-# Extract second person
-pe <- readOpenPose("path/to/output/", person_id = 2)
-} # }
+set.seed(123)
+tmp <- tempfile(fileext = ".json")
+people <- list(list(person_id = list(-1L),
+                    pose_keypoints_2d = as.list(runif(25 * 3, 0, 500))))
+jsonlite::write_json(list(version = 1.3, people = people),
+                     tmp, auto_unbox = TRUE)
+pe <- readOpenPose(tmp, model = "BODY_25", fps = 30)
+pe
+#> class: PhysioExperiment
+#> dim: 1 x 25 
+#> assays(3): keypoint_x, keypoint_y, confidence
+#> samplingRate: 30 Hz
+#> channels(25): Nose, Neck, RShoulder, RElbow, RWrist ...
+#> colData names(3): label, type, model
 ```

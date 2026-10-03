@@ -31,7 +31,21 @@ runCMC(
 
 An `opensim_tool_result` list with `tool` (the PhysioOpenSim result).
 
+## Details
+
+Requires a native OpenSim installation and a CMC setup XML file, so the
+example cannot run offline and is not executed.
+
 ## See also
 
 [`runStaticOptimization()`](https://x-biosignal.github.io/PhysioMoCap/reference/runStaticOptimization.md),
 [`runRRA()`](https://x-biosignal.github.io/PhysioMoCap/reference/runRRA.md)
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+# Requires a native OpenSim installation and a CMC setup XML file.
+runCMC("cmc_setup.xml")
+} # }
+```

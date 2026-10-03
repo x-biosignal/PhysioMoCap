@@ -66,3 +66,21 @@ result).
 [`staticOptimizationR()`](https://x-biosignal.github.io/PhysioMoCap/reference/staticOptimizationR.md),
 [`runRRA()`](https://x-biosignal.github.io/PhysioMoCap/reference/runRRA.md),
 [`runCMC()`](https://x-biosignal.github.io/PhysioMoCap/reference/runCMC.md)
+
+## Examples
+
+``` r
+if (requireNamespace("quadprog", quietly = TRUE)) {
+  set.seed(1)
+  n_muscle <- 6; n_dof <- 2; n_frames <- 15
+  r <- matrix(runif(n_dof * n_muscle, -0.05, 0.05), n_dof, n_muscle)
+  fmax <- runif(n_muscle, 200, 1200)
+  a <- matrix(runif(n_frames * n_muscle, 0, 0.6), n_frames, n_muscle)
+  cmat <- sweep(r, 2, fmax, "*")
+  tau <- t(apply(a, 1, function(ai) as.numeric(cmat %*% ai)))
+  res <- runStaticOptimization(moment_arms = r, max_force = fmax,
+    joint_moments = tau, execution = "r")
+  res$backend
+}
+#> [1] "r"
+```

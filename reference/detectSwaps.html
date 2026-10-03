@@ -13,7 +13,7 @@ between marker pairs."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -139,14 +139,11 @@ returned.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
-<span class="r-in"><span><span class="va">pe</span> <span class="op">&lt;-</span> <span class="fu"><a href="readVenus3D.html">readVenus3D</a></span><span class="op">(</span><span class="st">"capture.csv"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">pe_tracked</span> <span class="op">&lt;-</span> <span class="fu"><a href="trackMarkers.html">trackMarkers</a></span><span class="op">(</span><span class="va">pe</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">swaps</span> <span class="op">&lt;-</span> <span class="fu">detectSwaps</span><span class="op">(</span><span class="va">pe_tracked</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">swaps</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span>  <span class="va">pe_fixed</span> <span class="op">&lt;-</span> <span class="fu"><a href="correctSwaps.html">correctSwaps</a></span><span class="op">(</span><span class="va">pe_tracked</span>, <span class="va">swaps</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
-<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">demo</span> <span class="op">&lt;-</span> <span class="fu"><a href="demoMoCapData.html">demoMoCapData</a></span><span class="op">(</span>seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">swaps</span> <span class="op">&lt;-</span> <span class="fu">detectSwaps</span><span class="op">(</span><span class="va">demo</span><span class="op">$</span><span class="va">mocap</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">swaps</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] frame      marker_a   marker_b   velocity_a velocity_b confidence</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;0 rows&gt; (or 0-length row.names)</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

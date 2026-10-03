@@ -74,8 +74,24 @@ for displaying results.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-pe <- readC3D("trial.c3d", include_analog = TRUE)
-out <- analyzeForcePlatePE(pe)
-} # }
+n <- 500
+z <- matrix(0, n, 1, dimnames = list(NULL, "fp1"))
+fz <- matrix(c(rep(0, 100), rep(700, 300), rep(0, 100)), n, 1,
+             dimnames = list(NULL, "fp1"))
+pe <- PhysioExperiment(assays = S4Vectors::SimpleList(
+    force_x = z, force_y = z, force_z = fz,
+    moment_x = matrix(50, n, 1, dimnames = list(NULL, "fp1")),
+    moment_y = matrix(-100, n, 1, dimnames = list(NULL, "fp1")),
+    moment_z = z),
+  colData = S4Vectors::DataFrame(label = "fp1", type = "forceplate"),
+  samplingRate = 1000)
+out <- analyzeForcePlatePE(pe, threshold = 20, cutoff = 20,
+  filter_method = "moving_average")
+out
+#> Forceplate analysis
+#>   Stances: 1 
+#>   Peak vertical force: 700 
+#>   Max loading rate: 13725.49 
+#>   Total impulse: 209.945 
+#>   Selected plate: 1 
 ```

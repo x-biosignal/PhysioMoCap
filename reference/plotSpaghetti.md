@@ -72,3 +72,12 @@ Springer.
 for gait cycle visualization with event markers,
 [`plotWaveformComparison()`](https://x-biosignal.github.io/PhysioMoCap/reference/plotWaveformComparison.md)
 for multi-group waveform comparisons.
+
+## Examples
+
+``` r
+set.seed(1)
+waveforms <- matrix(sin(seq(0, pi, length.out = 101)) + rnorm(101 * 8, 0, 0.1),
+                    101, 8)
+plotSpaghetti(waveforms)
+```

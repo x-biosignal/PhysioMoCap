@@ -99,3 +99,20 @@ variability with inertial sensors." Gait & Posture 38(4):974-980.
 [`strapdownIntegrate()`](https://x-biosignal.github.io/PhysioMoCap/reference/strapdownIntegrate.md),
 [`estimateOrientation()`](https://x-biosignal.github.io/PhysioMoCap/reference/estimateOrientation.md),
 [`removeGravity()`](https://x-biosignal.github.io/PhysioMoCap/reference/removeGravity.md).
+
+## Examples
+
+``` r
+set.seed(1)
+g <- 9.81
+stance_block <- matrix(rep(c(0, 0, -g), each = 60), 60, 3)
+swing_block <- matrix(rnorm(40 * 3, 0, 3), 40, 3)
+accel <- rbind(stance_block, swing_block, stance_block, swing_block, stance_block)
+gyro <- rbind(matrix(0, 60, 3), matrix(rnorm(40 * 3, 0, 1.5), 40, 3),
+              matrix(0, 60, 3), matrix(rnorm(40 * 3, 0, 1.5), 40, 3),
+              matrix(0, 60, 3))
+res <- footImuGait(accel, gyro, sampling_rate = 200)
+names(res)
+#> [1] "strides"       "position"      "velocity"      "stance"       
+#> [5] "sampling_rate"
+```

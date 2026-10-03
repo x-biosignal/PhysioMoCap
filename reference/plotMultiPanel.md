@@ -61,3 +61,12 @@ Springer.
 for single-channel cycle visualization,
 [`plotGroupComparison()`](https://x-biosignal.github.io/PhysioMoCap/reference/plotGroupComparison.md)
 for between-group comparisons.
+
+## Examples
+
+``` r
+set.seed(1)
+waveforms <- matrix(rnorm(101 * 4), 101, 4)
+colnames(waveforms) <- paste0("ch", 1:4)
+plotMultiPanel(waveforms)
+```

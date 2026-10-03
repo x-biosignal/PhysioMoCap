@@ -13,7 +13,7 @@ keypoint labels."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,11 +115,85 @@ column names in the position assays.</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
-<span class="r-in"><span><span class="va">pe</span> <span class="op">&lt;-</span> <span class="fu"><a href="readOpenPose.html">readOpenPose</a></span><span class="op">(</span><span class="st">"path/to/frames/"</span>, model <span class="op">=</span> <span class="st">"BODY_25"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">sk</span> <span class="op">&lt;-</span> <span class="fu"><a href="define_skeleton.html">define_skeleton</a></span><span class="op">(</span><span class="st">"BODY_25"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">lengths</span> <span class="op">&lt;-</span> <span class="fu">get_segment_lengths</span><span class="op">(</span><span class="va">pe</span>, <span class="va">sk</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">sk</span> <span class="op">&lt;-</span> <span class="fu"><a href="define_skeleton.html">define_skeleton</a></span><span class="op">(</span><span class="st">"BODY_25"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">labels</span> <span class="op">&lt;-</span> <span class="va">sk</span><span class="op">$</span><span class="va">keypoints</span><span class="op">$</span><span class="va">label</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">42</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">nk</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">labels</span><span class="op">)</span>; <span class="va">nf</span> <span class="op">&lt;-</span> <span class="fl">10</span></span></span>
+<span class="r-in"><span><span class="va">mk</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">b</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="va">b</span>, each <span class="op">=</span> <span class="va">nf</span><span class="op">)</span>, <span class="va">nf</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">px</span> <span class="op">&lt;-</span> <span class="fu">mk</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">nk</span>, <span class="fl">0</span>, <span class="fl">0.3</span><span class="op">)</span><span class="op">)</span>; <span class="va">py</span> <span class="op">&lt;-</span> <span class="fu">mk</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">nk</span>, <span class="fl">0</span>, <span class="fl">0.3</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">pz</span> <span class="op">&lt;-</span> <span class="fu">mk</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">1.8</span>, <span class="fl">0</span>, length.out <span class="op">=</span> <span class="va">nk</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">px</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">py</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">pz</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">labels</span></span></span>
+<span class="r-in"><span><span class="va">pe</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://x-biosignal.r-universe.dev/PhysioExperiment/reference/PhysioExperiment.html" class="external-link">PhysioExperiment</a></span><span class="op">(</span>assays <span class="op">=</span> <span class="fu">S4Vectors</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/SimpleList-class.html" class="external-link">SimpleList</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    position_x <span class="op">=</span> <span class="va">px</span>, position_y <span class="op">=</span> <span class="va">py</span>, position_z <span class="op">=</span> <span class="va">pz</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  colData <span class="op">=</span> <span class="fu">S4Vectors</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/DataFrame-class.html" class="external-link">DataFrame</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">labels</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"keypoint"</span>, <span class="va">nk</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  samplingRate <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">get_segment_lengths</span><span class="op">(</span><span class="va">pe</span>, <span class="va">sk</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           spine right_clavicle left_clavicle right_upper_arm right_forearm</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1,] 0.9419561      0.5359077     0.3932471       0.6760421     0.3453205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,] 0.9419561      0.5359077     0.3932471       0.6760421     0.3453205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,] 0.9419561      0.5359077     0.3932471       0.6760421     0.3453205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,] 0.9419561      0.5359077     0.3932471       0.6760421     0.3453205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,] 0.9419561      0.5359077     0.3932471       0.6760421     0.3453205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,] 0.9419561      0.5359077     0.3932471       0.6760421     0.3453205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,] 0.9419561      0.5359077     0.3932471       0.6760421     0.3453205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,] 0.9419561      0.5359077     0.3932471       0.6760421     0.3453205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,] 0.9419561      0.5359077     0.3932471       0.6760421     0.3453205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,] 0.9419561      0.5359077     0.3932471       0.6760421     0.3453205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       left_upper_arm left_forearm right_hip_joint right_thigh right_shank</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1,]      0.4967219    0.4976197       0.7121046   0.7863153   0.4130895</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,]      0.4967219    0.4976197       0.7121046   0.7863153   0.4130895</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,]      0.4967219    0.4976197       0.7121046   0.7863153   0.4130895</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,]      0.4967219    0.4976197       0.7121046   0.7863153   0.4130895</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,]      0.4967219    0.4976197       0.7121046   0.7863153   0.4130895</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,]      0.4967219    0.4976197       0.7121046   0.7863153   0.4130895</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,]      0.4967219    0.4976197       0.7121046   0.7863153   0.4130895</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,]      0.4967219    0.4976197       0.7121046   0.7863153   0.4130895</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,]      0.4967219    0.4976197       0.7121046   0.7863153   0.4130895</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,]      0.4967219    0.4976197       0.7121046   0.7863153   0.4130895</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       left_hip_joint left_thigh left_shank      neck nose_to_right_eye</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1,]        1.06777   0.580069  0.7402028 0.5878213          1.162198</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,]        1.06777   0.580069  0.7402028 0.5878213          1.162198</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,]        1.06777   0.580069  0.7402028 0.5878213          1.162198</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,]        1.06777   0.580069  0.7402028 0.5878213          1.162198</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,]        1.06777   0.580069  0.7402028 0.5878213          1.162198</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,]        1.06777   0.580069  0.7402028 0.5878213          1.162198</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,]        1.06777   0.580069  0.7402028 0.5878213          1.162198</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,]        1.06777   0.580069  0.7402028 0.5878213          1.162198</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,]        1.06777   0.580069  0.7402028 0.5878213          1.162198</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,]        1.06777   0.580069  0.7402028 0.5878213          1.162198</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       right_eye_to_ear nose_to_left_eye left_eye_to_ear left_ankle_to_bigtoe</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1,]         1.012687         1.298849       0.6730276            0.7129228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,]         1.012687         1.298849       0.6730276            0.7129228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,]         1.012687         1.298849       0.6730276            0.7129228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,]         1.012687         1.298849       0.6730276            0.7129228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,]         1.012687         1.298849       0.6730276            0.7129228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,]         1.012687         1.298849       0.6730276            0.7129228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,]         1.012687         1.298849       0.6730276            0.7129228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,]         1.012687         1.298849       0.6730276            0.7129228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,]         1.012687         1.298849       0.6730276            0.7129228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,]         1.012687         1.298849       0.6730276            0.7129228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       left_bigtoe_to_smalltoe left_ankle_to_heel right_ankle_to_bigtoe</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1,]               0.7319496          0.7646555               1.29291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,]               0.7319496          0.7646555               1.29291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,]               0.7319496          0.7646555               1.29291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,]               0.7319496          0.7646555               1.29291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,]               0.7319496          0.7646555               1.29291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,]               0.7319496          0.7646555               1.29291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,]               0.7319496          0.7646555               1.29291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,]               0.7319496          0.7646555               1.29291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,]               0.7319496          0.7646555               1.29291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,]               0.7319496          0.7646555               1.29291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       right_bigtoe_to_smalltoe right_ankle_to_heel</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1,]                0.7037424            1.072878</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [2,]                0.7037424            1.072878</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3,]                0.7037424            1.072878</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4,]                0.7037424            1.072878</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5,]                0.7037424            1.072878</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6,]                0.7037424            1.072878</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7,]                0.7037424            1.072878</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8,]                0.7037424            1.072878</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9,]                0.7037424            1.072878</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10,]                0.7037424            1.072878</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

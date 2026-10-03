@@ -37,3 +37,14 @@ an updated `promp` with the conditioned `mean`, `sd`, `w_mean`, `w_cov`.
 ## See also
 
 [`promFit()`](https://x-biosignal.github.io/PhysioMoCap/reference/promFit.md)
+
+## Examples
+
+``` r
+z <- seq(0, 1, length.out = 50)
+demos <- lapply(1:20, function(i) sin(2 * pi * z) + rnorm(50, 0, 0.1))
+p <- promFit(demos)
+cond <- promCondition(p, phase = 0.5, value = 1.0)
+length(cond$mean)
+#> [1] 50
+```

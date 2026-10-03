@@ -32,3 +32,12 @@ Journal of Machine Learning Research, 9, 2579-2605.
 [`waveformPCA()`](https://x-biosignal.github.io/PhysioMoCap/reference/waveformPCA.md),
 [`plotPCAScatter()`](https://x-biosignal.github.io/PhysioMoCap/reference/plotPCAScatter.md),
 [`plotUMAP()`](https://x-biosignal.github.io/PhysioMoCap/reference/plotUMAP.md)
+
+## Examples
+
+``` r
+set.seed(1)
+d <- matrix(rnorm(1000), 100, 10)
+pca <- waveformPCA(d, method = "features")
+plotPCAVariance(pca)
+```

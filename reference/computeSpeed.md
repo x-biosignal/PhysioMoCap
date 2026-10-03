@@ -40,9 +40,9 @@ for computing acceleration.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-pe <- make_mocap_markers(n_time = 100, n_markers = 4, sr = 120)
-pe <- computeVelocity(pe)
-pe <- computeSpeed(pe)
-} # }
+demo <- demoMoCapData(seed = 1)
+pe_speed <- computeSpeed(computeVelocity(demo$mocap))
+SummarizedExperiment::assayNames(pe_speed)
+#> [1] "position_x" "position_y" "position_z" "velocity_x" "velocity_y"
+#> [6] "velocity_z" "speed"     
 ```

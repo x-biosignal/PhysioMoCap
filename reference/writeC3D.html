@@ -15,7 +15,7 @@ precision) and preserves the point/analog sampling-rate ratio."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,7 +95,7 @@ precision) and preserves the point/analog sampling-rate ratio.</p>
 <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
 <dd><p>A <code>PhysioExperiment</code> with <code>"position_x"</code>, <code>"position_y"</code>, and
 <code>"position_z"</code> assays (as produced by <code><a href="readC3D.html">readC3D()</a></code> or <code><a href="readTRC.html">readTRC()</a></code>), or a
-<code>MultiRatePhysioExperiment</code> whose marker stream carries those assays.</p></dd>
+<code>MultiPhysioExperiment</code> whose marker stream carries those assays.</p></dd>
 
 
 <dt id="arg-path">path<a class="anchor" aria-label="anchor" href="#arg-path"></a></dt>
@@ -105,7 +105,7 @@ precision) and preserves the point/analog sampling-rate ratio.</p>
 <dt id="arg-include-analog">include_analog<a class="anchor" aria-label="anchor" href="#arg-include-analog"></a></dt>
 <dd><p>Logical; if <code>TRUE</code> (default) and the object carries
 analog data (in <code>metadata(x)$analog_data</code>, or as an <code>"analog"</code> stream of
-a <code>MultiRatePhysioExperiment</code>), that data is written as C3D analog
+a <code>MultiPhysioExperiment</code>), that data is written as C3D analog
 channels. If <code>FALSE</code>, a marker-only C3D file is written.</p></dd>
 
 </dl></div>

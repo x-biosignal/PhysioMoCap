@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">PhysioMoCap</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,6 +103,20 @@ Between Two Methods of Clinical Measurement." Lancet, 327(8476), 307-310.</p>
     <div class="dont-index"><p><code><a href="validateBenchmarkManifest.html">validateBenchmarkManifest()</a></code> for performing manifest validation.</p></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">ex</span> <span class="op">&lt;-</span> <span class="fu"><a href="createBenchmarkExample.html">createBenchmarkExample</a></span><span class="op">(</span>n_trials <span class="op">=</span> <span class="fl">2</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="validateBenchmarkManifest.html">validateBenchmarkManifest</a></span><span class="op">(</span><span class="va">ex</span><span class="op">$</span><span class="va">manifest</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Benchmark Manifest Validation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Valid: FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Rows: 2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Issues:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    - Row 1: prediction file not found: ./prediction_1.csv </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    - Row 1: reference file not found: ./reference_1.csv </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    - Row 2: prediction file not found: ./prediction_2.csv </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    - Row 2: reference file not found: ./reference_2.csv </span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

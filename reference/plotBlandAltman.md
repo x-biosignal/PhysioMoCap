@@ -73,13 +73,8 @@ for the underlying statistics.
 ## Examples
 
 ``` r
-# \donttest{
 set.seed(1)
-m1 <- rnorm(30, 50, 10)
-m2 <- m1 + rnorm(30, 0, 3)
-plotBlandAltman(m1, m2)
-
-plotBlandAltman(m1, m2, proportional_bias = TRUE, units = "deg")
-
-# }
+x <- rnorm(50, 10, 2)
+y <- x + rnorm(50, 0, 0.5)
+plotBlandAltman(x, y)
 ```

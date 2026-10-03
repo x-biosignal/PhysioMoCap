@@ -37,3 +37,14 @@ Signal Processing, 26(1), 43-49.
 [`dtwDistance()`](https://x-biosignal.github.io/PhysioMoCap/reference/dtwDistance.md),
 [`dtwAverage()`](https://x-biosignal.github.io/PhysioMoCap/reference/dtwAverage.md),
 [`normalizeMovement()`](https://x-biosignal.github.io/PhysioMoCap/reference/normalizeMovement.md)
+
+## Examples
+
+``` r
+x <- sin(seq(0, pi, length.out = 100)) * 30
+y <- sin(seq(0, pi, length.out = 100) + 0.3) * 30
+dr <- dtwDistance(x, y)
+warped <- dtwWarp(x, dr)
+length(warped)
+#> [1] 100
+```

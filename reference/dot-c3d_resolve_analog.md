@@ -14,7 +14,7 @@ object carries no analog data.
 
 - x:
 
-  The original PhysioExperiment or MultiRatePhysioExperiment.
+  The original PhysioExperiment or MultiPhysioExperiment.
 
 - point_pe:
 

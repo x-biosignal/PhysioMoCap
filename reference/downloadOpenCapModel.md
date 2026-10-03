@@ -60,6 +60,9 @@ Requires the httr package and an OpenCap API key (see
 The model URL is taken from the session metadata when present and
 otherwise constructed from the documented session endpoint.
 
+Requires the OpenCap web API (network access and an API key), so the
+example cannot run offline and is not executed.
+
 ## References
 
 Uhlrich SD, Falisse A, Kidzinski L, Muccini J, Ko M, Chaudhari AS, Hicks

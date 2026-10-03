@@ -48,10 +48,10 @@ of joint coordinate systems." J Biomech.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-segs <- list(
-  femur = list(proximal = "HIP", distal = "KNEE", lateral = "THIGH"),
-  tibia = list(proximal = "KNEE", distal = "ANKLE", lateral = "SHANK"))
-frames <- jointCoordinateSystem(pe, segs)
-} # }
+demo <- demoMoCapData(seed = 1)
+jcs <- jointCoordinateSystem(demo$mocap,
+  segments = list(shank_r = list(proximal = "Knee_R",
+                                 distal = "Ankle_R", lateral = "Toe_R")))
+names(jcs)
+#> [1] "shank_r"
 ```

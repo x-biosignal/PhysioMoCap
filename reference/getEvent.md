@@ -32,3 +32,13 @@ Winter DA (2009). "Biomechanics and Motor Control of Human Movement."
 [`getEventNames()`](https://x-biosignal.github.io/PhysioMoCap/reference/getEventNames.md),
 [`getPhase()`](https://x-biosignal.github.io/PhysioMoCap/reference/getPhase.md),
 [`TaskSchema()`](https://x-biosignal.github.io/PhysioMoCap/reference/TaskSchema.md)
+
+## Examples
+
+``` r
+getEvent(schema_gait, getEventNames(schema_gait)[1])
+#> Event: Heel Strike 
+#>   Name: hs1 
+#>   Detection: threshold 
+#>   Typical timing: 0 %
+```

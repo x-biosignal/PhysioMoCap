@@ -39,3 +39,14 @@ a `dmp_trajectory`: `time`, `y`, `yd` (`n x D`).
 ## See also
 
 [`dmpFit()`](https://x-biosignal.github.io/PhysioMoCap/reference/dmpFit.md)
+
+## Examples
+
+``` r
+t <- seq(0, 1, length.out = 100)
+y <- 10 * (10 * t^3 - 15 * t^4 + 6 * t^5)   # minimum-jerk demo
+d <- dmpFit(y)
+rollout <- dmpGenerate(d)
+dim(rollout$y)
+#> [1] 100   1
+```

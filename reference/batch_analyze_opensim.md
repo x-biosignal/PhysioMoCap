@@ -56,6 +56,12 @@ A list containing:
 
 - summary: Summary statistics across trials
 
+## Details
+
+Requires a native OpenSim installation (`SystemRequirements: OpenSim`)
+and setup/model files, so the example cannot run offline and is not
+executed.
+
 ## References
 
 Delp SL, Anderson FC, Arnold AS, Loan P, Habib A, John CT, Guendelman E,

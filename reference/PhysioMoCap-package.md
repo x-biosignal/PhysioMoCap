@@ -28,3 +28,22 @@ Useful links:
 ## Author
 
 **Maintainer**: Yusuke Matsui <mail.to.matsui@gmail.com>
+
+## Examples
+
+``` r
+# Synthetic demo data gets you started without external files
+demo <- demoMoCapData(seed = 1)
+demo$mocap
+#> class: PhysioExperiment
+#> dim: 300 x 8 
+#> assays(3): position_x, position_y, position_z
+#> samplingRate: 120 Hz
+#> channels(8): Pelvis_R, Pelvis_L, Knee_R, Knee_L, Ankle_R ...
+#> colData names(2): label, type
+# Most operations take a PhysioExperiment and add a result assay
+vel <- computeVelocity(demo$mocap)
+SummarizedExperiment::assayNames(vel)
+#> [1] "position_x" "position_y" "position_z" "velocity_x" "velocity_y"
+#> [6] "velocity_z"
+```

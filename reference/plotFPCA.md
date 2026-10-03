@@ -47,3 +47,13 @@ Springer.
 for computing fPCA results,
 [`reconstructFPCA()`](https://x-biosignal.r-universe.dev/PhysioExperiment/reference/reconstructFPCA.html)
 for waveform reconstruction.
+
+## Examples
+
+``` r
+set.seed(1)
+curves <- matrix(rep(sin(seq(0, pi, length.out = 101)), 20) +
+                   rnorm(101 * 20, 0, 0.1), 101, 20)
+fp <- fPCA(curves)
+plotFPCA(fp, type = "variance")
+```
